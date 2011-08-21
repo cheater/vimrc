@@ -109,3 +109,10 @@ autocmd BufRead,BufNewFile *.php,*.ihtml
 \        expandtab
 \        softtabstop=4
 "       \foldmethod=indent
+
+if exists('+colorcolumn')
+  set colorcolumn=79
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
+endif
+
