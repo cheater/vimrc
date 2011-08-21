@@ -16,6 +16,8 @@ setlocal bg=dark
 
 filetype plugin on     " load ftplugin.vim
 "filetype indent on     " load indent.vim
+setlocal laststatus=2      " always show status.
+setlocal statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 setlocal history=1000      " number of commands and search patterns to save
 setlocal showcmd           " show the command in the lower right corner
 setlocal binary            " show control characters (ignore 'fileformat')
@@ -116,3 +118,11 @@ else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
 endif
 
+" Swap ; and :  Convenient.
+nnoremap ; :
+nnoremap : ;
+
+" Search mappings: These will make it so that going to the next result in a
+" search will center on the line it's found in.
+map N Nzz
+map n nzz
