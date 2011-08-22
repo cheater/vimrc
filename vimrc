@@ -121,6 +121,8 @@ endif
 " Swap ; and :  Convenient.
 nnoremap ; :
 nnoremap : ;
+vnoremap ; :
+vnoremap : ;
 
 " Search mappings: These will make it so that going to the next result in a
 " search will center on the line it's found in.
