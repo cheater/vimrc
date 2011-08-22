@@ -1,0 +1,11 @@
+* parse the following pages:
+http://vim.wikia.com/wiki/VimTip962
+http://www.google.com/search?q=vim+wildmode
+http://www.google.com/search?q=vim+wildmenu
+http://www.google.com/search?q=vim+set+backspace
+http://vimdoc.sourceforge.net/htmldoc/options.html
+http://www.vim.org/scripts/script.php?script_id=1014
+http://www.google.com/search?q=vim+cscope
+
+
+* consider configuring ctags for python
