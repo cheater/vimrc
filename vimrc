@@ -42,27 +42,38 @@ setlocal hidden            " so that when doing g] in ctags you don't save out
 setlocal noautowrite       " don't save buffers when abandoning (going out of)
                            " them, e.g. with g]
 setlocal switchbuf=useopen " prefer already open windows when switching buffers
+
 setlocal t_Co=256          " Much more beautiful than the standard of using
                            " just 8 colors! You can do:
+                           "
                            " :so $VIMRUNTIME/syntax/hitest.vim
-                           " in order to see all the highlight groups that you
-                           " can access. Then, you can also do things such as:
+                           " ^ in order to see all the highlight groups that you
+                           " can access.
+                           "
+                           " Then, you can also do things such as:
                            " :mat DiffAdd /[^=<>]=[^=]/
                            " ^ to show all assignments
+                           "
                            " :2mat SpellLocal /\<some_word\>/
                            " ^ to search for some_word
+                           "
                            " :call matchadd("DiffText", "\\<word\\>")
                            " ^ to match another word, if you need more
                            " highlight groups. you can do matchadd() over and
                            " over for infinite groups! then do
+                           "
                            " :call matchlist()
                            " ^ to see a list of matches
+                           "
                            " :call matchdelete(7)
                            " ^ to delete the 7th match group
+                           "
                            " :call clearmatches()
                            " ^ to clear all matches.
+                           "
                            " Note: don't use :3mat, that's pretty much
                            " reserved for highlighting matching parentheses.
+
 setlocal laststatus=2      " always show status.
 " the following two status lines that are commented out were ripped off someone
 " else... :)
@@ -78,7 +89,7 @@ setlocal titlestring=%<%f\ [%M%Y%R]\ -\ VIM
         \.jpg,.bmp,.gif,.png,.tif,.tiff,
         \.wmv,.avi,.mpg,.mpeg,.asf,.flv,.mov,
         \.wav,.aif,.aiff,.mp3,.flac,.mp4
-" the suffixes are what files Vim should normally prefer when autocompleting
+" the suffixes are what files Vim should normally ignore when autocompleting
 " file names, for :e :w and so on
 
 setlocal list                   " show chars using listchars.
