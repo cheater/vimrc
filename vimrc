@@ -212,7 +212,7 @@ map N Nzz
 map n nzz
 
 " use :w!! to write to a file using sudo if you forgot to "sudo vim file"
-cmap w!! %!sudo tee > /dev/null %
+command SudoWrite %!sudo tee > /dev/null %
 
 " Always disable paste mode when leaving insert mode
 au InsertLeave * set nopaste
