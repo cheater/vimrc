@@ -21,13 +21,16 @@ setlocal statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 setlocal history=1000      " number of commands and search patterns to save
 setlocal showcmd           " show the command in the lower right corner
 setlocal binary            " show control characters (ignore 'fileformat')
-setlocal shiftround        " round alignment to nearest indent when shifting with < and >
+setlocal shiftround        " round alignment to nearest indent when shifting
+                           " with < and >
 setlocal formatoptions+=r  " auto-format comments while typing
 setlocal incsearch         " incremental search
 setlocal ignorecase        " ignore case when searching (see smartcase)
-setlocal smartcase         " do not ignore case if pattern has mixed case (see ignorecase)
+setlocal smartcase         " do not ignore case if pattern has mixed case
+                           " (see ignorecase)
 setlocal showmatch         " show matching brackets by flickering cursor
 setlocal matchtime=1       " show matching brackets quicker than default
+setlocal hidden            " so that when doing g] in ctags you don't save out
 setlocal
 \    hlsearch
 \    suffixes+=
