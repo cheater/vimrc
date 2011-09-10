@@ -21,7 +21,7 @@ setlocal showcmd           " show the command in the lower right corner
 setlocal binary            " show control characters (ignore 'fileformat')
 setlocal undolevels=1000   " maximum number of changes that can be undone
 if exists('+undodir')      " set undodir stuff, which saves the undo history in an
-                           " external file, across saving.
+                           " external file, across saves. New in Vim 7.3
   setlocal undodir=~/.vim/undodir
   setlocal undofile
   setlocal undoreload=10000 " maximum number lines to save for undo on a buffer reload
