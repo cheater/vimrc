@@ -32,6 +32,7 @@ setlocal shiftround        " round alignment to nearest indent when shifting
 setlocal formatoptions+=r  " continue comment on next line
 setlocal formatoptions+=2  " continue indent from second line of paragraph,
                            " not first
+setlocal nojoinspaces      " no double spaces after . when joining lines with J
 setlocal incsearch         " incremental search
 setlocal ignorecase        " ignore case when searching (see smartcase)
 setlocal smartcase         " do not ignore case if pattern has mixed case
@@ -79,7 +80,7 @@ setlocal laststatus=2      " always show status.
 " else... :)
 " setlocal statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 " setlocal statusline=%<%f%y\ \ %h%m%r%=%-14.(%l/%L,%c%V%)\ %P
-setlocal statusline=%<%f\ [%M%Y%R]%h%w%=\ [L%l\ C%v\ %p%%]
+setlocal statusline=\ %n\ %<%f\ [%M%Y%R]%h%w%=\ [L%l\ C%v\ %p%%]
 setlocal title             " show the title!
 setlocal titlestring=%<%f\ [%M%Y%R]\ -\ VIM
 \    hlsearch
@@ -89,13 +90,15 @@ setlocal titlestring=%<%f\ [%M%Y%R]\ -\ VIM
         \.jpg,.bmp,.gif,.png,.tif,.tiff,
         \.wmv,.avi,.mpg,.mpeg,.asf,.flv,.mov,
         \.wav,.aif,.aiff,.mp3,.flac,.mp4
-" the suffixes are what files Vim should normally ignore when autocompleting
+" ^the suffixes are what files Vim should normally ignore when autocompleting
 " file names, for :e :w and so on
 
+setlocal showbreak=↪\           " right hook arrow for wrapped chars
 setlocal list                   " show chars using listchars.
 setlocal listchars=             " but don't use the default of showing newlines
                                 " with $.
 setlocal listchars+=tab:▸\      " make tabs show up
+setlocal listchars+=nbsp:·      " middle dot for non-breaking spaces
 "setlocal listchars+=eol:¬
 
 autocmd FileType *
