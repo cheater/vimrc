@@ -2,7 +2,7 @@ Those are some tips I have stumbled upon. This list will change and items will b
 removed, so check the repository log for more.
 
 
-<C-X><C-L>    : Line complete SUPER USEFUL
+<C-X><C-L>    : Line complete SUPER USEFUL. see :help ins-completion for more about the Ctrl-X mode.
 :h slash<C-D><Tab> : type control-D and get a list all help topics containing slash
     (plus use TAB for Help completion)
 :h i_CTRL-R  : help for say <C-R> in insert mode
