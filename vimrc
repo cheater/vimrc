@@ -110,13 +110,12 @@ autocmd FileType *
 \        noexpandtab
 
 autocmd BufRead,BufNewFile *.md
-\   |setlocal  syntax=markdown
+\   setlocal  syntax=markdown
 \        fileformat=unix
 \        encoding=utf-8
 \        tabstop=8
 \        shiftwidth=4
 \        smarttab
-\        expandtab
 \        softtabstop=4
 
 autocmd BufRead,BufNewFile *.bash
