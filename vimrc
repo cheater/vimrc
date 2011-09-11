@@ -1,3 +1,5 @@
+" If you like this vimrc, Follow this repo on BitBucket!
+"
 "                                                         
 "                           ,ji,                          
 "    ,@HHHHHHHHHHHHHHHHHHH "!:!!Y*,  ,HHHHHHHHHHHHHHHHHHHt
