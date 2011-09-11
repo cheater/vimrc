@@ -49,7 +49,9 @@ setlocal t_Co=256          " Much more beautiful than the standard of using
                            "
                            " :so $VIMRUNTIME/syntax/hitest.vim
                            " ^ in order to see all the highlight groups that you
-                           " can access.
+                           " can access. Called :HighlightTest in this vimrc.
+                           " Additionally, you can do :ColorTest to just see
+                           " all the supported colors.
                            "
                            " Then, you can also do things such as:
                            " :mat DiffAdd /[^=<>]=[^=]/
@@ -198,6 +200,12 @@ else
   "au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
   autocmd BufRead,BufNewFile *.bash,*.php,*.ihtml,*.txt,*.py,*.cgi :LongLinesShow
 endif
+
+" Show the Syntax Highlight Groups
+command HighlightTest source $VIMRUNTIME/syntax/hitest.vim
+
+" Show all the colors that Vim supports!
+command ColorTest source $VIMRUNTIME/syntax/colortest.vim
 
 " Swap ; and :  Convenient.
 nnoremap ; :
