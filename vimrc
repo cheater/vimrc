@@ -108,8 +108,7 @@ autocmd FileType *
 \        noexpandtab
 
 autocmd BufRead,BufNewFile *.md
-\    syntax off
-\   |set syntax=markdown
+\   |setlocal  syntax=markdown
 \        fileformat=unix
 \        encoding=utf-8
 \        tabstop=8
@@ -197,7 +196,7 @@ if exists('+colorcolumn')
   set colorcolumn=79
 else
   "au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
-  autocmd BufRead,BufNewFile *.bash,*.php,*.ihtml,*.md,*.txt,*.py,*.cgi :LongLinesShow
+  autocmd BufRead,BufNewFile *.bash,*.php,*.ihtml,*.txt,*.py,*.cgi :LongLinesShow
 endif
 
 " Swap ; and :  Convenient.
@@ -215,7 +214,7 @@ map n nzz
 command SudoWrite %!sudo tee > /dev/null %
 
 " Always disable paste mode when leaving insert mode
-au InsertLeave * set nopaste
+au InsertLeave * setlocal nopaste
 
 " Makes Caps Lock work as Esc
 command EscToCapsLock !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
@@ -232,7 +231,7 @@ for i in range(max):
     # print i, tags
     if os.path.isfile(tags):
         print "Found tags from", tags
-        vim.command(r"set tags=%s" % tags)
+        vim.command(r"setlocal tags=%s" % tags)
         break
 EOF
 
