@@ -1,0 +1,86 @@
+Those are some tips I have stumbled upon. This list will change and items will be
+removed, so check the repository log for more.
+
+
+<C-X><C-L>    : Line complete SUPER USEFUL
+:h slash<C-D><Tab> : type control-D and get a list all help topics containing slash
+    (plus use TAB for Help completion)
+:h i_CTRL-R  : help for say <C-R> in insert mode
+:h c_CTRL-R  : help for say <C-R> in command mode
+:h v_CTRL-V  : visual mode
+:h 'ai       : help on setting option 'autoindent'
+:helpgrep x  : grep help for x, then use quickfix commands
+
+quickfix commands - navigate quickfix list:
+:cc [#]      : display result #nr or last result
+:cnext       : next, prev result, next file, prev file
+:cprev
+:cnfile
+:cpfile
+
+location list commands - a different list independent of the quickfix list:
+:ll [#]
+:lnext
+:lprev
+:lnfile
+:lcfile
+
+:Ex     : file explorer, note capital E
+\be     : show buffer explorer (requires plugin)
+:ls     : list of buffers(eg following)
+i_CTRL-R=5*5  : insert 25 into text
+guu     : lowercase line
+gUU     : uppercase line
+~       : invert case (upper->lower; lower->upper) of current character
+gf      : open file name under cursor (SUPER)
+'.       : jump to last modification line (SUPER)
+`.       : jump to exact spot in last modification line
+:ju(mps) : list of your movements {{help|jump-motions}}
+:history : list of all your commands
+:reg     : display contents of all registers
+:r!ls                 : reads in output of ls (use dir on Windows)
+!1} sort             : sorts paragraph; this is issued from normal mode!)
+:ls           : display buffer list
+:bn           : next buffer
+:bp           : previous buffer
+:brew         : rewind to first buffer in buffer list
+:tabe         : open new tab page (Ctrl-PgUp, Ctrl-PgDown for next/previous tab)
+:tabm n       : move tab to position n (0=leftmost position)
+:args         : display argument list
+:sav module.py : Save current file as module.py and "move" to module.py
+:help :Nread  : use ftp/scp to edit remote files in Vim
+gv            : restores last visual range
+
+Between lines with marks a and b (inclusive), append each line starting with
+"Error" to a file:
+:'a,'b g/^Error/ .w >> errors.txt
+
+gq            : formats the selected range
+ls | gvim -   : edit a PIPE!
+
+Pulling objects onto command/search line (SUPER)
+
+CTRL-R CTRL-W   : pull word under the cursor into a command line or search
+CTRL-R CTRL-A   : pull whole word including punctuation
+CTRL-R -        : pull small register
+CTRL-R [0-9a-z] : pull named registers
+CTRL-R %        : pull file name (also # for alternative file name)
+<C-X><C-F> :insert name of a file in current directory
+
+<c-r>:          : pull in last command line command
+<c-r>/          : pull in last search command
+
+/\C                : make your search case-sensitive
+/<!--\_p\{-}-->    : search for multiple line comments
+ you can use
+:%s/FILE/\=expand("%:t") : To substitute any word (say FILE) by actual filename
+
+
+check out the taglist plugin - navigate source code structure:
+http://www.vim.org/scripts/script.php?script_id=273
+make sure to use pathogen for installing scripts:
+http://www.vim.org/scripts/script.php?script_id=2332
+to use a terminal inside vim windows:
+http://code.google.com/p/conque/wiki/Usage
+or as an alternative:
+http://www.wana.at/vimshell/
