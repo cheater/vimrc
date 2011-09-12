@@ -251,45 +251,6 @@ au InsertLeave * setlocal nopaste
 " Makes Caps Lock work as Esc
 command EscToCapsLock !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
-" Find tags directory by going up from cwd
-py << EOF
-import os
-import vim
-def findtags():
-    """ Find ctags 'tags' for Vim.
-        """
-    path = vim.current.buffer.name
-    if not path:
-        path = ''
-    if not os.path.isdir(path):
-        path = os.path.dirname(path)
-    path = os.path.abspath(path)
-    
-    i = 0
-    found = False
-    while True:
-        tags = os.path.join(path, 'tags')
-        if os.path.isfile(tags):
-            vim.command(r"setlocal tags+=%s" % tags)
-            found = True
-        tags2 = os.path.join(path, 'TAGS')
-        if os.path.isfile(tags2):
-            vim.command(r"setlocal tags+=%s" % tags2)
-            found = True
-        if found:
-            return
-        newpath = os.path.abspath(os.path.join(path, '..')) # cd ..
-        if path == newpath:
-            # we are at the top.
-            return
-        path = newpath
-        i += 1
-        if i > 200: # just in case..
-            return
-EOF
-function FindTags()
-py << EOF
-findtags()
-EOF
-endfunction
+setlocal tags=./tags;,./TAGS;,tags;,TAGS; " Find tags directory by going
+                                          " up from file and from cwd
 
