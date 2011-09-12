@@ -1,4 +1,5 @@
-" If you like this vimrc, Follow this repo on BitBucket!
+" If you like this vimrc, Follow my repo on BitBucket!
+"           <http://cheater.bitbucket.org/vimrc/>
 "
 "                                                         
 "                           ,ji,                          
