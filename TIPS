@@ -84,3 +84,81 @@ to use a terminal inside vim windows:
 http://code.google.com/p/conque/wiki/Usage
 or as an alternative:
 http://www.wana.at/vimshell/
+
+
+:set dictionary=/usr/share/dict/words
+ctrl-x ctrl-k     - dictionary completion
+
+ctrl-w      - erases word (insert mode...
+ctrl-u      - erases line  ...or on command line)
+
+g*              - search for partial word under cursor 
+                  (repeat with n)
+[I              - show lines with matching word under cursor
+
+ d'k     - delete from current position to mark k
+ 'a-z    - marks in the same file
+ 'A-Z    - marks shared beteween files
+
+ctrl-t, ctrl-d  - indent current line forward, backwards 
+                  (insert mode)
+
+:set pastetoggle=<f5>
+
+    V=  - select text, then reformat with =
+    =   - will correct alignment of code
+    ==  - one line; 
+    gq  - reformat paragraph
+    :help equalprg - external program for =.
+
+
+select block, then :fold
+zo - open
+zc - close
+See :help foldmethod for options, and use :mkview and :loadview to save and restore the current window. 
+
+ ctrl-w ctrl-w    - move cursor to another window (cycle)
+
+ :hide            - close current window
+ :only            - keep only this window open
+ :ls              - show current buffers
+ :b 2             - open buffer #2 in this window
+
+find . | vim -       - edit a stream
+
+
+
+ :tag TAB            - list the known tags
+ :tag function_name  - jump to that function
+ ctrl-t   - goes to previous spot where you called :tag
+ ctrl-]   - calls :tag on the word under the cursor        
+ :ptag    - open tag in preview window (also ctrl-w })
+ :pclose  - close preview window
+
+
+ :map <f9> :make    - map the F9 key to run make
+ :set makeprg       - change what :make does
+ :copen    - open a mini-window with list of errors
+           - hit enter on an error to jump to line 
+              :cclose   - closes the mini-window
+ :cw       - toggles the mini-window (if errors exist)
+
+
+ vmap <buffer> ;bo "zdi<B><c-r>z</B><esc> - puts bold html tags around something you have visually selected. 
+
+
+nnoremap <F6> <C-W>w              - ???
+nnoremap <S-F6> <C-W>W            - ???
+map <C-L> :noh<CR>:redraw!<CR>    - ???
+
+
+ :reg     - show named registers and what's in them
+ qk       - records edits into register k 
+            (q again to stop recording)
+ @k       - execute recorded edits (macro)
+ @@       - repeat last one
+ 5@@      - repeat 5 times
+ "kp      - print macro k 
+            (e.g., to edit or add to .vimrc)
+ "kd      - replace register k with what cursor is on
+
