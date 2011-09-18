@@ -143,6 +143,7 @@ autocmd BufRead,BufNewFile *.md
 \        shiftwidth=8
 \        smarttab
 \        softtabstop=4
+\        noshiftround
 
 autocmd BufRead,BufNewFile *.bash
 \    syntax on
