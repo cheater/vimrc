@@ -41,7 +41,6 @@ setlocal bg=dark
 " the continuation will also be seen as a comment!
 
 filetype plugin on         " load ftplugin.vim
-"filetype indent on        " don't load indent.vim - I write banner-style
 setlocal history=1000      " number of commands and search patterns to save
 setlocal showcmd           " show the command in the lower right corner
 setlocal binary            " show control characters (ignore 'fileformat')
@@ -136,6 +135,9 @@ autocmd FileType *
 \        noexpandtab
 
 autocmd BufRead,BufNewFile *.md
+\   setlocal filetype=markdown
+
+autocmd FileType markdown
 \   setlocal syntax=markdown
 \        fileformat=unix
 \        encoding=utf-8
@@ -145,11 +147,13 @@ autocmd BufRead,BufNewFile *.md
 \        softtabstop=4
 \        noshiftround
 
-autocmd BufRead,BufNewFile *.bash
+autocmd BufRead,BufNewFile *.sh,*.bash
+\       setlocal filetype=sh
+
+autocmd FileType sh
 \    syntax on
 \   |setlocal
-\        autoindent
-\        syntax=python
+\        syntax=sh
 \        smartindent
 \        fileformat=unix
 \        encoding=utf-8
@@ -159,21 +163,22 @@ autocmd BufRead,BufNewFile *.bash
 \        expandtab
 \        softtabstop=4
 \        autoindent
-\        cinwords=class,def,elif,else,except,finally,for,if,try,while,then,else,fi
-" cinwords were rudely copied from the python config!
-\   |highlight BadWhitespace ctermbg=red guibg=red
-\   |match BadWhitespace /^\t\+/
-\   |let python_highlight_all=1
+\        cinwords=elif,else,for,if,while,then,else,fi,until,do,done
 \   |inoremap # X#
 "the ctrl-H has to be entered specially
 
-"       \foldmethod=indent
-"
-"   \match BadWhitespace /\s\+$/
 
 autocmd BufRead,BufNewFile *.py
+\    setlocal filetype=python
+
+autocmd FileType python
 \    syntax on
 \   |setlocal
+\        tabstop=8
+\        shiftwidth=4
+\        smarttab
+\        expandtab
+\        softtabstop=4
 \        autoindent
 \        syntax=python
 \        smartindent
@@ -186,20 +191,10 @@ autocmd BufRead,BufNewFile *.py
 \   |inoremap # # X
 "the ctrl-H has to be entered specially
 
-"       \foldmethod=indent
-"
-"   \match BadWhitespace /\s\+$/
-
-autocmd FileType python
-\    setlocal
-\        tabstop=8
-\        shiftwidth=4
-\        smarttab
-\        expandtab
-\        softtabstop=4
-\        autoindent
-
 autocmd BufRead,BufNewFile *.php,*.ihtml
+\    setlocal filetype=php
+
+autocmd FileType php
 \    syntax on
 \   |setlocal
 \        autoindent
