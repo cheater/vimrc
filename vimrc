@@ -228,7 +228,7 @@ command HighlightTest source $VIMRUNTIME/syntax/hitest.vim
 " Show all the colors that Vim supports!
 command ColorTest source $VIMRUNTIME/syntax/colortest.vim
 
-" Swap ; and :  Convenient.
+" Swap ";" and ":".  Convenient.
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
