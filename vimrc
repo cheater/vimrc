@@ -265,5 +265,35 @@ nmap <F4> ;tabnext<CR>
 vmap <F4> ;tabnext<CR>
 imap <F4> <C-o>;tabnext<CR>
 
+" Move tabs in Vim:
+function MoveTabLeft()
+  " Moves the current tab to the left, wrapping around to the last tab if tab
+  " is currently the first one.
+  if tabpagenr() > 1
+    execute "tabmove ".(tabpagenr()-2)
+  elseif tabpagenr() == 1
+    execute "tabmove ".tabpagenr('$')
+    endif
+  endfunction
+command MoveTabLeft ;call MoveTabLeft()
 
+function MoveTabRight()
+  " Moves the current tab to the right, wrapping around to the first tab if
+  " tab is currently the last one.
+  if tabpagenr() < tabpagenr('$')
+    execute "tabmove ".(tabpagenr())
+  elseif tabpagenr() == tabpagenr('$')
+    execute "tabmove 0"
+    endif
+  endfunction
+command MoveTabRight ;call MoveTabRight()
 
+" I have also tried <S-F3> and <S-F4> but they didn't work, and just put
+" garbled text into the file being edited... wonder why? Might have to do with
+" this crappy Mac I'm working on right now, running GNU/Linux via Parallels.
+nmap <silent> <F5> ;MoveTabLeft<CR>
+vmap <silent> <F5> ;MoveTabLeft<CR>
+imap <silent> <F5> <C-o>;MoveTabLeft<CR>
+nmap <silent> <F6> ;MoveTabRight<CR>
+vmap <silent> <F6> ;MoveTabRight<CR>
+imap <silent> <F6> <C-o>;MoveTabRight<CR>
