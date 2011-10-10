@@ -251,3 +251,19 @@ command EscToCapsLock !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 setlocal tags=./tags;,./TAGS;,tags;,TAGS; " Find tags directory by going
                                           " up from file and from cwd
 
+" Remove the <F1> help binding. I use <F1> and <F2> in my terminal emulator to
+" cycle tabs.
+nmap <F1> <nop>
+vmap <F1> <nop>
+imap <F1> <nop>
+
+" Cycle tabs in Vim:
+nmap <F3> ;tabprevious<CR>
+vmap <F3> ;tabprevious<CR>
+imap <F3> <C-o>;tabprevious<CR>
+nmap <F4> ;tabnext<CR>
+vmap <F4> ;tabnext<CR>
+imap <F4> <C-o>;tabnext<CR>
+
+
+
