@@ -1,4 +1,4 @@
-* parse the following pages:
+. parse the following pages:
 http://vim.wikia.com/wiki/VimTip962
 http://www.google.com/search?q=vim+wildmode
 http://www.google.com/search?q=vim+wildmenu
@@ -8,4 +8,16 @@ http://www.vim.org/scripts/script.php?script_id=1014
 http://www.google.com/search?q=vim+cscope
 
 
-* consider configuring ctags for python
+. consider configuring ctags for python
+. regenerate ctags/cscope when a file is saved
+. make LongLinesHide work on Vim with colorcolumn
+. make "bad spaces" on empty lines (the line is only made out of spaces) not
+  show up or show up as a less annoying color
+. make a cmd to generate ctags and cscope
+. display number of search matches somewhere (status bar? command line?)
+. check out solarized, zenburn color schemes
+. on line continuations, use an underlined style on the first character instead
+  of the "↪ " chars, because that breaks copying from the window
+. make horizontal tabs show up with a different colour (gray?) rather than
+  using the "▸" char, because that breaks copying from the window
+
