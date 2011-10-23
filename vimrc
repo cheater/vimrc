@@ -191,6 +191,7 @@ autocmd FileType python
 \   |inoremap # # X
 "the ctrl-H has to be entered specially
 "consider using cindent instead of smartindent.
+autocmd FileType python :LongLinesShow
 
 autocmd BufRead,BufNewFile *.hs
 \    setlocal filetype=haskell
@@ -212,6 +213,7 @@ autocmd FileType haskell
 \   |let python_highlight_all=1
 \   |inoremap # # X
 "the ctrl-H has to be entered specially
+autocmd FileType haskell :LongLinesShow
 
 
 autocmd BufRead,BufNewFile *.php,*.ihtml
@@ -242,7 +244,7 @@ if exists('+colorcolumn')
   set colorcolumn=79
 else
   "au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
-  autocmd BufRead,BufNewFile *.bash,*.php,*.ihtml,*.txt,*.py,*.cgi :LongLinesShow
+  "autocmd BufRead,BufNewFile *.bash,*.php,*.ihtml,*.txt,*.py,*.cgi :LongLinesShow
 endif
 
 " Show the Syntax Highlight Groups
