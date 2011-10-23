@@ -12,7 +12,8 @@ http://www.google.com/search?q=vim+cscope
 . regenerate ctags/cscope when a file is saved
 . make LongLinesHide work on Vim with colorcolumn
 . make "bad spaces" on empty lines (the line is only made out of spaces) not
-  show up or show up as a less annoying color
+  show up or show up as a less annoying color - however, those are not in the
+  vimrc file.. they might be coming from the filetype plugin?
 . make a cmd to generate ctags and cscope
 . display number of search matches somewhere (status bar? command line?)
 . check out solarized, zenburn color schemes
