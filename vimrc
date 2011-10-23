@@ -190,6 +190,29 @@ autocmd FileType python
 \   |let python_highlight_all=1
 \   |inoremap # # X
 "the ctrl-H has to be entered specially
+"consider using cindent instead of smartindent.
+
+autocmd BufRead,BufNewFile *.hs
+\    setlocal filetype=haskell
+autocmd FileType haskell
+\    syntax on
+\   |setlocal
+\        tabstop=8
+\        shiftwidth=4
+\        smarttab
+\        expandtab
+\        softtabstop=4
+\        autoindent
+\        syntax=haskell
+\        smartindent
+\        fileformat=unix
+\        encoding=utf-8
+\   |highlight BadWhitespace ctermbg=red guibg=red
+\   |match BadWhitespace /^\t\+/
+\   |let python_highlight_all=1
+\   |inoremap # # X
+"the ctrl-H has to be entered specially
+
 
 autocmd BufRead,BufNewFile *.php,*.ihtml
 \    setlocal filetype=php
