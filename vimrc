@@ -379,5 +379,4 @@ call SetupVAM()
 command! -nargs=0 UpdateActivatedAddons exec 'UpdateAddons '.join(keys(g:vim_addon_manager['activated_plugins']),' ')
 silent! UpdateActivatedAddons
 
-
 call vam#ActivateAddons(['Indent_Guides'])
