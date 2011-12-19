@@ -326,9 +326,19 @@ imap <silent> <F6> <C-o>;MoveTabRight<CR>
 
 " -------------- begin automatic vim-addon-manager setup.
 " This was copied directly from the documentation for VAM; the indentation may
-" differ from the rest of this vimrc.
+" differ from the rest of this vimrc. Then I modified the code below by doing
+" the following:
+" 1. add a line that says:
+" let g:vim_addon_manager = {'auto_install' : 1 }
+" 2. modify
+" call vam#ActivateAddons([], {'auto_install' : 0})
+" to:
+" call vam#ActivateAddons([], {'auto_install' : 1})
+
+let g:vim_addon_manager = {'auto_install' : 1 }
 
 fun SetupVAM()
+  let g:vim_addon_manager = {'auto_install' : 1 }
   " YES, you can customize this vam_install_path path and everything still works!
   let vam_install_path = expand('$HOME') . '/.vim/vim-addons'
   exec 'set runtimepath+='.vam_install_path.'/vim-addon-manager'
@@ -350,7 +360,7 @@ fun SetupVAM()
   " be installed form www.vim.org. Lookup MergeSources to get more control
   " let g:vim_addon_manager['drop_git_sources'] = !executable('git')
 
-  call vam#ActivateAddons([], {'auto_install' : 0})
+  call vam#ActivateAddons([], {'auto_install' : 1})
   " sample: call vam#ActivateAddons(['pluginA','pluginB', ...], {'auto_install' : 0})
   " where 'pluginA' could be "git://" "github:YourName" or "snipmate-snippets" see vam#install#RewriteName()
   " also see section "5. Installing plugins" in VAM's documentation
