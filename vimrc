@@ -379,4 +379,4 @@ call SetupVAM()
 UpdateAddons
 set auto_install=1
 
-ActivateAddons Indent_Guides
+call vam#ActivateAddons(['Indent_Guides'])
