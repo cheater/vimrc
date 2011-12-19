@@ -376,7 +376,7 @@ call SetupVAM()
 " -------------- end automatic vim-addon-manager setup.
 
 " Install some addons using VAM.
-command! -nargs=0 UpdateActivatedAddons exec 'UpdateAddons '.join(keys(g:vim_addon_manager['activated_plugins']),' ')
-silent! UpdateActivatedAddons
 
 call vam#ActivateAddons(['Indent_Guides'])
+command! -nargs=0 UpdateActivatedAddons exec 'UpdateAddons '.join(keys(g:vim_addon_manager['activated_plugins']),' ')
+silent! UpdateActivatedAddons
