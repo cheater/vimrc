@@ -366,4 +366,6 @@ call SetupVAM()
 " -------------- end automatic vim-addon-manager setup.
 
 " Install some addons using VAM.
+UpdateAddons
+
 ActivateAddons Indent_Guides
