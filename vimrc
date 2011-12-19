@@ -377,5 +377,5 @@ call SetupVAM()
 
 " Install some addons using VAM.
 
-call vam#ActivateAddons(['Indent_Guides'])
+call vam#ActivateAddons(['Indent_Guides']) " lets you use :IndentGuidesToggle
 "silent! UpdateActivatedAddons
