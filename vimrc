@@ -364,3 +364,6 @@ call SetupVAM()
 " Vim 7.0 users see BUGS section [3]
 
 " -------------- end automatic vim-addon-manager setup.
+
+" Install some addons using VAM.
+ActivateAddons Indent_Guides
