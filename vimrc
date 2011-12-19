@@ -367,5 +367,6 @@ call SetupVAM()
 
 " Install some addons using VAM.
 UpdateAddons
+set auto_install=1
 
 ActivateAddons Indent_Guides
