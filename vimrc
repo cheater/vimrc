@@ -105,8 +105,8 @@ setlocal t_Co=256          " Much more beautiful than the standard of using
 setlocal laststatus=2      " always show status.
 " the following two status lines that are commented out were ripped off someone
 " else... :)
-" setlocal statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
-" setlocal statusline=%<%f%y\ \ %h%m%r%=%-14.(%l/%L,%c%V%)\ %P
+" set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
+" set statusline=%<%f%y\ \ %h%m%r%=%-14.(%l/%L,%c%V%)\ %P
 set statusline=\ %n\ %<%f\ [%M%Y%R]%h%w%=\ [L%l\ C%v\ %p%%]
 set title             " show the title!
 set titlestring=%<%f\ [%M%Y%R]\ -\ VIM
