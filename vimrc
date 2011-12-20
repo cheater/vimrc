@@ -107,10 +107,10 @@ setlocal laststatus=2      " always show status.
 " else... :)
 " setlocal statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 " setlocal statusline=%<%f%y\ \ %h%m%r%=%-14.(%l/%L,%c%V%)\ %P
-setlocal statusline=\ %n\ %<%f\ [%M%Y%R]%h%w%=\ [L%l\ C%v\ %p%%]
-setlocal title             " show the title!
-setlocal titlestring=%<%f\ [%M%Y%R]\ -\ VIM
-\    hlsearch
+set statusline=\ %n\ %<%f\ [%M%Y%R]%h%w%=\ [L%l\ C%v\ %p%%]
+set title             " show the title!
+set titlestring=%<%f\ [%M%Y%R]\ -\ VIM
+setlocal hlsearch
 \    suffixes+=
         \.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,
         \.idx,.ilg,.inx,.out,.toc,.pyc,
