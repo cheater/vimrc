@@ -162,3 +162,6 @@ map <C-L> :noh<CR>:redraw!<CR>    - ???
             (e.g., to edit or add to .vimrc)
  "kd      - replace register k with what cursor is on
 
+
+
+see http://vimgolf.com/ for lots of tips & tricks
