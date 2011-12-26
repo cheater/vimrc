@@ -51,7 +51,8 @@ if exists('+undodir')      " set undodir stuff, which saves the undo history in 
   setlocal undofile
   setlocal undoreload=10000 " maximum number lines to save for undo on a buffer reload
 endif
-setlocal modelines=0       " no remote code execution, thank you
+set      nomodeline
+set      modelines=0       " no remote code execution, thank you
 setlocal shiftround        " round alignment to nearest indent when shifting
                            " with < and >
 setlocal formatoptions+=r  " continue comment on next line
