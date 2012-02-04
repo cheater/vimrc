@@ -1,12 +1,13 @@
-Those are some tips I have stumbled upon. This list will change and items will be
-removed, so check the repository log for more.
+Those are some tips I have stumbled upon. This list will change and items will
+be removed, so check the repository log for more.
 
 
-<C-X><C-L>    : Line complete SUPER USEFUL. see :help ins-completion for more about the Ctrl-X mode.
-:h slash<C-D><Tab> : type control-D and get a list all help topics containing slash
-    (plus use TAB for Help completion)
-:h i_CTRL-R  : help for say <C-R> in insert mode
-:h c_CTRL-R  : help for say <C-R> in command mode
+<C-X><C-L>    : Line complete SUPER USEFUL. see :help ins-completion for more
+about the Ctrl-X mode.
+:h slash<C-D><Tab> : type control-D and get a list all help topics containing
+slash (plus use TAB for Help completion)
+:h i_CTRL-R  : help for <C-R> in insert mode
+:h c_CTRL-R  : help for <C-R> in command mode
 :h v_CTRL-V  : visual mode
 :h 'ai       : help on setting option 'autoindent'
 :helpgrep x  : grep help for x, then use quickfix commands
@@ -27,7 +28,7 @@ location list commands - a different list independent of the quickfix list:
 
 :Ex     : file explorer, note capital E
 \be     : show buffer explorer (requires plugin)
-:ls     : list of buffers(eg following)
+:ls     : list of buffers
 i_CTRL-R=5*5  : insert 25 into text
 guu     : lowercase line
 gUU     : uppercase line
@@ -40,7 +41,6 @@ gf      : open file name under cursor (SUPER)
 :reg     : display contents of all registers
 :r!ls                 : reads in output of ls (use dir on Windows)
 !1} sort             : sorts paragraph; this is issued from normal mode!)
-:ls           : display buffer list
 :bn           : next buffer
 :bp           : previous buffer
 :brew         : rewind to first buffer in buffer list
@@ -56,7 +56,7 @@ Between lines with marks a and b (inclusive), append each line starting with
 :'a,'b g/^Error/ .w >> errors.txt
 
 gq            : formats the selected range
-ls | gvim -   : edit a PIPE!
+ls | vim -   : edit a PIPE!
 
 Pulling objects onto command/search line (SUPER)
 
@@ -72,8 +72,7 @@ CTRL-R %        : pull file name (also # for alternative file name)
 
 /\C                : make your search case-sensitive
 /<!--\_p\{-}-->    : search for multiple line comments
- you can use
-:%s/FILE/\=expand("%:t") : To substitute any word (say FILE) by actual filename
+:%s/FILE/\=expand("%:t") : substitute any word (say FILE) by actual filename
 
 
 check out the taglist plugin - navigate source code structure:
@@ -115,7 +114,8 @@ ctrl-t, ctrl-d  - indent current line forward, backwards
 select block, then :fold
 zo - open
 zc - close
-See :help foldmethod for options, and use :mkview and :loadview to save and restore the current window. 
+See :help foldmethod for options, and use :mkview and :loadview to save and
+restore the current window. 
 
  ctrl-w ctrl-w    - move cursor to another window (cycle)
 
@@ -123,9 +123,6 @@ See :help foldmethod for options, and use :mkview and :loadview to save and rest
  :only            - keep only this window open
  :ls              - show current buffers
  :b 2             - open buffer #2 in this window
-
-find . | vim -       - edit a stream
-
 
 
  :tag TAB            - list the known tags
@@ -144,7 +141,8 @@ find . | vim -       - edit a stream
  :cw       - toggles the mini-window (if errors exist)
 
 
- vmap <buffer> ;bo "zdi<B><c-r>z</B><esc> - puts bold html tags around something you have visually selected. 
+ vmap <buffer> ;bo "zdi<B><c-r>z</B><esc> - puts bold html tags around
+something you have visually selected. 
 
 
 nnoremap <F6> <C-W>w              - ???
