@@ -163,5 +163,24 @@ map <C-L> :noh<CR>:redraw!<CR>    - ???
  "kd      - replace register k with what cursor is on
 
 
+-----------
+motions:
+
+w - word
+s - sentence
+p - paragraph
+" - double-quoted string
+' - single-quoted string
+` - back-quoted string
+) - parenthesized block
+] - bracketed block
+} - brace block
+t - contents of an xml tag
+> - definition of an xml tag (what is between < and >)
+i - indent-level block (ai gets one line before the indent level starts, eg if)
+
+for more info on motions (plugins for camel case motions and function arg
+motions) see this page:
+http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/
 
 see http://vimgolf.com/ for lots of tips & tricks
