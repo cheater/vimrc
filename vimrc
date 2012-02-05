@@ -398,5 +398,6 @@ call vam#ActivateAddons(['MatchTag']) " Highlights matching html tag
 call vam#ActivateAddons(['fugitive']) " apparently needed for gitv
 call vam#ActivateAddons(['gitv']) " like gitk, but in vim. Really cool. Does
 " this exist for mercurial?
+call vam#ActivateAddons(['todotxt']) " syntax file for [todo|TODO][.txt|]
 
 
