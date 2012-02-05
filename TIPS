@@ -26,6 +26,11 @@ location list commands - a different list independent of the quickfix list:
 :lnfile
 :lcfile
 
+See also the quickfixsigns plugin, which shows mark names and quickfix
+locations in the left margin.
+
+
+
 :Ex     : file explorer, note capital E
 \be     : show buffer explorer (requires plugin)
 :ls     : list of buffers
