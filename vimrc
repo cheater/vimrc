@@ -395,5 +395,7 @@ call vam#ActivateAddons(['visualrepeat']) " repeat last command for all lines
 "in visual selection
 call vam#ActivateAddons(['simple_bookmarks']) " :Bookmark, :GotoBookmark, etc
 call vam#ActivateAddons(['MatchTag']) " Highlights matching html tag
+call vam#ActivateAddons(['gitv']) " like gitk, but in vim. Really cool. Does
+" this exist for mercurial?
 
 
