@@ -402,5 +402,7 @@ call vam#ActivateAddons(['todotxt']) " syntax file for [todo|TODO][.txt|]
 call vam#ActivateAddons(['rainbow_parentheses']) " :RainbowParenthesesToggle
 call vam#ActivateAddons(['bad-whitespace']) " highlight bad whitespace
 call vam#ActivateAddons(['quickfixstatus']) " :QuickfixStatusEnable and Disable
+call vam#ActivateAddons(['git:git://github.com/fs111/pydoc.vim.git'])
+" K support for python and other goodies
 
 
