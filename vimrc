@@ -401,5 +401,6 @@ call vam#ActivateAddons(['gitv']) " like gitk, but in vim. Really cool. Does
 call vam#ActivateAddons(['todotxt']) " syntax file for [todo|TODO][.txt|]
 call vam#ActivateAddons(['rainbow_parentheses']) " :RainbowParenthesesToggle
 call vam#ActivateAddons(['bad-whitespace']) " highlight bad whitespace
+call vam#ActivateAddons(['quickfixstatus']) " :QuickfixStatusEnable and Disable
 
 
