@@ -391,3 +391,5 @@ call SetupVAM()
 call vam#ActivateAddons(['Indent_Guides']) " lets you use :IndentGuidesToggle
 "silent! UpdateActivatedAddons
 call vam#ActivateAddons(['vim-indent-object']) " lets you use cai and cal
+call vam#ActivateAddons(['visualrepeat']) " repeat last command for all lines
+"in visual selection
