@@ -77,8 +77,10 @@ CTRL-R %        : pull file name (also # for alternative file name)
 
 check out the taglist plugin - navigate source code structure:
 http://www.vim.org/scripts/script.php?script_id=273
-make sure to use pathogen for installing scripts:
-http://www.vim.org/scripts/script.php?script_id=2332
+#make sure to use pathogen for installing scripts:
+#http://www.vim.org/scripts/script.php?script_id=2332
+^^ no, use the much better vam instead!! it's included in this vimrc:
+http://www.vim.org/scripts/script.php?script_id=2905
 to use a terminal inside vim windows:
 http://code.google.com/p/conque/wiki/Usage
 or as an alternative:
