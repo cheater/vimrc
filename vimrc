@@ -415,5 +415,7 @@ call vam#ActivateAddons(['YankRing']) " you can do \"2p (without the backslash)
 call vam#ActivateAddons(['git:git://github.com/tpope/vim-repeat.git'])
 " allows you to use . to repeat plugin commands which don't work otherwise.
 " E.g. for surround.vim and speed dating.
+call vam#ActivateAddons(['git:git://github.com/tpope/vim-markdown.git'])
+" markdown filetype script.
 
 
