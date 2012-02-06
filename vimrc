@@ -404,5 +404,7 @@ call vam#ActivateAddons(['bad-whitespace']) " highlight bad whitespace
 call vam#ActivateAddons(['quickfixstatus']) " :QuickfixStatusEnable and Disable
 call vam#ActivateAddons(['git:git://github.com/fs111/pydoc.vim.git'])
 " K support for python and other goodies
+call vam#ActivateAddons(['git:git://github.com/tpope/vim-surround.git'])
+" surround.vim for things like cs"' etc
 
 
