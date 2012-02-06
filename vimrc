@@ -426,3 +426,57 @@ call vam#ActivateAddons(['hg:https://bitbucket.org/sjl/gundo.vim'])
 " :Gundo - displays undo tree. Unfortunately, Gundo requires Vim 7.3.
 
 
+python << EOF
+try:
+  import pyflakes
+except ImportError:
+  import os
+  # you can't use from distutils.dist import Distribution !!!!! For no
+  # apparent reason!!
+  from setuptools.command.easy_install import easy_install
+  class easy_install_stfu(easy_install):
+    """ class easy_install wouldn't shut the fuck up about the fist parameter
+        not being an instance of Distribution, even though it painfully was.
+        Fuck you, easy_install.
+        """
+
+    def __init__(self):
+      from distutils.dist import Distribution
+      dist = Distribution()
+      if not isinstance(dist, Distribution):
+        self.fuck() # You'd really need to want it to do it
+      self.distribution = dist
+      self.initialize_options()
+      self._dry_run = None
+      self.verbose = dist.verbose
+      self.force = None
+      self.help = 0
+      self.finalized = 0
+
+    def fuck(self):
+      """ class easy_install goes to fuck itself.
+          """
+      pass
+
+  e = easy_install_stfu()
+  import distutils.errors
+  try:
+    e.finalize_options()
+  except distutils.errors.DistutilsError:
+    pass
+  src_dir = os.path.realpath(os.path.join(e.install_dir, "src"))
+  git_url = "git://github.com/kevinw/pyflakes.git"
+
+  msg = "About to pip install the python pyflakes module from " + git_url
+  msg += " to " + src_dir + ".\n"
+  print msg
+
+  pip = "sudo pip install "
+  pip += "-e git+" + git_url + "#egg=pyflakes "
+  pip += '--src="' + src_dir + '" '
+  pip += '--install-option="--install-scripts=/usr/local/bin" '
+  os.system(pip)
+
+EOF
+
+call vam#ActivateAddons(['pyflakes%2441'])
