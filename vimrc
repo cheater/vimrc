@@ -408,5 +408,9 @@ call vam#ActivateAddons(['git:git://github.com/tpope/vim-surround.git'])
 " surround.vim for things like cs"' etc
 call vam#ActivateAddons(['Conque_Shell']) " :ConqueTerm
 call vam#ActivateAddons(['Source_Explorer_srcexpl.vim']) " :SrcExplToggle
+call vam#ActivateAddons(['YankRing']) " you can do \"2p (without the backslash)
+" to paste the 2nd to last content of the " buffer, 3 for 3rd, up to 9. Note
+" that there is some bug which I hadn't yet looked into which means yy does
+" not add stuff to the yank ring, whereas dd does.
 
 
