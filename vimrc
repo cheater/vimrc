@@ -484,3 +484,4 @@ except ImportError:
 EOF
 
 call vam#ActivateAddons(['pyflakes%2441'])
+call vam#ActivateAddons(['matrix%1189']) " :Matrix for cool 'screensaver'
