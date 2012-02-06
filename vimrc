@@ -419,5 +419,8 @@ call vam#ActivateAddons(['git:git://github.com/tpope/vim-markdown.git'])
 " markdown filetype script.
 call vam#ActivateAddons(['git:git://github.com/tpope/vim-speeddating.git'])
 " use C-a/C-x to increment and decrement dates. Smart about leap years etc.
+call vam#ActivateAddons(['git:git://github.com/tpope/vim-pastie.git'])
+" vim interface for pastie.org; use :Pastie to paste all files or a range,
+" :%Pastie to paste the current file. Ranges are allowed
 
 
