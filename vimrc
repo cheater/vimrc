@@ -412,5 +412,8 @@ call vam#ActivateAddons(['YankRing']) " you can do \"2p (without the backslash)
 " to paste the 2nd to last content of the " buffer, 3 for 3rd, up to 9. Note
 " that there is some bug which I hadn't yet looked into which means yy does
 " not add stuff to the yank ring, whereas dd does.
+call vam#ActivateAddons(['git:git://github.com/tpope/vim-repeat.git'])
+" allows you to use . to repeat plugin commands which don't work otherwise.
+" E.g. for surround.vim and speed dating.
 
 
