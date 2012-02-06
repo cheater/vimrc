@@ -427,6 +427,10 @@ call vam#ActivateAddons(['hg:https://bitbucket.org/sjl/gundo.vim'])
 
 
 python << EOF
+""" This will install pyflakes. It uses a special fork which is from the
+    author of pyflakes.vim and according to him is better because it retains
+    line number info.
+    """
 try:
   import pyflakes
 except ImportError:
