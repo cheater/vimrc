@@ -417,5 +417,7 @@ call vam#ActivateAddons(['git:git://github.com/tpope/vim-repeat.git'])
 " E.g. for surround.vim and speed dating.
 call vam#ActivateAddons(['git:git://github.com/tpope/vim-markdown.git'])
 " markdown filetype script.
+call vam#ActivateAddons(['git:git://github.com/tpope/vim-speeddating.git'])
+" use C-a/C-x to increment and decrement dates. Smart about leap years etc.
 
 
