@@ -168,6 +168,9 @@ map <C-L> :noh<CR>:redraw!<CR>    - ???
  "kd      - replace register k with what cursor is on
 
 
+
+yanking, deleting, and pasting windows around to rearrange them:
+http://www.gregsexton.org/2011/04/enhancing-window-movement-and-positioning-in-vim/
 -----------
 motions:
 
