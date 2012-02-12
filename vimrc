@@ -573,3 +573,4 @@ set statusline=\ %n\ %f\ %<[%M%Y%R]%h%w\ %<%{TagInStatusLine2()}%=\ [L%l\ C%v\ %
 call vam#ActivateAddons(['renamer']) " rename files editing their names in vim,
 " use :Renamer and then :Ren
 
+call vam#ActivateAddons(['AutoTag']) " update ctags on file save
