@@ -570,3 +570,6 @@ function TagInStatusLine2()
   endfunction
 set statusline=\ %n\ %f\ %<[%M%Y%R]%h%w\ %<%{TagInStatusLine2()}%=\ [L%l\ C%v\ %p%%]
 
+call vam#ActivateAddons(['renamer']) " rename files editing their names in vim,
+" use :Renamer and then :Ren
+
