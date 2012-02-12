@@ -196,3 +196,173 @@ motions) see this page:
 http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/
 
 see http://vimgolf.com/ for lots of tips & tricks
+
+
+
+----------------- Useful plugins:
+----------------- Note, the below plugins are pasted in with their sales pitch;
+----------------- only a few of the comments are my own opinion. Use your best
+----------------- judgement.
+CamelCaseComplete : Insert mode completion that expands CamelCaseWords and
+underscore_words. E.g. expand asd -> AnotherStaticDescriptor,
+air_shift_distance
+
+buffet.vim : A fast, easy to use buffer list plugin for switching and managing
+buffers. Useful for people with loads upon loads of buffers, tabs, and windows
+open.
+
+textobj-user : Support for user-defined text objects. Good for experimenting?
+
+gf-diff : In diff output, go to the file being diffed when you press "gf".
+
+viewdoc : Flexible viewer for any documentation (help/man/pydoc/perldoc/etc.)
+
+ft_improved : improved f/t command (searches whole file, not just current line)
+
+inline_edit.vim : Edit code that's embedded within other code. Opens the
+inlined code in a new buffer.
+
+slide show : A tool for viewing source code in a slide show fashion.
+
+Threesome : A plugin for resolving conflicts during three-way merges. This is a
+REALLY NICE, ide-style plugin for resolving merge conflicts. Very involved.
+Uses mappings on the localleader.
+
+diffwindow_movement : Movement over changes in a diff window. Defines movements
+and text objects for diff files.
+
+TVO: The Vim Outliner : a lot of people use it, but i still don't see its
+power. Looks like it might be useful for knowledge organization or for work
+planning.
+
+code_complete : really cool completion plugin based on snippets; autogenerates
+whole blocks of code and puts in placeholders for places where you want to type
+things; tab jumps to those placeholders. Demo can be found at
+http://files.myopera.com/mbbill/files/code_complete.gif
+
+Align : Help folks to align text, eqns, declarations, tables, etc -- really
+cool if you're into aligning multiple lines on equals signs, commas, and so on.
+
+Mark : a little script to highlight several words in different colors
+simultaneously -- could be useful if bindings to create marks are removed and
+replaced with :Commands.
+
+MultipleSearch2.vim : Improve Multiple search -- honorable mention. Great idea,
+I want it to work, but it's buggy. The original version has the same bugs.
+
+lookupfile : Lookup files using Vim7 ins-completion -- I know people like this
+sort of thing, so here it is.
+
+Command-T : Fast file navigation for VIM. Similar to lookupfile - search for
+files and open them. I guess it's based on TextMate, having never used that
+program.
+
+FindFile : Open file quickly by using autocomplete. Again, similar to
+lookupfile and Command-T.
+
+horses and sheep : http://www.vim.org/scripts/script.php?script_id=1301 - see it
+
+vim-easymotion : really cool, vim motions via text hints. The whole text is
+grayed out and the hints stand out in bright red. Then type the hint to go
+where the hint is. Not sure how it would integrate with my current bindings,
+though.
+
+PreciseJump : similar idea to vim-easymotion above, not as polished. Did not
+work at all for me. Weird key bindings.
+
+vimbuddy.vim : puts a smiley on your status bar. Smiley frowns on errors and
+does other stuff.
+
+vimsh.tar.gz : *almost great*. Needs to either strip or interpret ansi escape
+codes; should be engaged via a command, and not via sourcing the script; the
+plugin layout in the .zip could be better, it currently needs manual fixing if
+you're using vam.
+
+undo_tags : I can't figure out this plugin. Looks like it could be useful,
+though. I'll have to figure it out one day.
+
+unimpaired.vim : Pairs of handy bracket mappings -- honorable mention: great
+idea with the square brackets doing actions that can work in pairs, but the
+actions actually implemented are not things I would normally use.
+
+narrow : Emulate Emacs' narrowing feature -- honorable mention: good idea, not
+nearly complete execution. select a range, use :Narrow to only display and
+execute commands on that part; the rest is inaccessible. Except here
+"inaccessible" still just means folded-away, and the commands are in fact not
+limited to the range you did :Narrow on.
+
+Tumblr : Post to Tumblr
+
+
+----------------- Useful programming language plugins:
+----------------- Note, the below plugins are pasted in with their sales pitch;
+----------------- only a few of the comments are my own opinion. Use your best
+----------------- judgement.
+tagport : Find and yank Python import statement for keyword under cursor.
+Useful for Django!
+
+https://github.com/klen/python-mode : python mode integrating pyflakes, rope,
+and other general python-related stuff.
+
+http://www.vim.org/scripts/script.php?script_id=3782 : a python syntax
+definition (never used it)
+
+Vimpy : Vimpy helps in Navigating through Python code easy. (ctags-ish)
+
+pylint-mode : Pylint-mode is a vim mode that allows you to use the pylint
+library in vim to provide features like python code looking for bugs.
+
+SimpylFold : No-BS Python code folding
+
+Superior Haskell Interaction Mode (SHIM) : GHCi integration for VIM. Attempts
+to display a ghci with the current buffer loaded in a vim window. However
+typing into the interpreter doesn't work for me.
+
+VimPdb : a totally integrated environment which allows you to do breakpoint
+debugging in Vim with Pdb. Uses keyboard bindings which I don't like. Or use
+this for setting breakpoints: https://dev.launchpad.net/UltimateVimPythonSetup
+
+CRefVim : a C-reference manual especially designed for Vim -- get reference for
+word under cursor with <Leader>cr
+
+Pydiction : Tab-complete your Python code -- tab-completion that works without
+actually parsing the modules, good for some things, though i don't like the
+interface.
+
+ZenCoding.vim : vim plugins for HTML and CSS hi-speed coding -- real cool!
+
+DBGp client : a remote debugger interface to the DBGp protocol (tested only
+with XDebug/PHP)
+
+python_ifold : Improved version of python_fold. Uses folding expression for
+python code.
+
+vim-ref : tries to be some universal K support for a lot of different
+languages. Supposedly you can make it work with haskell/hoogle.
+
+PHP-correct-Indenting : A new indent script for php with many improvements
+never seen before
+
+jpythonfold.vim : A better python fold script
+
+CCTree : would be amazing if it worked for Python, Haskell, etc. Only works for
+C, but looks real cool.
+
+idevim.tgz : Control Gdb from inside Vim
+
+remote PHP debugger : remote debugger interface to DBGp protocol.
+
+VimDebug : Visual debugger for Perl, Ruby, and Python (updated 03/2011)
+
+Decho : Vim script internal debugger (output in separate window, tab, or remote
+vim)
+
+gdbvim.tar.gz : Watch in vim what you debug in gdb. And more.
+
+Efficient python folding : Fold python code nicely and toggle with one
+keystroke
+
+pylint.vim : compiler plugin for python style checking tool
+
+phpfolding.vim : Automatic folding of PHP functions, classes,.. (also folds
+related PhpDoc)
