@@ -454,6 +454,11 @@ call vam#ActivateAddons(['git:git://github.com/tpope/vim-speeddating.git'])
 call vam#ActivateAddons(['git:git://github.com/tpope/vim-pastie.git'])
 " vim interface for pastie.org; use :Pastie to paste all files or a range,
 " :%Pastie to paste the current file. Ranges are allowed
+call vam#ActivateAddons(['paster']) " configurable pastebin client
+call vam#ActivateAddons(['Dpaste.com_Plugin']) " Dpaste.com client
+call vam#ActivateAddons(['lodgeit']) " :Lodgeit (paste.pocoo.org)
+call vam#ActivateAddons(['Gist']) " :Gist
+
 call vam#ActivateAddons(['hg:https://bitbucket.org/sjl/gundo.vim'])
 " :Gundo - displays undo tree. Unfortunately, Gundo requires Vim 7.3.
 
