@@ -574,3 +574,9 @@ call vam#ActivateAddons(['renamer']) " rename files editing their names in vim,
 " use :Renamer and then :Ren
 
 call vam#ActivateAddons(['AutoTag']) " update ctags on file save
+call vam#ActivateAddons(['SourceCodeObedience'])
+" create tags and cscope.out in your project root, and in the dir where they
+" are, create a foo.sco file. Edit it, then do :SCO* to query the project by
+" using info from tags, cscope, and so on.
+" FIXME: the display is being messed up by 'long line showing'
+
