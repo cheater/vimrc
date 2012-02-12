@@ -23,6 +23,14 @@
 "                        `==!!+!=``   Config File         
 "                           `-'`            by cheater    
 "                                                         
+"
+" Main changes to how normal Vim operates:
+" - s and c are swapped
+" - c is used for surround.vim, it is like what surround.vim normally uses s for
+" - you enter command mode with ; instead of :
+" - repeat-quick-move is : instead of ;
+" - <F3> and <F4> scroll through tabs, <F5> and <F6> move them (shift-<F3/4>
+"   didn't want to work...)
 
 setlocal nocompatible
 setlocal
