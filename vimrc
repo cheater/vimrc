@@ -594,3 +594,6 @@ call vam#ActivateAddons(['CmdlineComplete']) " press ^N/^P in command line or
 call vam#ActivateAddons(['Cabal']) " Haskell .cabal file syntax definition
 autocmd BufRead,BufNewFile *.cabal
 \   setlocal filetype=cabal
+call vam#ActivateAddons(['git:git://github.com/bogado/file-line.git'])
+" allows you to open file:line like from compiler or grep output
+" FIXME: messes up -p, -o, and -O.
