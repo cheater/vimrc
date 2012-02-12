@@ -526,5 +526,11 @@ except ImportError:
 
 EOF
 
-call vam#ActivateAddons(['pyflakes%2441'])
+let g:pyflakes_use_quickfix = 0
+command PyflakesQuickfixOn  let g:pyflakes_use_quickfix = 1
+command PyflakesQuickfixOff let g:pyflakes_use_quickfix = 0
+call vam#ActivateAddons(['git:git://github.com/cheater/pyflakes-vim.git'])
+" automatically puts pyflakes errors in the quickfix list, and updates them as
+" you edit.
+
 call vam#ActivateAddons(['matrix%1189']) " :Matrix for cool 'screensaver'
