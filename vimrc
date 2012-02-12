@@ -112,11 +112,6 @@ setlocal t_Co=256          " Much more beautiful than the standard of using
                            " reserved for highlighting matching parentheses.
 
 setlocal laststatus=2      " always show status.
-" the following two status lines that are commented out were ripped off someone
-" else... :)
-" set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
-" set statusline=%<%f%y\ \ %h%m%r%=%-14.(%l/%L,%c%V%)\ %P
-set statusline=\ %n\ %<%f\ [%M%Y%R]%h%w%=\ [L%l\ C%v\ %p%%]
 set title             " show the title!
 set titlestring=%<%f\ [%M%Y%R]\ -\ VIM
 setlocal hlsearch
@@ -552,3 +547,26 @@ call vam#ActivateAddons(['sokoban']) " sokoban. Note that the installation
 " with vam does not work currently, and you might need to go to
 " .vim/vim-addons/sokoban, create a subdir called plugin, and move the .vim and
 " .sok files in there. FIXME
+let g:pythonhelper_updatetime = 20
+call vam#ActivateAddons(['git:git://github.com/cheater/pythonhelper.git'])
+"call vam#ActivateAddons(['pythonhelper'])
+" displays the class and function name the cursor is currently on.
+
+" the following two status lines that are commented out were ripped off someone
+" else... :)
+" set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
+" set statusline=%<%f%y\ \ %h%m%r%=%-14.(%l/%L,%c%V%)\ %P
+" set statusline=%-f%r\ %2*%m%*\ \ \ \ %1*%{TagInStatusLine()}%*%=[%l:%c]\ \ \ \
+" [buf\ %n]
+"
+
+function TagInStatusLine2()
+  let s:tag = TagInStatusLineTag()
+  if s:tag == ""
+    return ""
+  endif
+  let s:tag2 = "[" . s:tag . "]"
+  return s:tag2
+  endfunction
+set statusline=\ %n\ %f\ %<[%M%Y%R]%h%w\ %<%{TagInStatusLine2()}%=\ [L%l\ C%v\ %p%%]
+
