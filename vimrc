@@ -548,3 +548,7 @@ call vam#ActivateAddons(['delimitMate']) " first impression: delimitMate is
 " FIXME: if you are on top of a ) and type ) then delimitMate doesn't type it,
 " it just moves right of it, even if that ) was not auto-completed by
 " delimitMate (meaning, it was there before).
+call vam#ActivateAddons(['sokoban']) " sokoban. Note that the installation
+" with vam does not work currently, and you might need to go to
+" .vim/vim-addons/sokoban, create a subdir called plugin, and move the .vim and
+" .sok files in there.
