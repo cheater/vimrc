@@ -604,3 +604,40 @@ let g:detectindent_preferred_indent = 4
 call vam#ActivateAddons(['Smartput']) " makes p work better inside
 " (lists, of, things) and 'lists of words' by auto-adjusting where the space
 " or the comma joining the words is placed.
+call vam#ActivateAddons(['keepcase'])
+" Usage:
+"
+" %s/\u\<old_word\>/\=KeepCaseSameLen(submatch(0), 'new_word')/g
+"
+" * KeepCase(original_word, new_word)
+"   Returns the new_word maintaining the case of original_word. Uses simple
+"   heuristics to work out some different common situations.
+"     input       output
+"     Word    ->  Newword
+"     WORD    ->  NEWWORD
+"     word    ->  newword
+"     WoRd    ->  NewWord
+"     woRd    ->  newWord
+"
+" * KeepCaseSameLen(original_word , new_word)
+"   Returns the new word maintaining case. Keeps the case exactly the same
+"   letter-for-letter. It does work if the words aren't the same length, as it
+"   truncates or just copies the case of the word for the length of the
+"   original word.
+"
+" * :SubstituteCase#\cfoo\(Bar\)bar#\1Baz#g
+"     fooBarBar -> barBaz
+"     FooBarBar -> BarBaz
+"     foobarbar -> barbaz
+"     foobarBar -> barBaz
+"     FoobarBar -> BarBaz
+" FIXME: put the above in a doc or help file somewhere.
+call vam#ActivateAddons(['Shortcut_functions_for_KeepCase_script_'])
+" Usage:
+" :'<,'>call S('building','campus') will replace all occurrences of 'building'
+" with 'campus', 'BUILDING_ID' with 'CAMPUS_ID', 'getBuilding' with
+" 'getCampus', etc. across the currently selected range.
+"
+" Also included is the SS(pat,sub) function which uses KeepCaseSameLen for the
+" substitutions instead of KeepCase.
+
