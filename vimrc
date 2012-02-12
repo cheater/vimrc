@@ -404,8 +404,40 @@ call vam#ActivateAddons(['bad-whitespace']) " highlight bad whitespace
 call vam#ActivateAddons(['quickfixstatus']) " :QuickfixStatusEnable and Disable
 call vam#ActivateAddons(['git:git://github.com/fs111/pydoc.vim.git'])
 " K support for python and other goodies
+
+" the surround plugin. We also make it use c and C for any surround-related
+" stuff; and we make vim's s into what normally is done with c in vanilla Vim.
+" Rationale:
+" 1. c can do everything s can: with the new mapping press ss for what used to
+" be done with S; press sl for what used to be done with s; press S for what
+" used to be done with C. The only way in which I used s (on its own) in
+" normal mode used to be if I went forward to a word which I wanted on a new
+" line, and then I would on the first letter of that word; so I had to do
+" hs<Enter> to put it on a new line.. now I have to do sh<Enter>. Almost no
+" difference :)
+" 2. s is easier to access (home row)
+" 3. I use the action more often than I use anything related to surround, so
+" it's a great idea to have that at the home row
+let g:surround_no_mappings=1
 call vam#ActivateAddons(['git:git://github.com/tpope/vim-surround.git'])
-" surround.vim for things like cs"' etc
+" surround.vim for things like sc"' etc. FIXME: consider whether you really
+" need this plugin.
+noremap s c
+nnoremap ss cc
+onoremap ss cc
+" ss makes no sense in visual mode, and makes visual-s wait for 1 second
+" before proceeding with the action.
+nmap dc  <Plug>Dsurround
+nmap sc  <Plug>Csurround
+nmap yc  <Plug>Ysurround
+nmap yC  <Plug>YSurround
+nmap ycc <Plug>Yssurround
+nmap yCc <Plug>YSsurround
+nmap yCC <Plug>YSsurround
+xmap C   <Plug>VSurround
+xmap gC  <Plug>VgSurround
+
+
 call vam#ActivateAddons(['Conque_Shell']) " :ConqueTerm
 call vam#ActivateAddons(['Source_Explorer_srcexpl.vim']) " :SrcExplToggle
 call vam#ActivateAddons(['YankRing']) " you can do \"2p (without the backslash)
