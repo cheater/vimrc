@@ -586,3 +586,4 @@ call vam#ActivateAddons(['chapa']) " fnc, fpc to go to next/prev class, also
 " works for functions. Works for Python and JavaScript. FIXME: does not think
 " that old-style classes (that do not extend anything) are classes.
 call vam#ActivateAddons(['opsplorer']) " :Opsplore
+call vam#ActivateAddons(['browser%2227']) " :Google, :Wikipedia, :WebBrowser
