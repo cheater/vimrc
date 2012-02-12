@@ -587,3 +587,5 @@ call vam#ActivateAddons(['chapa']) " fnc, fpc to go to next/prev class, also
 " that old-style classes (that do not extend anything) are classes.
 call vam#ActivateAddons(['opsplorer']) " :Opsplore
 call vam#ActivateAddons(['browser%2227']) " :Google, :Wikipedia, :WebBrowser
+call vam#ActivateAddons(['camelcasemotion']) " now you can do ci,w and ci,b
+" for CamelCase and snake_case names.
