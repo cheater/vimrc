@@ -589,3 +589,5 @@ call vam#ActivateAddons(['opsplorer']) " :Opsplore
 call vam#ActivateAddons(['browser%2227']) " :Google, :Wikipedia, :WebBrowser
 call vam#ActivateAddons(['camelcasemotion']) " now you can do ci,w and ci,b
 " for CamelCase and snake_case names.
+call vam#ActivateAddons(['CmdlineComplete']) " press ^N/^P in command line or
+" search mode. Doesn't work well in search but works well in command mode. FIXME
