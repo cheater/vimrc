@@ -641,3 +641,11 @@ call vam#ActivateAddons(['Shortcut_functions_for_KeepCase_script_'])
 " Also included is the SS(pat,sub) function which uses KeepCaseSameLen for the
 " substitutions instead of KeepCase.
 
+call vam#ActivateAddons(['lid']) " :Lid, :Lid searchstring. :Lid -p or -v for
+" pattern based filtering/rejection of lid output. You need to install lid for
+" this to work: aptitude install id-utils; then you need to invoke mkid at the
+" project root. Great for searching, great interface, but doesn't work for
+" Python or Haskell. Currently supports C, C++, Java, Makefiles, and other
+" stuff directly. You can add indirect support for Python/Haskell/Bash by
+" editing /usr/share/misc/id-lang.map and adding lines for *.py, *.hs and *.sh
+" using the 'text' format. Maybe one day those will get direct support.
