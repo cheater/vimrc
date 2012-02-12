@@ -22,3 +22,35 @@ http://www.google.com/search?q=vim+cscope
 . make horizontal tabs show up with a different colour (gray?) rather than
   using the "▸" char, because that breaks copying from the window
 
+------------------------------
+
+search vimscripts for:
+
+motions motion
+objects object
+haskell
+paste
+undo
+
+
+
+vim-addon-async
+syntastic
+syntastic2
+vim-addon-actions
+
+12:37 <MarcWeber> vim-addon-actions (bind run interpreter actions to buf write
+or key hit events)
+
+12:40 <MarcWeber> Either jump into "aurum", have a look at vim-addon-views
+which is used by my minmial git support plugin or contact fugitive maintainers
+
+12:41 <MarcWeber> and vim-addon-goto-thing-at-cursor provides a way to register
+functions making some sense of context suggesting jump to lactions
+
+12:43 <MarcWeber> cheater If you are using X give vim-addon-async a try. It
+only requires a C compiler for the helper application, no ruby setup, nothing
+else.
+
+try finding a plugin which displays hg/git annotate on the left of a buffer. if
+you can't find it try using :vcsannotate from vcscommand.
