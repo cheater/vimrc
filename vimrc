@@ -597,3 +597,7 @@ autocmd BufRead,BufNewFile *.cabal
 call vam#ActivateAddons(['git:git://github.com/bogado/file-line.git'])
 " allows you to open file:line like from compiler or grep output
 " FIXME: messes up -p, -o, and -O.
+call vam#ActivateAddons(['git:git://github.com/ciaranm/detectindent.git'])
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 4
+" :DetectIndent
