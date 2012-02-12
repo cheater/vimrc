@@ -503,6 +503,11 @@ except ImportError:
   src_dir = os.path.realpath(os.path.join(e.install_dir, "src"))
   git_url = "git://github.com/kevinw/pyflakes.git"
 
+  try:
+    import pip
+  except ImportError:
+    print "Making sure pip is installed..."
+    os.system("sudo easy_install pip")
   msg = "About to pip install the python pyflakes module from " + git_url
   msg += " to " + src_dir + ".\n"
   print msg
