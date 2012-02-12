@@ -551,4 +551,4 @@ call vam#ActivateAddons(['delimitMate']) " first impression: delimitMate is
 call vam#ActivateAddons(['sokoban']) " sokoban. Note that the installation
 " with vam does not work currently, and you might need to go to
 " .vim/vim-addons/sokoban, create a subdir called plugin, and move the .vim and
-" .sok files in there.
+" .sok files in there. FIXME
