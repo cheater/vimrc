@@ -591,3 +591,6 @@ call vam#ActivateAddons(['camelcasemotion']) " now you can do ci,w and ci,b
 " for CamelCase and snake_case names.
 call vam#ActivateAddons(['CmdlineComplete']) " press ^N/^P in command line or
 " search mode. Doesn't work well in search but works well in command mode. FIXME
+call vam#ActivateAddons(['Cabal']) " Haskell .cabal file syntax definition
+autocmd BufRead,BufNewFile *.cabal
+\   setlocal filetype=cabal
