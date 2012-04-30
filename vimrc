@@ -524,7 +524,7 @@ except ImportError:
   pip = "sudo pip install "
   pip += "-e git+" + git_url + "#egg=pyflakes "
   pip += '--src="' + src_dir + '" '
-  pip += '--install-option="--install-scripts=/usr/local/bin" '
+  pip += '--install-option="--script-dir=/usr/local/bin" '
   os.system(pip)
 
 EOF
