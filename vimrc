@@ -648,4 +648,5 @@ call vam#ActivateAddons(['lid']) " :Lid, :Lid searchstring. :Lid -p or -v for
 " Python or Haskell. Currently supports C, C++, Java, Makefiles, and other
 " stuff directly. You can add indirect support for Python/Haskell/Bash by
 " editing /usr/share/misc/id-lang.map and adding lines for *.py, *.hs and *.sh
-" using the 'text' format. Maybe one day those will get direct support.
+" using the 'text' format. Maybe one day those will get direct support. This
+" tool is kind of like grep/ctags/gtatgs/etags/cscope.
