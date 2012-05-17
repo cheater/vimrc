@@ -551,6 +551,7 @@ let g:pythonhelper_updatetime = 20
 call vam#ActivateAddons(['git:git://github.com/cheater/pythonhelper.git'])
 "call vam#ActivateAddons(['pythonhelper'])
 " displays the class and function name the cursor is currently on.
+" FIXME: breaks on multiline comments that reduce indent level.
 
 " the following two status lines that are commented out were ripped off someone
 " else... :)
