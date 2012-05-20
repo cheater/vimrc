@@ -653,3 +653,9 @@ call vam#ActivateAddons(['lid']) " :Lid, :Lid searchstring. :Lid -p or -v for
 " tool is kind of like grep/ctags/gtatgs/etags/cscope.
 " FIXME: try to extract the cool quickfix stuff from ack.vim and try to put it
 " in this plugin.
+
+call vam#ActivateAddons(['git:git://github.com/mileszs/ack.vim.git'])
+" You can use :Ack, :AckAdd for quickfix, :LAck, :LAckAdd for location-list,
+" use mappings like o, go, t, T, v, V to open the file in different ways.
+" See :help *ack-mappings* for more mappings. The quickfix support (:AckAdd
+" and the mappings) is better than lid.
