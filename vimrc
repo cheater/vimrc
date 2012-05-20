@@ -651,3 +651,5 @@ call vam#ActivateAddons(['lid']) " :Lid, :Lid searchstring. :Lid -p or -v for
 " editing /usr/share/misc/id-lang.map and adding lines for *.py, *.hs and *.sh
 " using the 'text' format. Maybe one day those will get direct support. This
 " tool is kind of like grep/ctags/gtatgs/etags/cscope.
+" FIXME: try to extract the cool quickfix stuff from ack.vim and try to put it
+" in this plugin.
