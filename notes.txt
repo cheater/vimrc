@@ -54,3 +54,8 @@ else.
 
 try finding a plugin which displays hg/git annotate on the left of a buffer. if
 you can't find it try using :vcsannotate from vcscommand.
+
+
+-------------------------
+
+check out OpenGrok and see if there's a vim plugin yet. There wasn't one in May 2012.
