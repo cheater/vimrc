@@ -659,3 +659,15 @@ call vam#ActivateAddons(['git:git://github.com/mileszs/ack.vim.git'])
 " use mappings like o, go, t, T, v, V to open the file in different ways.
 " See :help *ack-mappings* for more mappings. The quickfix support (:AckAdd
 " and the mappings) is better than lid.
+
+call vam#ActivateAddons(['gtags_multiwindow_browsing'])
+" alternatively you can use this to get location list support instead:
+" call vam#ActivateAddons(['gtags'])
+" however, only one version of the gtags plugin should be used at a time,
+" since they use the same command names.
+"
+" You can use things like :Gtags tagname, :Gtags -r tagname (for reverse
+" lookup), :GtagsCursor, and so on. See
+" http://www.gnu.org/software/global/globaldoc.html#SEC5 for more info.
+" Note that for Ubuntu 10.04 LTS you need to use the CVS version of GLOBAL,
+" the packaged version is very old and crashy.
