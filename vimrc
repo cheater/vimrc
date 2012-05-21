@@ -142,6 +142,9 @@ autocmd FileType *
 \        shiftwidth=4
 \        noexpandtab
 
+autocmd BufRead,BufNewFile *.jsm
+\   setlocal filetype=javascript
+
 autocmd BufRead,BufNewFile *.md
 \   setlocal filetype=markdown
 
