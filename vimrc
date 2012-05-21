@@ -123,7 +123,9 @@ setlocal hlsearch
 " ^the suffixes are what files Vim should normally ignore when autocompleting
 " file names, for :e :w and so on
 
-setlocal showbreak=↪\           " right hook arrow for wrapped chars
+if has("linebreak")
+  setlocal showbreak=↪\           " right hook arrow for wrapped chars
+  endif
 setlocal list                   " show chars using listchars.
 setlocal listchars=             " but don't use the default of showing newlines
                                 " with $.
