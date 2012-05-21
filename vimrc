@@ -119,7 +119,7 @@ if has("extra_search")
   endif
 setlocal suffixes+=
         \.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,
-        \.idx,.ilg,.inx,.out,.toc,.pyc,
+        \.idx,.ilg,.inx,.out,.toc,.pyc,.pyo,
         \.jpg,.bmp,.gif,.png,.tif,.tiff,
         \.wmv,.avi,.mpg,.mpeg,.asf,.flv,.mov,
         \.wav,.aif,.aiff,.mp3,.flac,.mp4
