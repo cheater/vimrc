@@ -379,6 +379,15 @@ if has("persistent_undo")
 if v:version >= 600
   setlocal splitright         " new window in a visual split is on the right
   endif
+" Digraphs:
+if has("digraphs")          " digraphs are entered as the html entity number
+  digraph -- 8212           " em dash
+  digraph `` 8220           " left double quotation mark
+  digraph '' 8221           " right double quotation mark
+  digraph ,, 8222           " double low-9 quotation mark
+  digraph ** 8258           " asterism
+  endif
+
 " -------------- begin automatic vim-addon-manager setup.
 " This was copied directly from the documentation for VAM; the indentation may
 " differ from the rest of this vimrc. Then I modified the code below by doing
