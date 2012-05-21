@@ -426,6 +426,8 @@ cnoremap        <C-A>           <Home>
 " Do not lose "complete all", see :h c_CTRL-A
 cnoremap        <C-S-A>         <C-A>
 
+setlocal cpoptions-=c
+
 " Keyboard workarounds
 
 " xterm keys
