@@ -364,7 +364,7 @@ if !isdirectory(&backupdir)
   exec "silent !mkdir -p " . &backupdir
 endif
 
-" Persistent undo (vim 7.3+)                                    {{{2
+" Persistent undo (vim 7.3+)
 if has("persistent_undo")
   setlocal undofile                     " enable persistent undo
   let &undodir=&backupdir . "/.vimundo" " but don't clutter $PWD
