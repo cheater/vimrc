@@ -342,6 +342,17 @@ function OutlinePy()
   endfunction
 command OutlinePy ;call OutlinePy()
 
+" Backup files:
+set backup                      " make backups
+set backupdir=~/tmp/vim-backup  " but don't clutter $PWD with them
+if $USER == "root"
+  " 'sudo vi' on certain machines cannot write to ~/tmp (NFS root-squash)
+  set backupdir=/root/tmp/vim-backup
+endif
+if !isdirectory(&backupdir)
+  " create the backup directory if it doesn't already exist
+  exec "silent !mkdir -p " . &backupdir
+endif
 
 " -------------- begin automatic vim-addon-manager setup.
 " This was copied directly from the documentation for VAM; the indentation may
