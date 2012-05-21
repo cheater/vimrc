@@ -354,6 +354,10 @@ if !isdirectory(&backupdir)
   exec "silent !mkdir -p " . &backupdir
 endif
 
+" Various stuff:
+if v:version >= 600
+  setlocal splitright         " new window in a visual split is on the right
+  endif
 " -------------- begin automatic vim-addon-manager setup.
 " This was copied directly from the documentation for VAM; the indentation may
 " differ from the rest of this vimrc. Then I modified the code below by doing
