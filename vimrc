@@ -29,8 +29,7 @@
 " - c is used for surround.vim, it is like what surround.vim normally uses s for
 " - you enter command mode with ; instead of :
 " - repeat-quick-move is : instead of ;
-" - <F3> and <F4> scroll through tabs, <F5> and <F6> move them (shift-<F3/4>
-"   didn't want to work...)
+" - <F3> and <F4> scroll through tabs, <S-F3> and <S-F4> move them
 
 setlocal nocompatible
 setlocal
@@ -317,15 +316,16 @@ function MoveTabRight()
   endfunction
 command MoveTabRight ;call MoveTabRight()
 
-" I have also tried <S-F3> and <S-F4> but they didn't work, and just put
-" garbled text into the file being edited... wonder why? Might have to do with
-" this crappy Mac I'm working on right now, running GNU/Linux via Parallels.
-nmap <silent> <F5> ;MoveTabLeft<CR>
-vmap <silent> <F5> ;MoveTabLeft<CR>
-imap <silent> <F5> <C-o>;MoveTabLeft<CR>
-nmap <silent> <F6> ;MoveTabRight<CR>
-vmap <silent> <F6> ;MoveTabRight<CR>
-imap <silent> <F6> <C-o>;MoveTabRight<CR>
+" compat mapping for gnome-terminal:
+map O1;2R <S-F3>
+map O1;2S <S-F4>
+
+nmap <silent> <S-F3> ;MoveTabLeft<CR>
+vmap <silent> <S-F3> ;MoveTabLeft<CR>
+imap <silent> <S-F3> <C-o>;MoveTabLeft<CR>
+nmap <silent> <S-F4> ;MoveTabRight<CR>
+vmap <silent> <S-F4> ;MoveTabRight<CR>
+imap <silent> <S-F4> <C-o>;MoveTabRight<CR>
 
 " Outline Python code:
 function OutlinePy()
