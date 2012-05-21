@@ -665,11 +665,18 @@ call vam#ActivateAddons(['git:git://github.com/mileszs/ack.vim.git'])
 " See :help *ack-mappings* for more mappings. The quickfix support (:AckAdd
 " and the mappings) is better than lid.
 
-call vam#ActivateAddons(['gtags_multiwindow_browsing'])
-" alternatively you can use this to get location list support instead:
-" call vam#ActivateAddons(['gtags'])
+call vam#ActivateAddons(['gtags'])
+" alternatively you can use this to get popups instead of the location list:
+" call vam#ActivateAddons(['gtags_multiwindow_browsing'])
 " however, only one version of the gtags plugin should be used at a time,
 " since they use the same command names.
+"
+" The author of gtags_multiwindow_browsing makes some bindings that can't be
+" turned off. Bad!
+"
+" FIXME: Contacted the author on 2012-05-21 via email. If he doesn't make a
+" new version within a week I'll fork his code and ask that repo to be added
+" to VAM.
 "
 " You can use things like :Gtags tagname, :Gtags -r tagname (for reverse
 " lookup), :GtagsCursor, and so on. See
