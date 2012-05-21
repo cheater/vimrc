@@ -364,6 +364,17 @@ if !isdirectory(&backupdir)
   exec "silent !mkdir -p " . &backupdir
 endif
 
+" Persistent undo (vim 7.3+)                                    {{{2
+if has("persistent_undo")
+  setlocal undofile                     " enable persistent undo
+  let &undodir=&backupdir . "/.vimundo" " but don't clutter $PWD
+  if !isdirectory(&undodir)
+    " create the undo directory if it doesn't already exist
+    exec "silent !mkdir -p " . &undodir
+    endif
+  endif
+
+
 " Various stuff:
 if v:version >= 600
   setlocal splitright         " new window in a visual split is on the right
