@@ -139,7 +139,7 @@ setlocal listchars+=nbsp:·      " middle dot for non-breaking spaces
 autocmd FileType *
 \    setlocal
 \        tabstop=8
-\        shiftwidth=2
+\        shiftwidth=4
 \        noexpandtab
 
 autocmd BufRead,BufNewFile *.md
