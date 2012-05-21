@@ -38,7 +38,7 @@ setlocal
 \    shiftwidth=4
 \    ruler
 "\    cindent
-syntax on
+syntax enable
 setlocal bg=dark
 
 
