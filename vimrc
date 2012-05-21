@@ -113,8 +113,11 @@ setlocal t_Co=256          " Much more beautiful than the standard of using
 setlocal laststatus=2      " always show status.
 set title             " show the title!
 set titlestring=%<%f\ [%M%Y%R]\ -\ VIM
-setlocal hlsearch
-\    suffixes+=
+if has("extra_search")
+  setlocal hlsearch        " highlight search matches
+  nohlsearch               " but not initially
+  endif
+setlocal suffixes+=
         \.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,
         \.idx,.ilg,.inx,.out,.toc,.pyc,
         \.jpg,.bmp,.gif,.png,.tif,.tiff,
