@@ -414,11 +414,10 @@ map             <C-S-Down>      1<C-D><Up>
 imap            <C-S-Up>        <C-O><C-S-Up>
 imap            <C-S-Down>      <C-O><C-S-Down>
 
-" Readline-like Ctrl-A and Ctrl-E
+" Readline-like Ctrl-A and Ctrl-E in command line
 cnoremap        <C-A>           <Home>
-cnoremap        <C-E>           <End>
 
-" Do not lose "complete all"
+" Do not lose "complete all", see :h c_CTRL-A
 cnoremap        <C-S-A>         <C-A>
 
 " -------------- begin automatic vim-addon-manager setup.
