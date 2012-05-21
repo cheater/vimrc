@@ -414,6 +414,10 @@ map             <C-S-Down>      1<C-D><Up>
 imap            <C-S-Up>        <C-O><C-S-Up>
 imap            <C-S-Down>      <C-O><C-S-Down>
 
+" Readline-like Ctrl-A and Ctrl-E
+cnoremap        <C-A>           <Home>
+cnoremap        <C-E>           <End>
+
 " -------------- begin automatic vim-addon-manager setup.
 " This was copied directly from the documentation for VAM; the indentation may
 " differ from the rest of this vimrc. Then I modified the code below by doing
