@@ -201,6 +201,16 @@ autocmd FileType python
 "consider using cindent instead of smartindent.
 autocmd FileType python :LongLinesShow
 
+" Python tracebacks (unittest + doctest output)
+setlocal errorformat&
+setlocal errorformat+=
+            \File\ \"%f\"\\,\ line\ %l%.%#,
+            \%C\ %.%#,
+            \%-A\ \ File\ \"unittest%.py\"\\,\ line\ %.%#,
+            \%-A\ \ File\ \"%f\"\\,\ line\ 0%.%#,
+            \%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,
+            \%Z%[%^\ ]%\\@=%m
+
 autocmd BufRead,BufNewFile *.hs
 \    setlocal filetype=haskell
 autocmd FileType haskell
