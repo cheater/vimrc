@@ -376,9 +376,15 @@ if has("persistent_undo")
 
 
 " Various stuff:
+setlocal hidden             " side effect: undo list is not lost on C-^
+setlocal browsedir=buffer   " :browse e starts in %:h (file's dir), not $PWD
+setlocal switchbuf=useopen  " quickfix reuses open windows
 if v:version >= 600
-  setlocal splitright         " new window in a visual split is on the right
+  setlocal splitright       " new window in a visual split is on the right
   endif
+setlocal backspace=indent,eol,start  " sane backspacing
+setlocal wrap                        " wrap long lines"
+
 " Digraphs:
 if has("digraphs")          " digraphs are entered as the html entity number
   digraph -- 8212           " em dash
