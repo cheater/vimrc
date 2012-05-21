@@ -388,6 +388,20 @@ if has("digraphs")          " digraphs are entered as the html entity number
   digraph ** 8258           " asterism
   endif
 
+" */# search in visual mode (from www.vim.org):
+" Atom \V sets following pattern to "very nomagic", i.e. only the backslash
+" has special meaning.
+" As a search pattern we insert an expression (= register) that
+" calls the 'escape()' function on the unnamed register content '@@',
+" and escapes the backslash and the character that still has a special
+" meaning in the search command (/|?, respectively).
+" This works well even with <Tab> (no need to change ^I into \t),
+" but not with a linebreak, which must be changed from ^M to \n.
+" This is done with the substitute() function.
+" See http://vim.wikia.com/wiki/Search_for_visually_selected_text
+vnoremap * y/\V<C-R>=substitute(escape(@@,"/\\"),"\n","\\\\n","ge")<CR><CR>
+vnoremap # y?\V<C-R>=substitute(escape(@@,"?\\"),"\n","\\\\n","ge")<CR><CR>
+
 " -------------- begin automatic vim-addon-manager setup.
 " This was copied directly from the documentation for VAM; the indentation may
 " differ from the rest of this vimrc. Then I modified the code below by doing
