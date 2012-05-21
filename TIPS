@@ -15,6 +15,10 @@ slash (plus use TAB for Help completion)
 :h 'ai       : help on setting option 'autoindent'
 :helpgrep x  : grep help for x, then use quickfix commands
 
+you can use :diffget and :diffput. Also in visual mode:
+vmap            \do             :diffget<CR>
+vmap            \dp             :diffput<CR>
+
 quickfix commands - navigate quickfix list:
 :cc [#]      : display result #nr or last result
 :cnext       : next, prev result, next file, prev file
