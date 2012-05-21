@@ -418,6 +418,9 @@ imap            <C-S-Down>      <C-O><C-S-Down>
 cnoremap        <C-A>           <Home>
 cnoremap        <C-E>           <End>
 
+" Do not lose "complete all"
+cnoremap        <C-S-A>         <C-A>
+
 " -------------- begin automatic vim-addon-manager setup.
 " This was copied directly from the documentation for VAM; the indentation may
 " differ from the rest of this vimrc. Then I modified the code below by doing
