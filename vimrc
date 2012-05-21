@@ -402,6 +402,18 @@ if has("digraphs")          " digraphs are entered as the html entity number
 vnoremap * y/\V<C-R>=substitute(escape(@@,"/\\"),"\n","\\\\n","ge")<CR><CR>
 vnoremap # y?\V<C-R>=substitute(escape(@@,"?\\"),"\n","\\\\n","ge")<CR><CR>
 
+" Scrolling with Ctrl+Up/Down
+map             <C-Up>          1<C-U>
+map             <C-Down>        1<C-D>
+imap            <C-Up>          <C-O><C-Up>
+imap            <C-Down>        <C-O><C-Down>
+
+" Scrolling with Ctrl+Shift+Up/Down
+map             <C-S-Up>        1<C-U><Down>
+map             <C-S-Down>      1<C-D><Up>
+imap            <C-S-Up>        <C-O><C-S-Up>
+imap            <C-S-Down>      <C-O><C-S-Down>
+
 " -------------- begin automatic vim-addon-manager setup.
 " This was copied directly from the documentation for VAM; the indentation may
 " differ from the rest of this vimrc. Then I modified the code below by doing
