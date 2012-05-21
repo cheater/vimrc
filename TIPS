@@ -1,6 +1,7 @@
 Those are some tips I have stumbled upon. This list will change and items will
 be removed, so check the repository log for more.
 
+use :helpgrep, it's great. Finds lots of stuff that :help doesn't.
 
 <C-X><C-L>    : Line complete SUPER USEFUL. see :help ins-completion for more
 about the Ctrl-X mode.
