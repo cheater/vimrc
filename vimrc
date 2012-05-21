@@ -294,16 +294,6 @@ nmap <F4> ;tabnext<CR>
 vmap <F4> ;tabnext<CR>
 imap <F4> <C-o>;tabnext<CR>
 
-" Outline Python code:
-function OutlinePy()
-  " the below regex searches for a string which starts at the beginning of the
-  " line, then perhaps has some whitespace, then either has the keyword def or
-  " class, and then has one whitespace character. The command g/re/p then
-  " prints all such strings.
-  execute "g/^\\s*\\(def\\|class\\)\\s/p"
-  endfunction
-command OutlinePy ;call OutlinePy()
-
 " Move tabs in Vim:
 function MoveTabLeft()
   " Moves the current tab to the left, wrapping around to the last tab if tab
@@ -336,6 +326,16 @@ imap <silent> <F5> <C-o>;MoveTabLeft<CR>
 nmap <silent> <F6> ;MoveTabRight<CR>
 vmap <silent> <F6> ;MoveTabRight<CR>
 imap <silent> <F6> <C-o>;MoveTabRight<CR>
+
+" Outline Python code:
+function OutlinePy()
+  " the below regex searches for a string which starts at the beginning of the
+  " line, then perhaps has some whitespace, then either has the keyword def or
+  " class, and then has one whitespace character. The command g/re/p then
+  " prints all such strings.
+  execute "g/^\\s*\\(def\\|class\\)\\s/p"
+  endfunction
+command OutlinePy ;call OutlinePy()
 
 
 " -------------- begin automatic vim-addon-manager setup.
