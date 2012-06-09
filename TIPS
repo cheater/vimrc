@@ -1,6 +1,10 @@
 Those are some tips I have stumbled upon. This list will change and items will
 be removed, so check the repository log for more.
 
+in Bash, you can use C-X C-E to edit the current command line in $EDITOR and
+execute it when it's saved. You can also use the fc builtin to edit the
+previous command and execute it.
+
 use :helpgrep, it's great. Finds lots of stuff that :help doesn't.
 
 use <C-^> to quickly switch to the alternate file.
