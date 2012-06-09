@@ -7,8 +7,9 @@ previous command and execute it.
 
 use :helpgrep, it's great. Finds lots of stuff that :help doesn't.
 
-use q: and q/ to quickly get one of the last commands or searches, then press
-Enter to execute.
+use q: and q/ and q? to quickly get one of the last commands or searches, then
+press Enter to execute. You can also use <C-F> in command line mode to open the
+command history.
 
 use <C-^> to quickly switch to the alternate file.
 
