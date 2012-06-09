@@ -213,6 +213,9 @@ http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/
 see http://vimgolf.com/ for lots of tips & tricks
 
 
+Debugging startup time: you can do this: vim +q --startuptime ~/tmp/startuptime.txt
+it will make a log of what happens during startup and how long it takes.
+
 
 ----------------- Useful plugins:
 ----------------- Note, the below plugins are pasted in with their sales pitch;
