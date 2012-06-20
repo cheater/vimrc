@@ -1067,3 +1067,18 @@ call vam#ActivateAddons(['gtags'])
 " http://www.gnu.org/software/global/globaldoc.html#SEC5 for more info.
 " Note that for Ubuntu 10.04 LTS you need to use the CVS version of GLOBAL,
 " the packaged version is very old and crashy.
+
+" some bindings for the quickfix and location list windows
+" TODO: put this in a vim plugin.
+au BufWinEnter * call QFBind()
+function! QFBind()
+    if &buftype=="quickfix"
+        exec "nnoremap <silent> <buffer> q :ccl<CR>"
+        exec "nnoremap <silent> <buffer> t <C-W><CR><C-W>T"
+        exec "nnoremap <silent> <buffer> T <C-W><CR><C-W>TgT<C-W><C-W>"
+        exec "nnoremap <silent> <buffer> o <CR>"
+        exec "nnoremap <silent> <buffer> go <CR><C-W><C-W>"
+        exec "nnoremap <silent> <buffer> v <C-W><C-W><C-W>v<C-L><C-W><C-J><CR>"
+        exec "nnoremap <silent> <buffer> gv <C-W><C-W><C-W>v<C-L><C-W><C-J><CR><C-W><C-J>"
+        endif
+    endfunction
