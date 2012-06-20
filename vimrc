@@ -1041,6 +1041,7 @@ call vam#ActivateAddons(['git:git://github.com/mileszs/ack.vim.git'])
 " use mappings like o, go, t, T, v, V to open the file in different ways.
 " See :help *ack-mappings* for more mappings. The quickfix support (:AckAdd
 " and the mappings) is better than lid.
+" We need to set g:ackprg because Debian renames ack to ack-grep.
 
 call vam#ActivateAddons(['gtags'])
 " alternatively you can use this to get popups instead of the location list:
