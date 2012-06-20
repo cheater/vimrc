@@ -1035,6 +1035,7 @@ call vam#ActivateAddons(['lid']) " :Lid, :Lid searchstring. :Lid -p or -v for
 " FIXME: try to extract the cool quickfix stuff from ack.vim and try to put it
 " in this plugin.
 
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 call vam#ActivateAddons(['git:git://github.com/mileszs/ack.vim.git'])
 " You can use :Ack, :AckAdd for quickfix, :LAck, :LAckAdd for location-list,
 " use mappings like o, go, t, T, v, V to open the file in different ways.
