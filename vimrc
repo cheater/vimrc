@@ -1042,6 +1042,12 @@ call vam#ActivateAddons(['git:git://github.com/mileszs/ack.vim.git'])
 " See :help *ack-mappings* for more mappings. The quickfix support (:AckAdd
 " and the mappings) is better than lid.
 " We need to set g:ackprg because Debian renames ack to ack-grep.
+" FIXME: add a variable to explicitly turn on the quickfix bindings.
+" FIXME: remove the 'silent' from 'silent execute' which messes up the gui
+" during search results that open a file being edited by another instance of
+" vim
+" FIXME: fix the error which happens when two instances try to display the
+" same file (is this even fixable?)
 
 call vam#ActivateAddons(['gtags'])
 " alternatively you can use this to get popups instead of the location list:
