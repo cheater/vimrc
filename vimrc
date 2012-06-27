@@ -127,14 +127,22 @@ setlocal suffixes+=
 " file names, for :e :w and so on
 
 if has("linebreak")
-  setlocal showbreak=↪\           " right hook arrow for wrapped chars
+  let &l:showbreak=nr2char(8618) . ' ' " right hook arrow for wrapped chars
+  " see :help :let-&
   endif
 setlocal list                   " show chars using listchars.
 setlocal listchars=             " but don't use the default of showing newlines
                                 " with $.
-setlocal listchars+=tab:▸\      " make tabs show up
-setlocal listchars+=nbsp:·      " middle dot for non-breaking spaces
-"setlocal listchars+=eol:¬
+"FIXME: build listchars with += instead setting it just like that. I do this
+"because listchars seems to be cast to a string somehow, so you can't use +=
+"anymore. Figure out how to keep it in the correct data type instead of making
+"it a string.
+let &l:listchars='tab:'.nr2char(9656).' ,nbsp:'.nr2char(183)
+" ^ Don't use the default of showing newlines with $; make tabs show up;
+" middle dot for non-breaking spaces.
+"setlocal listchars+=eol:¬ " XXX: you can't use this directly because it'll
+"mess up; you need to find the number of the character with the ga command and
+"then use nr2char(). see :help :let-&
 
 autocmd FileType *
 \    setlocal
