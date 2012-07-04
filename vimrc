@@ -183,7 +183,7 @@ autocmd FileType sh
 \        softtabstop=4
 \        autoindent
 \        cinwords=elif,else,for,if,while,then,else,fi,until,do,done
-\   |inoremap # X#
+\   |inoremap # # X
 "the ctrl-H has to be entered specially
 
 
