@@ -144,6 +144,18 @@ let &l:listchars='tab:'.nr2char(9656).' ,nbsp:'.nr2char(183)
 "mess up; you need to find the number of the character with the ga command and
 "then use nr2char(). see :help :let-&
 
+function! HashCommentBind()
+    " this function inserts a space after a hash (#) character opening a
+    " comment, but not on the first line (so that it doesn't interrupt with
+    " typing shebangs). You could customize this for file types and have it
+    " type the whole shebang on line 1, for example '#!/usr/bin/env python'.
+    if line(".") == 1
+        return "#"
+    else
+        return "# "
+        endif
+    endfunction
+
 autocmd FileType *
 \    setlocal
 \        tabstop=8
@@ -183,7 +195,7 @@ autocmd FileType sh
 \        softtabstop=4
 \        autoindent
 \        cinwords=elif,else,for,if,while,then,else,fi,until,do,done
-\   |inoremap # # X
+\   |inoremap <expr> # HashCommentBind()
 "the ctrl-H has to be entered specially
 
 
@@ -207,7 +219,7 @@ autocmd FileType python
 \   |highlight BadWhitespace ctermbg=red guibg=red
 \   |match BadWhitespace /^\t\+/
 \   |let python_highlight_all=1
-\   |inoremap # # X
+\   |inoremap <expr> # HashCommentBind()
 "the ctrl-H has to be entered specially
 "consider using cindent instead of smartindent.
 autocmd FileType python :LongLinesShow
@@ -240,7 +252,7 @@ autocmd FileType haskell
 \   |highlight BadWhitespace ctermbg=red guibg=red
 \   |match BadWhitespace /^\t\+/
 \   |let python_highlight_all=1
-\   |inoremap # # X
+\   |inoremap <expr> # HashCommentBind()
 "the ctrl-H has to be entered specially
 autocmd FileType haskell :LongLinesShow
 
