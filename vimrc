@@ -270,6 +270,19 @@ autocmd FileType php
 \        softtabstop=4
 "       \foldmethod=indent
 
+autocmd BufRead,BufNewFile *.txt
+\    setlocal filetype=text
+
+autocmd FileType text
+\    setlocal
+\        fileformat=unix
+\        encoding=utf-8
+\        tabstop=8
+\        shiftwidth=4
+\        smarttab
+\        expandtab
+\        softtabstop=4
+
 " Highlight long lines
 "command LongLinesShow let w:m1=matchadd('Search', '\%<81v.\%>77v', -1) | let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 "command LongLinesHide call matchdelete(w:m1) | call matchdelete(w:m2)
