@@ -196,8 +196,6 @@ autocmd FileType sh
 \        autoindent
 \        cinwords=elif,else,for,if,while,then,else,fi,until,do,done
 \   |inoremap <expr> # HashCommentBind()
-"the ctrl-H has to be entered specially
-
 
 autocmd BufRead,BufNewFile *.py
 \    setlocal filetype=python
@@ -220,7 +218,6 @@ autocmd FileType python
 \   |match BadWhitespace /^\t\+/
 \   |let python_highlight_all=1
 \   |inoremap <expr> # HashCommentBind()
-"the ctrl-H has to be entered specially
 "consider using cindent instead of smartindent.
 autocmd FileType python :LongLinesShow
 
@@ -253,9 +250,7 @@ autocmd FileType haskell
 \   |match BadWhitespace /^\t\+/
 \   |let python_highlight_all=1
 \   |inoremap <expr> # HashCommentBind()
-"the ctrl-H has to be entered specially
 autocmd FileType haskell :LongLinesShow
-
 
 autocmd BufRead,BufNewFile *.php,*.ihtml
 \    setlocal filetype=php
