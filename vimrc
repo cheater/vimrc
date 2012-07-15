@@ -178,6 +178,21 @@ autocmd FileType markdown
 \        softtabstop=4
 \        noshiftround
 
+autocmd BufRead,BufNewFile *.clj,*.cljs
+\   setlocal filetype=lisp
+
+autocmd FileType lisp
+\   setlocal syntax=lisp
+\        fileformat=unix
+\        encoding=utf-8
+\        tabstop=8
+\        shiftwidth=4
+\        smarttab
+\        expandtab
+\        softtabstop=4
+\        noshiftround
+\        autoindent
+
 autocmd BufRead,BufNewFile *.sh,*.bash
 \       setlocal filetype=sh
 
