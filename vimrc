@@ -408,7 +408,7 @@ command OutlinePy ;call OutlinePy()
 " Backup files:
 setlocal backup                      " make backups
 setlocal backupdir=~/tmp/vim-backup  " but don't clutter $PWD with them
-if $USER == "root"
+if $USER ==# "root"
   " 'sudo vi' on certain machines cannot write to ~/tmp (NFS root-squash)
   setlocal backupdir=/root/tmp/vim-backup
 endif
