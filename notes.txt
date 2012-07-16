@@ -69,3 +69,9 @@ and have their editing windows rendered by Vim. For example Light Table style
 layouts could be very good with this; but you could also use screen/tmux or any
 of the tiling wm's to manage Vim's windowing. At the same time, the different
 windows would share buffers, registers, and so on.
+
+-------------------------
+
+I would like to be able to stop using Esc for exiting modes and use something
+else, because Esc is sluggish because of the whole Esc-based function key codes
+(see :h timeoutlen).
