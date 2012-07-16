@@ -59,3 +59,13 @@ you can't find it try using :vcsannotate from vcscommand.
 -------------------------
 
 check out OpenGrok and see if there's a vim plugin yet. There wasn't one in May 2012.
+
+
+-------------------------
+
+One of the biggest things I would like to see Vim support is a "buffer server"
+or "window server". This way you could have things like IDEs connect to that,
+and have their editing windows rendered by Vim. For example Light Table style
+layouts could be very good with this; but you could also use screen/tmux or any
+of the tiling wm's to manage Vim's windowing. At the same time, the different
+windows would share buffers, registers, and so on.
