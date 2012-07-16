@@ -290,14 +290,20 @@ autocmd BufRead,BufNewFile *.txt
 \    setlocal filetype=text
 
 autocmd FileType text
-\    setlocal
-\        fileformat=unix
-\        encoding=utf-8
-\        tabstop=8
-\        shiftwidth=4
-\        smarttab
-\        expandtab
-\        softtabstop=4
+\    if &buftype!=#"help"
+\       | setlocal
+\           fileformat=unix
+\           encoding=utf-8
+\           tabstop=8
+\           shiftwidth=4
+\           smarttab
+\           expandtab
+\           softtabstop=4
+\       | endif
+
+" the pipes above are necessary because, the way vim sees things, the whole
+" autocommand is one big line. You can have if clauses in one line, but you
+" need to separate the parts with the pipe.
 
 " Highlight long lines
 "command LongLinesShow let w:m1=matchadd('Search', '\%<81v.\%>77v', -1) | let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
