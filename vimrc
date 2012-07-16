@@ -51,6 +51,7 @@ filetype plugin on         " load ftplugin.vim
 setlocal history=1000      " number of commands and search patterns to save
 setlocal showcmd           " show the command in the lower right corner
 setlocal binary            " show control characters (ignore 'fileformat')
+setlocal timeoutlen=100       " let me enter edit mode right after exiting it
 setlocal undolevels=1000   " maximum number of changes that can be undone
 if exists('+undodir')      " set undodir stuff, which saves the undo history in an
                            " external file, across saves. New in Vim 7.3
