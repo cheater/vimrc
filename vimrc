@@ -1122,7 +1122,7 @@ call vam#ActivateAddons(['gtags'])
 " TODO: put this in a vim plugin.
 au BufWinEnter * call QFBind()
 function! QFBind()
-    if &buftype=="quickfix"
+    if &buftype==#"quickfix"
         exec "nnoremap <silent> <buffer> q :ccl<CR>"
         exec "nnoremap <silent> <buffer> t <C-W><CR><C-W>T"
         exec "nnoremap <silent> <buffer> T <C-W><CR><C-W>TgT<C-W><C-W>"
