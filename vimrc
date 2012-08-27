@@ -59,7 +59,7 @@ if exists('+undodir')      " set undodir stuff, which saves the undo history in 
   setlocal undodir=~/.vim/undodir
   setlocal undofile
   setlocal undoreload=10000 " maximum number lines to save for undo on a buffer reload
-endif
+  endif
 set      nomodeline
 set      modelines=0       " no remote code execution, thank you
 setlocal shiftround        " round alignment to nearest indent when shifting
@@ -317,7 +317,7 @@ if exists('+colorcolumn') && !exists('g:pager_mode')
 else
   "au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
   "autocmd BufRead,BufNewFile *.bash,*.php,*.ihtml,*.txt,*.py,*.cgi :LongLinesShow
-endif
+  endif
 
 " Show the Syntax Highlight Groups
 command HighlightTest source $VIMRUNTIME/syntax/hitest.vim
@@ -412,11 +412,11 @@ setlocal backupdir=~/tmp/vim-backup  " but don't clutter $PWD with them
 if $USER ==# "root"
   " 'sudo vi' on certain machines cannot write to ~/tmp (NFS root-squash)
   setlocal backupdir=/root/tmp/vim-backup
-endif
+  endif
 if !isdirectory(&backupdir)
   " create the backup directory if it doesn't already exist
   exec "silent !mkdir -p " . &backupdir
-endif
+  endif
 
 " Persistent undo (vim 7.3+)
 if has("persistent_undo")
