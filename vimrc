@@ -214,6 +214,20 @@ autocmd FileType sh
 \        cinwords=elif,else,for,if,while,then,else,fi,until,do,done
 \   |inoremap <expr> # HashCommentBind()
 
+autocmd FileType awk
+\    syntax on
+\   |setlocal
+\        syntax=awk
+\        smartindent
+\        fileformat=unix
+\        encoding=utf-8
+\        tabstop=8
+\        shiftwidth=4
+\        smarttab
+\        expandtab
+\        softtabstop=4
+\        autoindent
+
 autocmd BufRead,BufNewFile *.py
 \    setlocal filetype=python
 
