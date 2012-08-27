@@ -312,7 +312,7 @@ autocmd FileType text
 command LongLinesShow let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
 command LongLinesHide call matchdelete(w:m2)
 
-if exists('+colorcolumn')
+if exists('+colorcolumn') && !exists('g:pager_mode')
   set colorcolumn=79
 else
   "au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
@@ -835,7 +835,9 @@ call vam#ActivateAddons(['gitv']) " like gitk, but in vim. Really cool. Does
 " this exist for mercurial?
 call vam#ActivateAddons(['todotxt']) " syntax file for [todo|TODO][.txt|]
 call vam#ActivateAddons(['rainbow_parentheses']) " :RainbowParenthesesToggle
-call vam#ActivateAddons(['bad-whitespace']) " highlight bad whitespace
+if !exists('g:pager_mode')
+  call vam#ActivateAddons(['bad-whitespace']) " highlight bad whitespace
+  endif
 call vam#ActivateAddons(['quickfixstatus']) " :QuickfixStatusEnable and Disable
 call vam#ActivateAddons(['git:git://github.com/fs111/pydoc.vim.git'])
 " K support for python and other goodies
