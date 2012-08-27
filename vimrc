@@ -1135,3 +1135,5 @@ function! QFBind()
         exec "nnoremap <silent> <buffer> gv <C-W><C-W><C-W>v<C-L><C-W><C-J><CR><C-W><C-J>"
         endif
     endfunction
+
+call vam#ActivateAddons(['AnsiEsc']) " :AnsiEsc to interpret ANSI color etc
