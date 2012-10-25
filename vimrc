@@ -1091,6 +1091,14 @@ call vam#ActivateAddons(['Shortcut_functions_for_KeepCase_script_'])
 " Also included is the SS(pat,sub) function which uses KeepCaseSameLen for the
 " substitutions instead of KeepCase.
 
+python << EOF
+import os
+# for the lid addon
+os.system(
+  "dpkg --get-selections id-utils | grep '\Winstall$' > /dev/null "
+  "|| sudo aptitude install id-utils"
+  )
+EOF
 call vam#ActivateAddons(['lid']) " :Lid, :Lid searchstring. :Lid -p or -v for
 " pattern based filtering/rejection of lid output. You need to install lid for
 " this to work: aptitude install id-utils; then you need to invoke mkid at the
