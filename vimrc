@@ -1111,6 +1111,14 @@ call vam#ActivateAddons(['lid']) " :Lid, :Lid searchstring. :Lid -p or -v for
 " FIXME: try to extract the cool quickfix stuff from ack.vim and try to put it
 " in this plugin.
 
+python << EOF
+import os
+# for the ack addon
+os.system(
+  "dpkg --get-selections ack-grep | grep '\Winstall$' > /dev/null "
+  "|| sudo aptitude install ack-grep"
+  )
+EOF
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 call vam#ActivateAddons(['git:git://github.com/mileszs/ack.vim.git'])
 " You can use :Ack, :AckAdd for quickfix, :LAck, :LAckAdd for location-list,
