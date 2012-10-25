@@ -1133,6 +1133,14 @@ call vam#ActivateAddons(['git:git://github.com/mileszs/ack.vim.git'])
 " FIXME: fix the error which happens when two instances try to display the
 " same file (is this even fixable?)
 
+python << EOF
+import os
+# GNU global, for the gtags addon
+os.system(
+  "dpkg --get-selections global | grep '\Winstall$' > /dev/null "
+  "|| sudo aptitude install global"
+  )
+EOF
 call vam#ActivateAddons(['gtags'])
 " alternatively you can use this to get popups instead of the location list:
 " call vam#ActivateAddons(['gtags_multiwindow_browsing'])
