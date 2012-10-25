@@ -913,9 +913,9 @@ call vam#ActivateAddons(['Dpaste.com_Plugin']) " Dpaste.com client
 call vam#ActivateAddons(['lodgeit']) " :Lodgeit (paste.pocoo.org)
 call vam#ActivateAddons(['Gist']) " :Gist
 
-"call vam#ActivateAddons(['hg:https://bitbucket.org/sjl/gundo.vim'])
+call vam#ActivateAddons(['hg:https://bitbucket.org/sjl/gundo.vim'])
 " :Gundo - displays undo tree. Unfortunately, Gundo requires Vim 7.3.
-"call vam#ActivateAddons(['git:git://github.com/chrisbra/histwin.vim.git'])
+call vam#ActivateAddons(['git:git://github.com/chrisbra/histwin.vim.git'])
 " :histwin - displays undo tree. Requires Vim 7.3 just like Gundo.
 
 python << EOF
