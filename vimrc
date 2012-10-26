@@ -990,6 +990,15 @@ call vam#ActivateAddons(['git:git://github.com/cheater/pyflakes-vim.git'])
 " automatically puts pyflakes errors in the quickfix list, and updates them as
 " you edit.
 
+let g:syntastic_enable_signs=1
+let g:syntastic_mode_map = {
+  \'mode':'active', 'active_filetypes':[], 'passive_filetypes':[]
+  \}
+call vam#ActivateAddons(['Syntastic'])
+" automatically puts syntax-checker (lint, pyflakes, etc) errors in the
+" location list, and updates them when you save. Use :lw to open the location
+" list window.
+
 call vam#ActivateAddons(['matrix%1189']) " :Matrix for cool 'screensaver'
 "call vam#ActivateAddons(['AutoClose%1849']) " auto-closes brackets, parens, etc
 call vam#ActivateAddons(['delimitMate']) " first impression: delimitMate is
