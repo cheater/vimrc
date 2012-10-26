@@ -1001,12 +1001,14 @@ except ImportError:
 
 EOF
 
-let g:pyflakes_use_quickfix = 0
-command PyflakesQuickfixOn  let g:pyflakes_use_quickfix = 1
-command PyflakesQuickfixOff let g:pyflakes_use_quickfix = 0
-call vam#ActivateAddons(['git:git://github.com/cheater/pyflakes-vim.git'])
-" automatically puts pyflakes errors in the quickfix list, and updates them as
-" you edit.
+if 0 " not using pyflakes anymore. It's still here in case I change my mind.
+  let g:pyflakes_use_quickfix = 0
+  command PyflakesQuickfixOn  let g:pyflakes_use_quickfix = 1
+  command PyflakesQuickfixOff let g:pyflakes_use_quickfix = 0
+  call vam#ActivateAddons(['git:git://github.com/cheater/pyflakes-vim.git'])
+  " automatically puts pyflakes errors in the quickfix list, and updates them
+  " as you edit.
+  endif
 
 python << EOF
 import os
