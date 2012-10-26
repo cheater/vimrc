@@ -26,7 +26,7 @@
 "
 " Main changes to how normal Vim operates:
 " - s and c are swapped
-" - c is used for surround.vim, it is like what surround.vim normally uses s for
+" - c is used for surround.vim, it is like surround.vim's s command
 " - you enter command mode with ; instead of :
 " - repeat-quick-move is : instead of ;
 " - <F3> and <F4> scroll through tabs, <S-F3> and <S-F4> move them
@@ -40,10 +40,6 @@ setlocal
 "\    cindent
 syntax enable
 setlocal bg=dark
-
-
-":colorscheme railscasts
-
 " Note: you can't use prepend-\ line continuations after "comments, or
 " the continuation will also be seen as a comment!
 
@@ -56,11 +52,11 @@ setlocal binary            " show control characters (ignore 'fileformat')
 setlocal timeoutlen=100    " let me enter edit mode right after exiting it
                            " FIXME: stop using esc to exit modes altogether?
 setlocal undolevels=1000   " maximum number of changes that can be undone
-if exists('+undodir')      " set undodir stuff, which saves the undo history in an
-                           " external file, across saves. New in Vim 7.3
+if exists('+undodir')      " set undodir stuff, which saves the undo history
+                           " in an external file, across saves. New in Vim 7.3
   setlocal undodir=~/.vim/undodir
   setlocal undofile
-  setlocal undoreload=10000 " maximum number lines to save for undo on a buffer reload
+  setlocal undoreload=10000 " max lines to save for undo on buffer reload
   endif
 set      nomodeline
 set      modelines=0       " no remote code execution, thank you
@@ -69,7 +65,7 @@ setlocal shiftround        " round alignment to nearest indent when shifting
 setlocal formatoptions+=r  " continue comment on next line
 setlocal formatoptions+=2  " continue indent from second line of paragraph,
                            " not first
-setlocal nojoinspaces      " no double spaces after . when joining lines with J
+setlocal nojoinspaces      " no double space after . when joining lines with J
 setlocal incsearch         " incremental search
 setlocal ignorecase        " ignore case when searching (see smartcase)
 setlocal smartcase         " do not ignore case if pattern has mixed case
@@ -79,40 +75,38 @@ setlocal matchtime=1       " show matching brackets quicker than default
 setlocal hidden            " so that you don't save when doing g] in ctags
 setlocal noautowrite       " don't save buffers when abandoning (going out of)
                            " them, e.g. with g]
-setlocal switchbuf=useopen " prefer already open windows when switching buffers
+setlocal switchbuf=useopen " prefer already open windows when switching buffer
 
 setlocal t_Co=256          " Much more beautiful than the standard of using
-                           " just 8 colors! You can do:
-                           "
-                           " :so $VIMRUNTIME/syntax/hitest.vim
-                           " ^ in order to see all the highlight groups that you
-                           " can access. Called :HighlightTest in this vimrc.
-                           " Additionally, you can do :ColorTest to just see
-                           " all the supported colors.
-                           "
-                           " Then, you can also do things such as:
-                           " :mat DiffAdd /[^=<>]=[^=]/
-                           " ^ to show all assignments
-                           "
-                           " :2mat SpellLocal /\<some_word\>/
-                           " ^ to search for some_word
-                           "
-                           " :call matchadd("DiffText", "\\<word\\>")
-                           " ^ to match another word, if you need more
-                           " highlight groups. you can do matchadd() over and
-                           " over for infinite groups! then do
-                           "
-                           " :call matchlist()
-                           " ^ to see a list of matches
-                           "
-                           " :call matchdelete(7)
-                           " ^ to delete the 7th match group
-                           "
-                           " :call clearmatches()
-                           " ^ to clear all matches.
-                           "
-                           " Note: don't use :3mat, that's pretty much
-                           " reserved for highlighting matching parentheses.
+" just 8 colors! You can do:
+"
+" :so $VIMRUNTIME/syntax/hitest.vim
+" ^ in order to see all the highlight groups that you you can access. You can
+" just use :HighlightTest with this vimrc.
+" Additionally, you can do :ColorTest to just see all the supported colors.
+"
+" Then, you can also do things such as:
+" :mat DiffAdd /[^=<>]=[^=]/
+" ^ to show all assignments
+"
+" :2mat SpellLocal /\<some_word\>/
+" ^ to search for some_word
+"
+" :call matchadd("DiffText", "\\<word\\>")
+" ^ to match another word, if you need more highlight groups. you can do
+" matchadd() over and over for infinite groups! then do
+"
+" :call matchlist()
+" ^ to see a list of matches
+"
+" :call matchdelete(7)
+" ^ to delete the 7th match group
+"
+" :call clearmatches()
+" ^ to clear all matches.
+"
+" Note: don't use :3mat, that's pretty much
+" reserved for highlighting matching parentheses.
 
 setlocal laststatus=2      " always show status.
 set title             " show the title!
@@ -135,23 +129,23 @@ if has("linebreak")
   " see :help :let-&
   endif
 setlocal list                   " show chars using listchars.
-setlocal listchars=             " but don't use the default of showing newlines
-                                " with $.
-"FIXME: build listchars with += instead setting it just like that. I do this
-"because listchars seems to be cast to a string somehow, so you can't use +=
-"anymore. Figure out how to keep it in the correct data type instead of making
-"it a string.
+setlocal listchars=             " but don't use the default of showing
+                                " newlines with $.
+" FIXME: build listchars with += instead setting it just like that. I do this
+" because listchars seems to be cast to a string somehow, so you can't use +=
+" anymore. Figure out how to keep it in the correct data type instead of
+" making it a string.
 let &l:listchars='tab:'.nr2char(9656).' ,nbsp:'.nr2char(183)
 " ^ Don't use the default of showing newlines with $; make tabs show up;
 " middle dot for non-breaking spaces.
-"setlocal listchars+=eol:¬ " XXX: you can't use this directly because it'll
-"mess up; you need to find the number of the character with the ga command and
-"then use nr2char(). see :help :let-&
+" setlocal listchars+=eol:¬ " XXX: you can't use this directly because it'll
+" mess up; you need to find the number of the character with the ga command
+" and then use nr2char(). see :help :let-&
 
 function! HashCommentBind()
-    " this function inserts a space after a hash (#) character opening a
-    " comment, but not on the first line (so that it doesn't interrupt with
-    " typing shebangs). You could customize this for file types and have it
+    " This function inserts a space after a hash (#) character opening a
+    " comment, but not on the first line, so that it doesn't interrupt with
+    " typing shebangs. You could customize this for file types and have it
     " type the whole shebang on line 1, for example '#!/usr/bin/env python'.
     if line(".") == 1
         return "#"
@@ -318,7 +312,7 @@ autocmd FileType text
 \           softtabstop=4
 \       | endif
 
-" the pipes above are necessary because, the way vim sees things, the whole
+" The pipes above are necessary because, the way Vim sees things, the whole
 " autocommand is one big line. You can have if clauses in one line, but you
 " need to separate the parts with the pipe.
 
@@ -331,8 +325,8 @@ command LongLinesHide call matchdelete(w:m2)
 if exists('+colorcolumn') && !exists('g:pager_mode')
   set colorcolumn=79
 else
-  "au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
-  "autocmd BufRead,BufNewFile *.bash,*.php,*.ihtml,*.txt,*.py,*.cgi :LongLinesShow
+  " au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
+  " autocmd BufRead,BufNewFile *.bash,*.php,*.ihtml,*.txt,*.py,*.cgi :LongLinesShow
   endif
 
 " Show the Syntax Highlight Groups
@@ -443,7 +437,6 @@ if has("persistent_undo")
     exec "silent !mkdir -p " . &undodir
     endif
   endif
-
 
 " Various stuff:
 setlocal hidden             " side effect: undo list is not lost on C-^
@@ -905,15 +898,14 @@ nmap yCC <Plug>YSsurround
 xmap C   <Plug>VSurround
 xmap gC  <Plug>VgSurround
 
-
 call vam#ActivateAddons(['Conque_Shell']) " :ConqueTerm
 call vam#ActivateAddons(['SrcExpl']) " :SrcExplToggle
 " FIXME: temporarily disabled YankRing. See if that helps with the corruption,
 " and if it does, then remove it permanently.
-" call vam#ActivateAddons(['YankRing']) \" you can do \"2p (without the backslash)
-" to paste the 2nd to last content of the " buffer, 3 for 3rd, up to 9. Note
-" that there is some bug which I hadn't yet looked into which means yy does
-" not add stuff to the yank ring, whereas dd does.
+" call vam#ActivateAddons(['YankRing']) \" you can do \"2p (without the
+" backslash) to paste the 2nd to last content of the " buffer, 3 for 3rd, up
+" to 9. Note that there is some bug which I hadn't yet looked into which means
+" yy does not add stuff to the yank ring, whereas dd does.
 call vam#ActivateAddons(['git:git://github.com/tpope/vim-repeat.git'])
 " allows you to use . to repeat plugin commands which don't work otherwise.
 " E.g. for surround.vim and speed dating.
@@ -1030,7 +1022,7 @@ call vam#ActivateAddons(['Syntastic'])
 " list window.
 
 call vam#ActivateAddons(['matrix%1189']) " :Matrix for cool 'screensaver'
-"call vam#ActivateAddons(['AutoClose%1849']) " auto-closes brackets, parens, etc
+"call vam#ActivateAddons(['AutoClose%1849']) " auto-closes parentheses etc
 call vam#ActivateAddons(['delimitMate']) " first impression: delimitMate is
 " better than AutoClose%1849.
 " FIXME: if you are on top of a ) and type ) then delimitMate doesn't type it,
@@ -1038,21 +1030,20 @@ call vam#ActivateAddons(['delimitMate']) " first impression: delimitMate is
 " delimitMate (meaning, it was there before).
 call vam#ActivateAddons(['sokoban']) " sokoban. Note that the installation
 " with vam does not work currently, and you might need to go to
-" .vim/vim-addons/sokoban, create a subdir called plugin, and move the .vim and
-" .sok files in there. FIXME
+" .vim/vim-addons/sokoban, create a subdir called plugin, and move the .vim
+" and .sok files in there. FIXME
 let g:pythonhelper_updatetime = 20
 call vam#ActivateAddons(['git:git://github.com/cheater/pythonhelper.git'])
 "call vam#ActivateAddons(['pythonhelper'])
 " displays the class and function name the cursor is currently on.
 " FIXME: breaks on multiline comments that reduce indent level.
 
-" the following two status lines that are commented out were ripped off someone
-" else... :)
+" the following two status lines that are commented out were ripped off
+" someone else... :)
 " set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 " set statusline=%<%f%y\ \ %h%m%r%=%-14.(%l/%L,%c%V%)\ %P
-" set statusline=%-f%r\ %2*%m%*\ \ \ \ %1*%{TagInStatusLine()}%*%=[%l:%c]\ \ \ \
-" [buf\ %n]
-"
+" set statusline=%-f%r\ %2*%m%*\ \ \ \ %1*%{TagInStatusLine()}%*%=[%l:%c]
+" \ \ \ \ [buf\ %n]
 
 function TagInStatusLine2()
   let s:tag = TagInStatusLineTag()
@@ -1064,8 +1055,8 @@ function TagInStatusLine2()
   endfunction
 set statusline=\ %n\ %f\ %<[%M%Y%R]%h%w\ %<%{TagInStatusLine2()}%=\ [L%l\ C%v\ %p%%]
 
-call vam#ActivateAddons(['renamer']) " rename files editing their names in vim,
-" use :Renamer and then :Ren
+call vam#ActivateAddons(['renamer']) " rename files editing their names in
+" vim, use :Renamer and then :Ren
 
 set showfulltag " display the full tag in the completion menu.
 call vam#ActivateAddons(['AutoTag']) " update ctags on file save
@@ -1091,7 +1082,8 @@ map e <Plug>(smartword-e)
 map ge <Plug>(smartword-ge)
 
 call vam#ActivateAddons(['CmdlineComplete']) " press ^N/^P in command line or
-" search mode. Doesn't work well in search but works well in command mode. FIXME
+" search mode. Doesn't work well in search but works well in command mode.
+" ^ FIXME
 call vam#ActivateAddons(['Cabal']) " Haskell .cabal file syntax definition
 autocmd BufRead,BufNewFile *.cabal
 \   setlocal filetype=cabal
