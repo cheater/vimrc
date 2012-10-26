@@ -934,7 +934,7 @@ call vam#ActivateAddons(['hg:https://bitbucket.org/sjl/gundo.vim'])
 call vam#ActivateAddons(['git:git://github.com/chrisbra/histwin.vim.git'])
 " :histwin - displays undo tree. Requires Vim 7.3 just like Gundo.
 
-call EnsureSystemPackage("tidy") " installs the xhtml linter for use with Syntastic
+call EnsureSystemPackage("tidy") " install xhtml linter for Syntastic
 
 python << EOF
 """ This install flake8, for use with Syntastic. """
@@ -1016,7 +1016,8 @@ if 0 " not using pyflakes anymore. It's still here in case I change my mind.
   " as you edit.
   endif
 
-call EnsureSystemPackage("ghc-mod") " Install ghc-mod, a linter/checker for Haskell. Yes, this does pull in Emacs as a dependency. For use with Syntastic.
+call EnsureSystemPackage("ghc-mod") " Install ghc-mod, a linter/checker for
+" Haskell. Yes, it does pull in Emacs as a dependency. For use with Syntastic.
 
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
