@@ -922,6 +922,24 @@ call vam#ActivateAddons(['git:git://github.com/chrisbra/histwin.vim.git'])
 " :histwin - displays undo tree. Requires Vim 7.3 just like Gundo.
 
 python << EOF
+import os
+# installs the xhtml linter for use with Syntastic
+os.system(
+  "dpkg --get-selections tidy | grep '\Winstall$' > /dev/null "
+  "|| sudo aptitude install tidy"
+  )
+EOF
+
+python << EOF
+""" This install flake8, for use with Syntastic. """
+try:
+  import flake8
+except ImportError:
+  import os
+  os.system("sudo pip install flake8")
+EOF
+
+python << EOF
 """ This will install pyflakes. It uses a special fork which is from the
     author of pyflakes.vim and according to him is better because it retains
     line number info.
@@ -989,6 +1007,15 @@ command PyflakesQuickfixOff let g:pyflakes_use_quickfix = 0
 call vam#ActivateAddons(['git:git://github.com/cheater/pyflakes-vim.git'])
 " automatically puts pyflakes errors in the quickfix list, and updates them as
 " you edit.
+python << EOF
+import os
+# The below installs ghc-mod, a linter/checker for Haskell. Yes, this does
+# pull in Emacs as a dependency. For use with Syntastic.
+os.system(
+  "dpkg --get-selections ghc-mod | grep '\Winstall$' > /dev/null "
+  "|| sudo aptitude install ghc-mod"
+  )
+EOF
 
 let g:syntastic_enable_signs=1
 let g:syntastic_mode_map = {
