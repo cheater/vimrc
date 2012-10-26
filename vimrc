@@ -837,6 +837,19 @@ call SetupVAM()
 
 " -------------- end automatic vim-addon-manager setup.
 
+" I will need to install some system packages for supporting some of the
+" addons. Let me fetch them once to speed up processing.
+let g:installed_system_packages="\n".system(
+  \"dpkg --get-selections | awk '/\\Winstall$/{print $1}'"
+  \)
+function! EnsureSystemPackage(pkg)
+  " this function will install the package if it's not installed yet. Uses
+  " the variable g:installed_system_packages from above.
+  if -1 == stridx(g:installed_system_packages, "\n".a:pkg."\n")
+    execute "!sudo aptitude install ".a:pkg
+    endif
+  endfunction
+
 " Install some addons using VAM.
 
 call vam#ActivateAddons(['Indent_Guides']) " lets you use :IndentGuidesToggle
@@ -921,14 +934,7 @@ call vam#ActivateAddons(['hg:https://bitbucket.org/sjl/gundo.vim'])
 call vam#ActivateAddons(['git:git://github.com/chrisbra/histwin.vim.git'])
 " :histwin - displays undo tree. Requires Vim 7.3 just like Gundo.
 
-python << EOF
-import os
-# installs the xhtml linter for use with Syntastic
-os.system(
-  "dpkg --get-selections tidy | grep '\Winstall$' > /dev/null "
-  "|| sudo aptitude install tidy"
-  )
-EOF
+call EnsureSystemPackage("tidy") " installs the xhtml linter for use with Syntastic
 
 python << EOF
 """ This install flake8, for use with Syntastic. """
@@ -1010,15 +1016,7 @@ if 0 " not using pyflakes anymore. It's still here in case I change my mind.
   " as you edit.
   endif
 
-python << EOF
-import os
-# The below installs ghc-mod, a linter/checker for Haskell. Yes, this does
-# pull in Emacs as a dependency. For use with Syntastic.
-os.system(
-  "dpkg --get-selections ghc-mod | grep '\Winstall$' > /dev/null "
-  "|| sudo aptitude install ghc-mod"
-  )
-EOF
+call EnsureSystemPackage("ghc-mod") " Install ghc-mod, a linter/checker for Haskell. Yes, this does pull in Emacs as a dependency. For use with Syntastic.
 
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
@@ -1143,14 +1141,7 @@ call vam#ActivateAddons(['Shortcut_functions_for_KeepCase_script_'])
 " Also included is the SS(pat,sub) function which uses KeepCaseSameLen for the
 " substitutions instead of KeepCase.
 
-python << EOF
-import os
-# for the lid addon
-os.system(
-  "dpkg --get-selections id-utils | grep '\Winstall$' > /dev/null "
-  "|| sudo aptitude install id-utils"
-  )
-EOF
+call EnsureSystemPackage("id-utils") " for the lid addon
 call vam#ActivateAddons(['lid']) " :Lid, :Lid searchstring. :Lid -p or -v for
 " pattern based filtering/rejection of lid output. You need to install lid for
 " this to work: aptitude install id-utils; then you need to invoke mkid at the
@@ -1163,14 +1154,7 @@ call vam#ActivateAddons(['lid']) " :Lid, :Lid searchstring. :Lid -p or -v for
 " FIXME: try to extract the cool quickfix stuff from ack.vim and try to put it
 " in this plugin.
 
-python << EOF
-import os
-# for the ack addon
-os.system(
-  "dpkg --get-selections ack-grep | grep '\Winstall$' > /dev/null "
-  "|| sudo aptitude install ack-grep"
-  )
-EOF
+call EnsureSystemPackage("ack-grep") " for the ack addon
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 call vam#ActivateAddons(['git:git://github.com/mileszs/ack.vim.git'])
 " You can use :Ack, :AckAdd for quickfix, :LAck, :LAckAdd for location-list,
@@ -1185,14 +1169,7 @@ call vam#ActivateAddons(['git:git://github.com/mileszs/ack.vim.git'])
 " FIXME: fix the error which happens when two instances try to display the
 " same file (is this even fixable?)
 
-python << EOF
-import os
-# GNU global, for the gtags addon
-os.system(
-  "dpkg --get-selections global | grep '\Winstall$' > /dev/null "
-  "|| sudo aptitude install global"
-  )
-EOF
+call EnsureSystemPackage("global") " GNU global, for the gtags addon
 call vam#ActivateAddons(['gtags'])
 " alternatively you can use this to get popups instead of the location list:
 " call vam#ActivateAddons(['gtags_multiwindow_browsing'])
