@@ -937,7 +937,7 @@ call vam#ActivateAddons(['git:git://github.com/chrisbra/histwin.vim.git'])
 call EnsureSystemPackage("tidy") " install xhtml linter for Syntastic
 
 python << EOF
-""" This install flake8, for use with Syntastic. """
+""" This installs flake8, for use with Syntastic. """
 try:
   import flake8
 except ImportError:
