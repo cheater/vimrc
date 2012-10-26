@@ -435,7 +435,7 @@ if !isdirectory(&backupdir)
   exec "silent !mkdir -p " . &backupdir
   endif
 
-" Persistent undo (vim 7.3+)
+" Persistent undo (Vim 7.3+)
 if has("persistent_undo")
   setlocal undofile                     " enable persistent undo
   let &undodir=&backupdir . "/.vimundo" " but don't clutter $PWD
@@ -862,7 +862,7 @@ call vam#ActivateAddons(['MatchTag']) " Highlights matching html tag
 call vam#ActivateAddons(['matchit.zip']) " lets % match html tags etc
 call vam#ActivateAddons(['sparkup'])
 call vam#ActivateAddons(['fugitive']) " apparently needed for gitv
-call vam#ActivateAddons(['gitv']) " like gitk, but in vim. Really cool. Does
+call vam#ActivateAddons(['gitv']) " like gitk, but in Vim. Really cool. Does
 " this exist for mercurial?
 call vam#ActivateAddons(['todotxt']) " syntax file for [todo|TODO][.txt|]
 call vam#ActivateAddons(['rainbow_parentheses']) " :RainbowParenthesesToggle
@@ -874,7 +874,7 @@ call vam#ActivateAddons(['git:git://github.com/fs111/pydoc.vim.git'])
 " K support for python and other goodies
 
 " the surround plugin. We also make it use c and C for any surround-related
-" stuff; and we make vim's s into what normally is done with c in vanilla Vim.
+" stuff; and we make Vim's s into what normally is done with c in vanilla Vim.
 " Rationale:
 " 1. c can do everything s can: with the new mapping press ss for what used to
 " be done with S; press sl for what used to be done with s; press S for what
@@ -921,7 +921,7 @@ call vam#ActivateAddons(['git:git://github.com/tpope/vim-markdown.git'])
 call vam#ActivateAddons(['git:git://github.com/tpope/vim-speeddating.git'])
 " use C-a/C-x to increment and decrement dates. Smart about leap years etc.
 call vam#ActivateAddons(['git:git://github.com/tpope/vim-pastie.git'])
-" vim interface for pastie.org; use :Pastie to paste all files or a range,
+" Vim interface for pastie.org; use :Pastie to paste all files or a range,
 " :%Pastie to paste the current file. Ranges are allowed
 call vam#ActivateAddons(['paster']) " configurable pastebin client
 call vam#ActivateAddons(['Dpaste.com_Plugin']) " Dpaste.com client
@@ -1063,7 +1063,7 @@ function TagInStatusLine2()
 set statusline=\ %n\ %f\ %<[%M%Y%R]%h%w\ %<%{TagInStatusLine2()}%=\ [L%l\ C%v\ %p%%]
 
 call vam#ActivateAddons(['renamer']) " rename files editing their names in
-" vim, use :Renamer and then :Ren
+" Vim, use :Renamer and then :Ren
 
 set showfulltag " display the full tag in the completion menu.
 call vam#ActivateAddons(['AutoTag']) " update ctags on file save
@@ -1165,7 +1165,7 @@ call vam#ActivateAddons(['git:git://github.com/mileszs/ack.vim.git'])
 " FIXME: add a variable to explicitly turn on the quickfix bindings.
 " FIXME: remove the 'silent' from 'silent execute' which messes up the gui
 " during search results that open a file being edited by another instance of
-" vim
+" Vim
 " FIXME: fix the error which happens when two instances try to display the
 " same file (is this even fixable?)
 
@@ -1190,7 +1190,7 @@ call vam#ActivateAddons(['gtags'])
 " the packaged version is very old and crashy.
 
 " some bindings for the quickfix and location list windows
-" TODO: put this in a vim plugin.
+" TODO: put this in a Vim plugin.
 au BufWinEnter * call QFBind()
 function! QFBind()
     if &buftype==#"quickfix"
