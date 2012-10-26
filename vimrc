@@ -1028,6 +1028,7 @@ set statusline=\ %n\ %f\ %<[%M%Y%R]%h%w\ %<%{TagInStatusLine2()}%=\ [L%l\ C%v\ %
 call vam#ActivateAddons(['renamer']) " rename files editing their names in vim,
 " use :Renamer and then :Ren
 
+set showfulltag " display the full tag in the completion menu.
 call vam#ActivateAddons(['AutoTag']) " update ctags on file save
 call vam#ActivateAddons(['SourceCodeObedience'])
 " create tags and cscope.out in your project root, and in the dir where they
