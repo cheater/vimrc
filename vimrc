@@ -50,6 +50,8 @@ setlocal bg=dark
 filetype plugin on         " load ftplugin.vim
 setlocal history=1000      " number of commands and search patterns to save
 setlocal showcmd           " show the command in the lower right corner
+setlocal wildmode=full     " default
+setlocal wildmenu          " displays a menu of the completions you go through
 setlocal binary            " show control characters (ignore 'fileformat')
 setlocal timeoutlen=100    " let me enter edit mode right after exiting it
                            " FIXME: stop using esc to exit modes altogether?
