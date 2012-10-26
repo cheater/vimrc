@@ -1044,6 +1044,12 @@ call vam#ActivateAddons(['opsplorer']) " :Opsplore
 call vam#ActivateAddons(['browser%2227']) " :Google, :Wikipedia, :WebBrowser
 call vam#ActivateAddons(['camelcasemotion']) " now you can do ci,w and ci,b
 " for CamelCase and snake_case names.
+call vam#ActivateAddons(['smartword']) " better word movements.
+map w <Plug>(smartword-w)
+map b <Plug>(smartword-b)
+map e <Plug>(smartword-e)
+map ge <Plug>(smartword-ge)
+
 call vam#ActivateAddons(['CmdlineComplete']) " press ^N/^P in command line or
 " search mode. Doesn't work well in search but works well in command mode. FIXME
 call vam#ActivateAddons(['Cabal']) " Haskell .cabal file syntax definition
