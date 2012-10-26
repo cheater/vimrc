@@ -942,7 +942,7 @@ EOF
 python << EOF
 """ This will install pyflakes. It uses a special fork which is from the
     author of pyflakes.vim and according to him is better because it retains
-    line number info.
+    line number info. This is for use with Syntastic and the pyflakes addon.
     """
 try:
   import pyflakes
