@@ -217,6 +217,13 @@ Debugging startup time: you can do this: vim +q --startuptime ~/tmp/startuptime.
 it will make a log of what happens during startup and how long it takes.
 
 
+Ripped from Zesty:
+" The following beast is something i didn't write... it will return the 
+" syntax highlighting group that the current "thing" under the cursor
+" belongs to -- very useful for figuring out what to change as far as 
+" syntax highlighting goes.
+nmap <silent> ,qq :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
 ----------------- Useful plugins:
 ----------------- Note, the below plugins are pasted in with their sales pitch;
 ----------------- only a few of the comments are my own opinion. Use your best
