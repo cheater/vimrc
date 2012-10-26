@@ -155,17 +155,18 @@ function! HashCommentBind()
     endfunction
 
 autocmd FileType *
-\    setlocal
+\   setlocal
 \        tabstop=8
 \        shiftwidth=4
 \        noexpandtab
 
 autocmd BufRead,BufNewFile *.jsm
 \   setlocal filetype=javascript
+autocmd FileType javascript
+\   LongLinesShow
 
 autocmd BufRead,BufNewFile *.md
 \   setlocal filetype=markdown
-
 autocmd FileType markdown
 \   setlocal syntax=markdown
 \        fileformat=unix
@@ -175,10 +176,10 @@ autocmd FileType markdown
 \        smarttab
 \        softtabstop=4
 \        noshiftround
+\   |LongLinesShow
 
 autocmd BufRead,BufNewFile *.clj,*.cljs
 \   setlocal filetype=lisp
-
 autocmd FileType lisp
 \   setlocal syntax=lisp
 \        fileformat=unix
@@ -190,10 +191,10 @@ autocmd FileType lisp
 \        softtabstop=4
 \        noshiftround
 \        autoindent
+\   |LongLinesShow
 
 autocmd BufRead,BufNewFile *.sh,*.bash
 \       setlocal filetype=sh
-
 autocmd FileType sh
 \    syntax on
 \   |setlocal
@@ -209,6 +210,7 @@ autocmd FileType sh
 \        autoindent
 \        cinwords=elif,else,for,if,while,then,else,fi,until,do,done
 \   |inoremap <expr> # HashCommentBind()
+\   |LongLinesShow
 
 autocmd FileType awk
 \    syntax on
@@ -223,10 +225,10 @@ autocmd FileType awk
 \        expandtab
 \        softtabstop=4
 \        autoindent
+\   |LongLinesShow
 
 autocmd BufRead,BufNewFile *.py
 \    setlocal filetype=python
-
 autocmd FileType python
 \    syntax on
 \   |setlocal
@@ -245,18 +247,18 @@ autocmd FileType python
 \   |match BadWhitespace /^\t\+/
 \   |let python_highlight_all=1
 \   |inoremap <expr> # HashCommentBind()
-"consider using cindent instead of smartindent.
-autocmd FileType python :LongLinesShow
-
-" Python tracebacks (unittest + doctest output)
-setlocal errorformat&
-setlocal errorformat+=
+\   |LongLinesShow
+\   |setlocal errorformat&
+\   |setlocal errorformat+=
             \File\ \"%f\"\\,\ line\ %l%.%#,
             \%C\ %.%#,
             \%-A\ \ File\ \"unittest%.py\"\\,\ line\ %.%#,
             \%-A\ \ File\ \"%f\"\\,\ line\ 0%.%#,
             \%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,
             \%Z%[%^\ ]%\\@=%m
+" Python tracebacks (unittest + doctest output)
+
+" consider using cindent instead of smartindent.
 
 autocmd BufRead,BufNewFile *.hs
 \    setlocal filetype=haskell
@@ -277,11 +279,10 @@ autocmd FileType haskell
 \   |match BadWhitespace /^\t\+/
 \   |let python_highlight_all=1
 \   |inoremap <expr> # HashCommentBind()
-autocmd FileType haskell :LongLinesShow
+\   |LongLinesShow
 
 autocmd BufRead,BufNewFile *.php,*.ihtml
 \    setlocal filetype=php
-
 autocmd FileType php
 \    syntax on
 \   |setlocal
@@ -295,11 +296,10 @@ autocmd FileType php
 \        smarttab
 \        expandtab
 \        softtabstop=4
-"       \foldmethod=indent
+\   |LongLinesShow
 
 autocmd BufRead,BufNewFile *.txt
 \    setlocal filetype=text
-
 autocmd FileType text
 \    if &buftype!=#"help"
 \       | setlocal
@@ -322,11 +322,13 @@ autocmd FileType text
 command LongLinesShow let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
 command LongLinesHide call matchdelete(w:m2)
 
-if exists('+colorcolumn') && !exists('g:pager_mode')
-  set colorcolumn=79
-else
-  " au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
-  " autocmd BufRead,BufNewFile *.bash,*.php,*.ihtml,*.txt,*.py,*.cgi :LongLinesShow
+if !exists('g:pager_mode')
+  if exists('+colorcolumn')
+    set colorcolumn=80
+    highlight ColorColumn ctermbg=black guibg=black
+  else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
+    endif
   endif
 
 " Show the Syntax Highlight Groups
