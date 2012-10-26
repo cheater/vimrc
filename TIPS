@@ -346,6 +346,8 @@ Superior Haskell Interaction Mode (SHIM) : GHCi integration for VIM. Attempts
 to display a ghci with the current buffer loaded in a vim window. However
 typing into the interpreter doesn't work for me.
 
+scion: https://github.com/nominolo/scion#readme - Haskell IDE for vim
+
 VimPdb : a totally integrated environment which allows you to do breakpoint
 debugging in Vim with Pdb. Uses keyboard bindings which I don't like. Or use
 this for setting breakpoints: https://dev.launchpad.net/UltimateVimPythonSetup
