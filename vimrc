@@ -1007,6 +1007,7 @@ command PyflakesQuickfixOff let g:pyflakes_use_quickfix = 0
 call vam#ActivateAddons(['git:git://github.com/cheater/pyflakes-vim.git'])
 " automatically puts pyflakes errors in the quickfix list, and updates them as
 " you edit.
+
 python << EOF
 import os
 # The below installs ghc-mod, a linter/checker for Haskell. Yes, this does
