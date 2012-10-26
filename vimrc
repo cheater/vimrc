@@ -76,7 +76,7 @@ setlocal smartcase         " do not ignore case if pattern has mixed case
                            " (see ignorecase)
 setlocal showmatch         " show matching brackets by flickering cursor
 setlocal matchtime=1       " show matching brackets quicker than default
-setlocal hidden            " so that when doing g] in ctags you don't save out
+setlocal hidden            " so that you don't save when doing g] in ctags
 setlocal noautowrite       " don't save buffers when abandoning (going out of)
                            " them, e.g. with g]
 setlocal switchbuf=useopen " prefer already open windows when switching buffers
