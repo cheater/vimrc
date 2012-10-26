@@ -265,6 +265,9 @@ whole blocks of code and puts in placeholders for places where you want to type
 things; tab jumps to those placeholders. Demo can be found at
 http://files.myopera.com/mbbill/files/code_complete.gif
 
+xptemplate: wow, nice! enter a snippet/template into your code and then press
+tab to navigate the various places you can edit.
+
 Align : Help folks to align text, eqns, declarations, tables, etc -- really
 cool if you're into aligning multiple lines on equals signs, commas, and so on.
 
