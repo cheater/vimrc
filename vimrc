@@ -155,7 +155,8 @@ function! HashCommentBind()
     if line(".") == 1
         return "#"
     else
-        return "# "
+        return " # " " the ' ^H' is there so that the # doesn't get put in
+        " the first column.
         endif
     endfunction
 
