@@ -253,8 +253,8 @@ autocmd FileType python
 \   |let python_highlight_all=1
 \   |inoremap <expr> # HashCommentBind()
 \   |LongLinesShow
-\   |setlocal errorformat&
-\   |setlocal errorformat+=
+autocmd FileType python setlocal errorformat& " those two can't be joined above
+autocmd FileType python setlocal errorformat+=
             \File\ \"%f\"\\,\ line\ %l%.%#,
             \%C\ %.%#,
             \%-A\ \ File\ \"unittest%.py\"\\,\ line\ %.%#,
