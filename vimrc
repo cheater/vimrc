@@ -287,6 +287,26 @@ autocmd FileType haskell
 \   |inoremap <expr> # HashCommentBind()
 \   |LongLinesShow
 
+autocmd BufRead,BufNewFile *.cabal
+\    setlocal filetype=cabal
+autocmd FileType cabal
+\    syntax on
+\   |setlocal
+\        tabstop=8
+\        shiftwidth=2
+\        smarttab
+\        expandtab
+\        softtabstop=2
+\        autoindent
+\        syntax=cabal
+\        smartindent
+\        fileformat=unix
+\        encoding=utf-8
+\   |highlight BadWhitespace ctermbg=black guibg=black
+\   |match BadWhitespace /^\t\+/
+\   |inoremap <expr> # HashCommentBind()
+\   |LongLinesShow
+
 autocmd BufRead,BufNewFile *.php,*.ihtml
 \    setlocal filetype=php
 autocmd FileType php
@@ -1093,8 +1113,6 @@ call vam#ActivateAddons(['CmdlineComplete']) " press ^N/^P in command line or
 " search mode. Doesn't work well in search but works well in command mode.
 " ^ FIXME
 call vam#ActivateAddons(['Cabal']) " Haskell .cabal file syntax definition
-autocmd BufRead,BufNewFile *.cabal
-\   setlocal filetype=cabal
 call vam#ActivateAddons(['git:git://github.com/bogado/file-line.git'])
 " allows you to open file:line like from compiler or grep output
 " FIXME: messes up -p, -o, and -O.
