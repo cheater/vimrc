@@ -1225,6 +1225,10 @@ function! QFBind()
 
 call vam#ActivateAddons(['AnsiEsc']) " :AnsiEsc to interpret ANSI color etc
 
+" This uses djinn for automatically generating Haskell code from type
+" signatures. Move your cursor over the type sig and type :Djinn. See also the
+" <http://www.augustsson.net/Darcs/Djinn/examples> examples page for more info
+" on using Djinn.
 command! -range Djinn
 \    <line1>,<line2>!
 \      sed 's/::/?/g'
