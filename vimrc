@@ -1224,3 +1224,9 @@ function! QFBind()
     endfunction
 
 call vam#ActivateAddons(['AnsiEsc']) " :AnsiEsc to interpret ANSI color etc
+
+command! -range Djinn
+\    <line1>,<line2>!
+\      sed 's/::/?/g'
+\      | while read i; do djinn <(echo "$i"); done
+\      | grep -v -- "-- loading file /dev/fd"
