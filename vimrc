@@ -386,54 +386,6 @@ command EscToCapsLock !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 setlocal tags=./tags;,./TAGS;,tags;,TAGS; " Find tags directory by going
                                           " up from file and from cwd
 
-" Remove the <F1> help binding. I use <F1> and <F2> in my terminal emulator to
-" cycle tabs.
-nmap <F1> <nop>
-vmap <F1> <nop>
-imap <F1> <nop>
-
-" Cycle tabs in Vim:
-nmap <F3> ;tabprevious<CR>
-vmap <F3> ;tabprevious<CR>
-imap <F3> <C-o>;tabprevious<CR>
-nmap <F4> ;tabnext<CR>
-vmap <F4> ;tabnext<CR>
-imap <F4> <C-o>;tabnext<CR>
-
-" Move tabs in Vim:
-function MoveTabLeft()
-  " Moves the current tab to the left, wrapping around to the last tab if tab
-  " is currently the first one.
-  if tabpagenr() > 1
-    execute "tabmove ".(tabpagenr()-2)
-  elseif tabpagenr() == 1
-    execute "tabmove ".tabpagenr('$')
-    endif
-  endfunction
-command MoveTabLeft ;call MoveTabLeft()
-
-function MoveTabRight()
-  " Moves the current tab to the right, wrapping around to the first tab if
-  " tab is currently the last one.
-  if tabpagenr() < tabpagenr('$')
-    execute "tabmove ".(tabpagenr())
-  elseif tabpagenr() == tabpagenr('$')
-    execute "tabmove 0"
-    endif
-  endfunction
-command MoveTabRight ;call MoveTabRight()
-
-" compat mapping for gnome-terminal:
-map O1;2R <S-F3>
-map O1;2S <S-F4>
-
-nmap <silent> <S-F3> ;MoveTabLeft<CR>
-vmap <silent> <S-F3> ;MoveTabLeft<CR>
-imap <silent> <S-F3> <C-o>;MoveTabLeft<CR>
-nmap <silent> <S-F4> ;MoveTabRight<CR>
-vmap <silent> <S-F4> ;MoveTabRight<CR>
-imap <silent> <S-F4> <C-o>;MoveTabRight<CR>
-
 " Outline Python code:
 function OutlinePy()
   " the below regex searches for a string which starts at the beginning of the
@@ -1234,3 +1186,53 @@ command! -range Djinn
 \      sed 's/::/?/g'
 \      | djinn <(cat)
 \      | grep -v -- "-- loading file /dev/fd"
+
+
+" -- Tabs
+" Remove the <F1> help binding. I use <F1> and <F2> in my terminal emulator to
+" cycle tabs.
+nmap <F1> <nop>
+vmap <F1> <nop>
+imap <F1> <nop>
+
+" Cycle tabs in Vim:
+nmap <F3> ;tabprevious<CR>
+vmap <F3> ;tabprevious<CR>
+imap <F3> <C-o>;tabprevious<CR>
+nmap <F4> ;tabnext<CR>
+vmap <F4> ;tabnext<CR>
+imap <F4> <C-o>;tabnext<CR>
+
+" Move tabs in Vim:
+function MoveTabLeft()
+  " Moves the current tab to the left, wrapping around to the last tab if tab
+  " is currently the first one.
+  if tabpagenr() > 1
+    execute "tabmove ".(tabpagenr()-2)
+  elseif tabpagenr() == 1
+    execute "tabmove ".tabpagenr('$')
+    endif
+  endfunction
+command MoveTabLeft ;call MoveTabLeft()
+
+function MoveTabRight()
+  " Moves the current tab to the right, wrapping around to the first tab if
+  " tab is currently the last one.
+  if tabpagenr() < tabpagenr('$')
+    execute "tabmove ".(tabpagenr())
+  elseif tabpagenr() == tabpagenr('$')
+    execute "tabmove 0"
+    endif
+  endfunction
+command MoveTabRight ;call MoveTabRight()
+
+" compat mapping for gnome-terminal:
+map O1;2R <S-F3>
+map O1;2S <S-F4>
+
+nmap <silent> <S-F3> ;MoveTabLeft<CR>
+vmap <silent> <S-F3> ;MoveTabLeft<CR>
+imap <silent> <S-F3> <C-o>;MoveTabLeft<CR>
+nmap <silent> <S-F4> ;MoveTabRight<CR>
+vmap <silent> <S-F4> ;MoveTabRight<CR>
+imap <silent> <S-F4> <C-o>;MoveTabRight<CR>
