@@ -1200,6 +1200,31 @@ command! -range Pl <line1>,<line2>!pointfree "$(cat)"
 " <http://hackage.haskell.org/package/pointful>
 command! -range Unpl <line1>,<line2>!pointful "$(cat)" | sed 's/^(\(.*\))$/\1/'
 
+function! HaskellManual()
+python << EOF
+import vim
+word = vim.eval("expand('<cword>')")
+import urllib
+import json
+results = json.load(urllib.urlopen(
+    "http://holumbus.fh-wedel.de/hayoo/hayoo.json?query=" + word
+    ))
+#choices = []
+links = ""
+for f in results['functions']:
+    #choices.append((f['module'] + '.' + f['name'], f['uri']))
+    fmt = '<a href="%s">%s</a><br>'
+    links += fmt % (f['uri'], f['module'] + '.' + f['name'])
+if not links:
+    links = "Function not found."
+import os
+html = "<html><body>%s</body></html>" % (links,)
+os.system("echo \"%s\" | lynx -stdin; clear" % (html,))
+EOF
+  redraw!
+  endfunction
+
+autocmd FileType haskell nnoremap <expr> K HaskellManual()
 
 " -- Tabs
 
