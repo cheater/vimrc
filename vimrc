@@ -1187,6 +1187,16 @@ command! -range Djinn
 \      | djinn <(cat)
 \      | grep -v -- "-- loading file /dev/fd"
 
+" This uses pointfree for refactoring Haskell code to pointfree form
+" This requires the pointfree package:
+" <http://hackage.haskell.org/package/pointfree>
+command! -range Pl <line1>,<line2>!pointfree "$(cat)"
+
+" The following refactors Haskell code into pointful form.
+" Requires the pointful package:
+" <http://hackage.haskell.org/package/pointful>
+command! -range Unpl <line1>,<line2>!pointful "$(cat)" | sed 's/^(\(.*\))$/\1/'
+
 
 " -- Tabs
 " Remove the <F1> help binding. I use <F1> and <F2> in my terminal emulator to
