@@ -1195,12 +1195,24 @@ command! -range Djinn
 " This uses pointfree for refactoring Haskell code to pointfree form
 " This requires the pointfree package:
 " <http://hackage.haskell.org/package/pointfree>
-command! -range Pl <line1>,<line2>!pointfree "$(cat)"
+command! -range Pl
+\    <line1>,<line2>!
+\      inp="$(cat)";
+\      without_indent=$(echo "$inp" | sed 's/^[ \t]*//');
+\      indent_spaces=$(echo "$inp" | sed 's/^\([ \t]*\)\([^ \t].*\|\)$/\1/');
+\      echo -n "$indent_spaces";
+\      pointfree "$without_indent"
 
 " The following refactors Haskell code into pointful form.
 " Requires the pointful package:
 " <http://hackage.haskell.org/package/pointful>
-command! -range Unpl <line1>,<line2>!pointful "$(cat)" | sed 's/^(\(.*\))$/\1/'
+command! -range Unpl
+\    <line1>,<line2>!
+\      inp="$(cat)";
+\      without_indent=$(echo "$inp" | sed 's/^[ \t]*//');
+\      indent_spaces=$(echo "$inp" | sed 's/^\([ \t]*\)\([^ \t].*\|\)$/\1/');
+\      outp=$(pointful "$without_indent" | sed 's/^(\(.*\))$/\1/');
+\      echo -n "$indent_spaces$outp"
 
 function! HaskellManual()
 python << EOF
