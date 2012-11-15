@@ -1246,7 +1246,9 @@ EOF
   redraw!
   endfunction
 
-autocmd FileType haskell nnoremap <expr> K HaskellManual()
+command! HaskellManual call HaskellManual()
+
+autocmd FileType haskell nnoremap K :HaskellManual<cr>
 
 " -- Tabs
 
