@@ -1239,7 +1239,7 @@ if not links:
     links = \"Function not found.\"
 html = \"<html><body>%s</body></html>\" % (links,)
 print html
-        ' | lynx -stdin
+        ' | lynx -stdin -vikeys
     """)
 EOF
   redraw!
