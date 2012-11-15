@@ -1242,6 +1242,7 @@ print html
         ' | lynx -stdin -vikeys
     """)
 EOF
+  silent !reset
   redraw!
   endfunction
 
