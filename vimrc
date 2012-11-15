@@ -36,6 +36,8 @@
 " - repeat-quick-move is : instead of ;
 " - <F3> and <F4> scroll through tabs, <S-F3> and <S-F4> move them
 
+scriptencoding utf-8
+
 setlocal nocompatible
 setlocal
 \    expandtab
