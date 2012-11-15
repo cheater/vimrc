@@ -1254,6 +1254,8 @@ autocmd FileType haskell nnoremap K :HaskellManual<cr>
 
 " -- Tabs
 
+set tabpagemax=25 " Max number of tabs to open with -p or :tab all
+
 " Remove the <F1> help binding. I use <F1> and <F2> in my terminal emulator to
 " cycle tabs.
 nmap <F1> <nop>
