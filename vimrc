@@ -1003,7 +1003,7 @@ call vam#ActivateAddons(['Syntastic'])
 
 call vam#ActivateAddons(['matrix%1189']) " :Matrix for cool 'screensaver'
 "call vam#ActivateAddons(['AutoClose%1849']) " auto-closes parentheses etc
-call vam#ActivateAddons(['delimitMate']) " first impression: delimitMate is
+"call vam#ActivateAddons(['delimitMate']) " first impression: delimitMate is
 " better than AutoClose%1849.
 " FIXME: if you are on top of a ) and type ) then delimitMate doesn't type it,
 " it just moves right of it, even if that ) was not auto-completed by
