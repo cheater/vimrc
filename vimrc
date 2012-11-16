@@ -1216,6 +1216,7 @@ command! -range Unpl
 \      if [ $? -eq 0 ];
 \          then outp=$(echo "$outp_parens" | sed 's/^(\(.*\))$/\1/');
 \          else outp="$without_indent";
+\          fi;
 \      echo -n "$indent_spaces$outp"
 
 function! HaskellManual()
