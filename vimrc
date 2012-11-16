@@ -1200,8 +1200,9 @@ command! -range Pl
 \      inp="$(cat)";
 \      without_indent=$(echo "$inp" | sed 's/^[ \t]*//');
 \      indent_spaces=$(echo "$inp" | sed 's/^\([ \t]*\)\([^ \t].*\|\)$/\1/');
-\      echo -n "$indent_spaces";
-\      pointfree "$without_indent"
+\      outp=$(pointfree "$without_indent");
+\      if [ $? -ne 0 ]; then outp="$without_indent"; fi;
+\      echo -n "$indent_spaces$outp";
 
 " The following refactors Haskell code into pointful form.
 " Requires the pointful package:
@@ -1211,7 +1212,10 @@ command! -range Unpl
 \      inp="$(cat)";
 \      without_indent=$(echo "$inp" | sed 's/^[ \t]*//');
 \      indent_spaces=$(echo "$inp" | sed 's/^\([ \t]*\)\([^ \t].*\|\)$/\1/');
-\      outp=$(pointful "$without_indent" | sed 's/^(\(.*\))$/\1/');
+\      outp_parens=$(pointful "$without_indent");
+\      if [ $? -eq 0 ];
+\          then outp=$(echo "$outp_parens" | sed 's/^(\(.*\))$/\1/');
+\          else outp="$without_indent";
 \      echo -n "$indent_spaces$outp"
 
 function! HaskellManual()
