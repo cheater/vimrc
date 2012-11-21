@@ -815,7 +815,7 @@ call SetupVAM()
 " I will need to install some system packages for supporting some of the
 " addons. Let me fetch them once to speed up processing.
 let g:installed_system_packages="\n".system(
-  \"dpkg --get-selections | awk '/\\Winstall$/{print $1}'"
+  \"dpkg --get-selections | awk '/install$/ && !/deinstall$/{print $1}'"
   \)
 function! EnsureSystemPackage(pkg)
   " this function will install the package if it's not installed yet. Uses
