@@ -910,6 +910,7 @@ call vam#ActivateAddons(['git:git://github.com/chrisbra/histwin.vim.git'])
 
 call EnsureSystemPackage("tidy") " install xhtml linter for Syntastic
 
+call EnsureSystemPackage("python-setuptools") " install easy_install
 python << EOF
 """ This installs flake8, for use with Syntastic. """
 try:
