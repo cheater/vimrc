@@ -370,6 +370,8 @@ nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
+nnoremap q; q:
+vnoremap q; q:
 
 " Search mappings: These will make it so that going to the next result in a
 " search will center on the line it's found in.
