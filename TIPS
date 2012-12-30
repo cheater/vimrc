@@ -125,6 +125,9 @@ g*              - search for partial word under cursor
                   (repeat with n)
 [I              - show lines with matching word under cursor
 
+Neat little thing. <leader>ff displays a list of occurrences of the word under point and asks which to jump to:
+nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+
  d'k     - delete from current position to mark k
  'a-z    - marks in the same file
  'A-Z    - marks shared beteween files
