@@ -144,6 +144,14 @@ ctrl-t, ctrl-d  - indent current line forward, backwards
     :help equalprg - external program for =.
 
 
+regular expressions: \zs and \ze define the "actual match". So
+therefore :s/aaa\zsxxxze/yyy/ is the same as :s/aaaxxx/aaayyy/.
+You can use \0 to refer to the whole match. & is a shorthand for \0.
+
+global actions: you can use g/re/s/^/str/ to insert text into matching lines.
+You can also use g/re/normal Itext to do the same, and "text" will be indented.
+
+
 select block, then :fold
 zo - open
 zc - close
