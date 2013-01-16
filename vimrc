@@ -992,8 +992,9 @@ if 0 " not using pyflakes anymore. It's still here in case I change my mind.
   " as you edit.
   endif
 
-call EnsureSystemPackage("ghc-mod") " Install ghc-mod, a linter/checker for
+" call EnsureSystemPackage("ghc-mod") " Install ghc-mod, a linter/checker for
 " Haskell. Yes, it does pull in Emacs as a dependency. For use with Syntastic.
+" actually, never mind: do cabal-install ghc-mod instead? - FIXME
 
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
