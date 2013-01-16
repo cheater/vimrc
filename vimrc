@@ -841,6 +841,7 @@ call vam#ActivateAddons(['sparkup'])
 call vam#ActivateAddons(['fugitive']) " apparently needed for gitv
 call vam#ActivateAddons(['gitv']) " like gitk, but in Vim. Really cool. Does
 " this exist for mercurial?
+call vam#ActivateAddons(['Lawrencium']) " like fugitive, but for hg
 call vam#ActivateAddons(['todotxt']) " syntax file for [todo|TODO][.txt|]
 call vam#ActivateAddons(['rainbow_parentheses']) " :RainbowParenthesesToggle
 if !exists('g:pager_mode')
