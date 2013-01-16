@@ -1196,6 +1196,9 @@ command! -range Djinn
 \      | djinn <(cat)
 \      | grep -v -- "-- loading file /dev/fd"
 
+" Get the type of an expression.
+command! -range Type <line1>,<line2>LambdabotPipe @type
+
 " Refactor Haskell code into pointfree form
 command! -range Pl <line1>,<line2>LambdabotPipe @pl
 
