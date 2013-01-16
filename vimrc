@@ -1301,6 +1301,11 @@ EOF
 command! HaskellManual call HaskellManual()
 
 autocmd FileType haskell nnoremap K :HaskellManual<cr>
+" FIXME: those are currently disabled, re-enable them and see what bugs they
+" have and how they can be made better.
+"call vam#ActivateAddons(['haskellmode-vim'])
+"call vam#ActivateAddons(['vim-addon-haskell'])
+
 
 " -- Tabs
 
