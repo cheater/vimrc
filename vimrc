@@ -1003,7 +1003,9 @@ let g:syntastic_enable_signs=1
 let g:syntastic_mode_map = {
   \'mode':'active', 'active_filetypes':[], 'passive_filetypes':[]
   \}
-call vam#ActivateAddons(['Syntastic'])
+" call vam#ActivateAddons(['Syntastic']) " fucking thing breaks Vim. Error
+" messages in the linters show up every time you do keyboard input into Vim,
+" which is simply excruciating.
 " automatically puts syntax-checker (lint, pyflakes, etc) errors in the
 " location list, and updates them when you save. Use :lw to open the location
 " list window.
