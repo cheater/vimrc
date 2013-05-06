@@ -387,9 +387,6 @@ au InsertLeave * setlocal nopaste
 " Makes Caps Lock work as Esc
 command EscToCapsLock !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
-setlocal tags=./tags;,./TAGS;,tags;,TAGS; " Find tags directory by going
-                                          " up from file and from cwd
-
 " Outline Python code:
 function OutlinePy()
   " the below regex searches for a string which starts at the beginning of the
@@ -1107,6 +1104,9 @@ call vam#ActivateAddons(['Shortcut_functions_for_KeepCase_script_'])
 " substitutions instead of KeepCase.
 
 " -- Tags and IDE stuff
+
+setlocal tags=./tags;,./TAGS;,tags;,TAGS; " Find tags directory by going
+                                          " up from file and from cwd
 
 call vam#ActivateAddons(['fugitive']) " apparently needed for gitv
 call vam#ActivateAddons(['gitv']) " like gitk, but in Vim. Really cool. Does
