@@ -1106,15 +1106,16 @@ call vam#ActivateAddons(['Shortcut_functions_for_KeepCase_script_'])
 
 " -- Tags and IDE stuff
 
-setlocal tags=./tags;,./TAGS;,tags;,TAGS; " Find tags directory by going
-                                          " up from file and from cwd
-
 call vam#ActivateAddons(['fugitive']) " apparently needed for gitv
 call vam#ActivateAddons(['gitv']) " like gitk, but in Vim. Really cool. Does
 " this exist for mercurial?
 call vam#ActivateAddons(['Lawrencium']) " like fugitive, but for hg
 call vam#ActivateAddons(['simple_bookmarks']) " :Bookmark, :GotoBookmark, etc
+
 call vam#ActivateAddons(['opsplorer']) " :Opsplore
+
+setlocal tags=./tags;,./TAGS;,tags;,TAGS; " Find tags directory by going
+                                          " up from file and from cwd
 set showfulltag " display the full tag in the completion menu.
 call vam#ActivateAddons(['AutoTag']) " update ctags on file save
 call vam#ActivateAddons(['taglist']) " :TlistToggle to see ctags in open files
