@@ -834,14 +834,9 @@ call vam#ActivateAddons(['Indent_Guides']) " lets you use :IndentGuidesToggle
 call vam#ActivateAddons(['vim-indent-object']) " lets you use cai and cii
 call vam#ActivateAddons(['visualrepeat']) " repeat last command for all lines
 " in visual selection
-call vam#ActivateAddons(['simple_bookmarks']) " :Bookmark, :GotoBookmark, etc
 call vam#ActivateAddons(['MatchTag']) " Highlights matching html tag
 call vam#ActivateAddons(['matchit.zip']) " lets % match html tags etc
 call vam#ActivateAddons(['sparkup'])
-call vam#ActivateAddons(['fugitive']) " apparently needed for gitv
-call vam#ActivateAddons(['gitv']) " like gitk, but in Vim. Really cool. Does
-" this exist for mercurial?
-call vam#ActivateAddons(['Lawrencium']) " like fugitive, but for hg
 call vam#ActivateAddons(['todotxt']) " syntax file for [todo|TODO][.txt|]
 call vam#ActivateAddons(['rainbow_parentheses']) " :RainbowParenthesesToggle
 if !exists('g:pager_mode')
@@ -1047,21 +1042,11 @@ set statusline=\ %n\ %f\ %<[%M%Y%R]%h%w\ %<%{TagInStatusLine2()}%=\ [L%l\ C%v\ %
 call vam#ActivateAddons(['renamer']) " rename files editing their names in
 " Vim, use :Renamer and then :Ren
 
-set showfulltag " display the full tag in the completion menu.
-call vam#ActivateAddons(['AutoTag']) " update ctags on file save
-call vam#ActivateAddons(['taglist']) " :TlistToggle to see ctags in open files
-call vam#ActivateAddons(['SourceCodeObedience'])
-" create tags and cscope.out in your project root, and in the dir where they
-" are, create a foo.sco file. Edit it, then do :SCO* to query the project by
-" using info from tags, cscope, and so on.
-" FIXME: the display is being messed up by 'long line showing'
-
 let g:chapa_default_mappings = 1
 let g:chapa_no_repeat_mappings = 1
 call vam#ActivateAddons(['chapa']) " fnc, fpc to go to next/prev class, also
 " works for functions. Works for Python and JavaScript. FIXME: does not think
 " that old-style classes (that do not extend anything) are classes.
-call vam#ActivateAddons(['opsplorer']) " :Opsplore
 call vam#ActivateAddons(['browser%2227']) " :Google, :Wikipedia, :WebBrowser
 call vam#ActivateAddons(['camelcasemotion']) " now you can do ci,w and ci,b
 " for CamelCase and snake_case names.
@@ -1121,6 +1106,23 @@ call vam#ActivateAddons(['Shortcut_functions_for_KeepCase_script_'])
 "
 " Also included is the SS(pat,sub) function which uses KeepCaseSameLen for the
 " substitutions instead of KeepCase.
+
+" -- Tags and IDE stuff
+
+call vam#ActivateAddons(['fugitive']) " apparently needed for gitv
+call vam#ActivateAddons(['gitv']) " like gitk, but in Vim. Really cool. Does
+" this exist for mercurial?
+call vam#ActivateAddons(['Lawrencium']) " like fugitive, but for hg
+call vam#ActivateAddons(['simple_bookmarks']) " :Bookmark, :GotoBookmark, etc
+call vam#ActivateAddons(['opsplorer']) " :Opsplore
+set showfulltag " display the full tag in the completion menu.
+call vam#ActivateAddons(['AutoTag']) " update ctags on file save
+call vam#ActivateAddons(['taglist']) " :TlistToggle to see ctags in open files
+call vam#ActivateAddons(['SourceCodeObedience'])
+" create tags and cscope.out in your project root, and in the dir where they
+" are, create a foo.sco file. Edit it, then do :SCO* to query the project by
+" using info from tags, cscope, and so on.
+" FIXME: the display is being messed up by 'long line showing'
 
 call EnsureSystemPackage("id-utils") " for the lid addon
 call vam#ActivateAddons(['lid']) " :Lid, :Lid searchstring. :Lid -p or -v for
