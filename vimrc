@@ -836,7 +836,7 @@ call vam#ActivateAddons(['visualrepeat']) " repeat last command for all lines
 " in visual selection
 call vam#ActivateAddons(['MatchTag']) " Highlights matching html tag
 call vam#ActivateAddons(['matchit.zip']) " lets % match html tags etc
-call vam#ActivateAddons(['sparkup'])
+call vam#ActivateAddons(['sparkup']) " write fast html and css with this markup
 call vam#ActivateAddons(['todotxt']) " syntax file for [todo|TODO][.txt|]
 call vam#ActivateAddons(['rainbow_parentheses']) " :RainbowParenthesesToggle
 if !exists('g:pager_mode')
@@ -1049,7 +1049,7 @@ call vam#ActivateAddons(['chapa']) " fnc, fpc to go to next/prev class, also
 " that old-style classes (that do not extend anything) are classes.
 call vam#ActivateAddons(['browser%2227']) " :Google, :Wikipedia, :WebBrowser
 call vam#ActivateAddons(['camelcasemotion']) " now you can do ci,w and ci,b
-" for CamelCase and snake_case names.
+" for CamelCase and snake_case names. FIXME: doesn't work.
 call vam#ActivateAddons(['smartword']) " better word movements.
 map w <Plug>(smartword-w)
 map b <Plug>(smartword-b)
@@ -1058,7 +1058,7 @@ map ge <Plug>(smartword-ge)
 
 call vam#ActivateAddons(['CmdlineComplete']) " press ^N/^P in command line or
 " search mode. Doesn't work well in search but works well in command mode.
-" ^ FIXME
+" ^ FIXME: seems broken.
 call vam#ActivateAddons(['git:git://github.com/bogado/file-line.git'])
 " allows you to open file:line like from compiler or grep output
 " FIXME: messes up -p, -o, and -O.
