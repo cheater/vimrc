@@ -1124,6 +1124,11 @@ call vam#ActivateAddons(['SourceCodeObedience'])
 " are, create a foo.sco file. Edit it, then do :SCO* to query the project by
 " using info from tags, cscope, and so on.
 " FIXME: the display is being messed up by 'long line showing'
+"
+" To use cscope, go to the project root, and do:
+" find . -iname '*.whatever' > cscope.files
+" (note that you can do it with an enough C-like language)
+" Then, do cscope -R -b (-b disables the shell)
 
 call EnsureSystemPackage("id-utils") " for the lid addon
 call vam#ActivateAddons(['lid']) " :Lid, :Lid searchstring. :Lid -p or -v for
@@ -1137,6 +1142,8 @@ call vam#ActivateAddons(['lid']) " :Lid, :Lid searchstring. :Lid -p or -v for
 " tool is kind of like grep/ctags/gtatgs/etags/cscope.
 " FIXME: try to extract the cool quickfix stuff from ack.vim and try to put it
 " in this plugin.
+"
+" To generate the database, you'd run mkid.
 
 call EnsureSystemPackage("ack-grep") " for the ack addon
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
@@ -1171,7 +1178,10 @@ call vam#ActivateAddons(['gtags'])
 " lookup), :GtagsCursor, and so on. See
 " http://www.gnu.org/software/global/globaldoc.html#SEC5 for more info.
 " Note that for Ubuntu 10.04 LTS you need to use the CVS version of GLOBAL,
-" the packaged version is very old and crashy.
+" the packaged version is very old and crashy (6.x is new).
+"
+" To create tags, execute gtags from the project root. If it crashes then
+" you need a new version.
 
 " some bindings for the quickfix and location list windows
 " TODO: put this in a Vim plugin.
