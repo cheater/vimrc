@@ -1379,4 +1379,3 @@ imap <silent> <S-F4> <C-o>;MoveTabRight<CR>
 " FIXME: the below is a cool plugin, but the default gui is crap. See if you
 " can fix it.
 " call vam#ActivateAddons(['Tab_Name']) " :TName 'name here', :TNoName
-
