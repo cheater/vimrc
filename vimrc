@@ -1059,7 +1059,6 @@ map ge <Plug>(smartword-ge)
 call vam#ActivateAddons(['CmdlineComplete']) " press ^N/^P in command line or
 " search mode. Doesn't work well in search but works well in command mode.
 " ^ FIXME
-call vam#ActivateAddons(['Cabal']) " Haskell .cabal file syntax definition
 call vam#ActivateAddons(['git:git://github.com/bogado/file-line.git'])
 " allows you to open file:line like from compiler or grep output
 " FIXME: messes up -p, -o, and -O.
@@ -1191,6 +1190,8 @@ call vam#ActivateAddons(['AnsiEsc']) " :AnsiEsc to interpret ANSI color etc
 
 
 " -- Haskell
+
+call vam#ActivateAddons(['Cabal']) " Haskell .cabal file syntax definition
 
 " This uses djinn for automatically generating Haskell code from type
 " signatures. Move your cursor over the type sig and type :Djinn. See also the
