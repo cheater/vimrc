@@ -888,6 +888,7 @@ call vam#ActivateAddons(['git:git://github.com/tpope/vim-repeat.git'])
 " E.g. for surround.vim and speed dating.
 call vam#ActivateAddons(['git:git://github.com/tpope/vim-markdown.git'])
 " markdown filetype script.
+call vam#ActivateAddons(['AnsiEsc']) " :AnsiEsc to interpret ANSI color etc
 call vam#ActivateAddons(['git:git://github.com/tpope/vim-speeddating.git'])
 " use C-a/C-x to increment and decrement dates. Smart about leap years etc.
 call vam#ActivateAddons(['git:git://github.com/tpope/vim-pastie.git'])
@@ -1185,8 +1186,6 @@ function! QFBind()
         exec "nnoremap <silent> <buffer> gv <C-W><C-W><C-W>v<C-L><C-W><C-J><CR><C-W><C-J>"
         endif
     endfunction
-
-call vam#ActivateAddons(['AnsiEsc']) " :AnsiEsc to interpret ANSI color etc
 
 
 " -- Haskell
