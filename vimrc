@@ -420,6 +420,15 @@ if has("persistent_undo")
     endif
   endif
 
+" When recovering, diff opened file against its recovered swap (.swp) file.
+" This assumes that, when prompted about the existance of a .swp file, you
+" told vim to recover it.
+command! DiffSwpAgainstFileOnDisk call DiffSwpAgainstFileOnDisk()
+function! DiffSwpAgainstFileOnDisk()
+  :w! /tmp/recovered_swp
+  exec "!diff /tmp/recovered_swp \"%\""
+  endfunction
+
 " Various stuff:
 setlocal hidden             " side effect: undo list is not lost on C-^
 setlocal browsedir=buffer   " :browse e starts in %:h (file's dir), not $PWD
