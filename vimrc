@@ -1053,7 +1053,7 @@ call vam#ActivateAddons(['py-coverage'])
 " \ \ \ \ [buf\ %n]
 
 function TagInStatusLine2()
-  let s:tag = TagInStatusLineTag()
+  let s:tag = Tlist_Get_Tagname_By_Line()
   if s:tag == ""
     return ""
   endif
