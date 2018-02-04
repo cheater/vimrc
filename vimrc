@@ -269,7 +269,7 @@ autocmd FileType python setlocal errorformat+=
 
 " consider using cindent instead of smartindent.
 
-autocmd BufRead,BufNewFile *.hs
+autocmd BufRead,BufNewFile *.hs,*.hsc
 \    setf haskell
 autocmd FileType haskell
 \    syntax on
