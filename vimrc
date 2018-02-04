@@ -1079,6 +1079,8 @@ map b <Plug>(smartword-b)
 map e <Plug>(smartword-e)
 map ge <Plug>(smartword-ge)
 
+call vam#ActivateAddons(['phpcomplete']) " ^X^O for omnicompletion via tags or
+"from open files.
 call vam#ActivateAddons(['CmdlineComplete']) " press ^N/^P in command line or
 " search mode. Doesn't work well in search but works well in command mode.
 " ^ FIXME: seems broken.
