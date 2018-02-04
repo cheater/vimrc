@@ -1227,6 +1227,22 @@ function! QFBind()
     endfunction
 
 
+
+" -- Scala
+
+let plugins = [
+  \ 'ensime',
+  \ 'vim-addon-async',
+  \ 'vim-async-beans',
+  \ 'ensime-common',
+  \ 'envim'
+  \ ]
+
+call vam#ActivateAddons(plugins, {'auto_install' : 0})
+" call vam#ActivateAddons(['vim-scala']) " Scala syntax files.
+call vam#ActivateAddons(['git:git://github.com/derekwyatt/vim-scala.git'])
+
+
 " -- Haskell
 
 call vam#ActivateAddons(['Cabal']) " Haskell .cabal file syntax definition
