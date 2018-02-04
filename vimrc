@@ -784,6 +784,16 @@ map!            <Esc>[1;6C      <C-S-Right>
 let g:vim_addon_manager = {'auto_install' : 1 }
 
 fun SetupVAM()
+
+  let g:vim_addon_manager = {}
+  let g:vim_addon_manager.plugin_sources = {}
+  let g:vim_addon_manager.plugin_sources['ensime'] = {"type": "git", "url": "git://github.com/aemoncannon/ensime.git", "branch" : "scala-2.9"}
+  let g:vim_addon_manager.plugin_sources['envim'] = {"type": "git", "url": "git://github.com/jlc/envim.git", "branch" : "master"}
+  let g:vim_addon_manager.plugin_sources['ensime-common'] = {"type": "git", "url": "git://github.com/jlc/ensime-common.git", "branch" : "master"}
+  let g:vim_addon_manager.plugin_sources['vim-async-beans'] = {"type": "git", "url": "git://github.com/jlc/vim-async-beans.git", "branch" : "master"}
+  "let g:vim_addon_manager.plugin_sources['vim-addon-async'] = {"type": "git", "url": "git://github.com/jlc/vim-addon-async.git", "branch" : "master"}
+
+
   let g:vim_addon_manager['auto_install'] = 1
   " YES, you can customize this vam_install_path path and everything still works!
   let vam_install_path = expand('$HOME') . '/.vim/vim-addons'
