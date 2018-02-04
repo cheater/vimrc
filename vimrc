@@ -864,6 +864,8 @@ if !exists('g:pager_mode')
 call vam#ActivateAddons(['quickfixstatus']) " :QuickfixStatusEnable and Disable
 call vam#ActivateAddons(['git:git://github.com/fs111/pydoc.vim.git'])
 " K support for python and other goodies
+call vam#ActivateAddons(['git:git://github.com/dleonard0/pony-vim-syntax.git'])
+" pony language syntax etc
 
 " the surround plugin. We also make it use c and C for any surround-related
 " stuff; and we make Vim's s into what normally is done with c in vanilla Vim.
