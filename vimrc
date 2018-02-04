@@ -846,6 +846,8 @@ function! EnsureSystemPackage(pkg)
 
 " Install some addons using VAM.
 
+" call vam#ActivateAddons(['DBGp_client']) " ...
+
 call vam#ActivateAddons(['Indent_Guides']) " lets you use :IndentGuidesToggle
 "silent! UpdateActivatedAddons
 call vam#ActivateAddons(['vim-indent-object']) " lets you use cai and cii
