@@ -184,6 +184,7 @@ autocmd FileType markdown
 \        smarttab
 \        softtabstop=4
 \        noshiftround
+\        autoindent
 \   |LongLinesShow
 
 autocmd BufRead,BufNewFile *.clj,*.cljs
