@@ -169,12 +169,12 @@ autocmd FileType *
 \        noexpandtab
 
 autocmd BufRead,BufNewFile *.jsm
-\   setlocal filetype=javascript
+\   setf javascript
 autocmd FileType javascript
 \   LongLinesShow
 
 autocmd BufRead,BufNewFile *.md
-\   setlocal filetype=markdown
+\   setf markdown
 autocmd FileType markdown
 \   setlocal syntax=markdown
 \        fileformat=unix
@@ -187,7 +187,7 @@ autocmd FileType markdown
 \   |LongLinesShow
 
 autocmd BufRead,BufNewFile *.clj,*.cljs
-\   setlocal filetype=lisp
+\   setf lisp
 autocmd FileType lisp
 \   setlocal syntax=lisp
 \        fileformat=unix
@@ -202,7 +202,7 @@ autocmd FileType lisp
 \   |LongLinesShow
 
 autocmd BufRead,BufNewFile *.sh,*.bash
-\       setlocal filetype=sh
+\       setf sh
 autocmd FileType sh
 \    syntax on
 \   |setlocal
@@ -236,7 +236,7 @@ autocmd FileType awk
 \   |LongLinesShow
 
 autocmd BufRead,BufNewFile *.py
-\    setlocal filetype=python
+\    setf python
 autocmd FileType python
 \    syntax on
 \   |setlocal
@@ -269,7 +269,7 @@ autocmd FileType python setlocal errorformat+=
 " consider using cindent instead of smartindent.
 
 autocmd BufRead,BufNewFile *.hs
-\    setlocal filetype=haskell
+\    setf haskell
 autocmd FileType haskell
 \    syntax on
 \   |setlocal
@@ -290,7 +290,7 @@ autocmd FileType haskell
 \   |LongLinesShow
 
 autocmd BufRead,BufNewFile *.cabal
-\    setlocal filetype=cabal
+\    setf cabal
 autocmd FileType cabal
 \    syntax on
 \   |setlocal
@@ -310,7 +310,7 @@ autocmd FileType cabal
 \   |LongLinesShow
 
 autocmd BufRead,BufNewFile *.php,*.ihtml
-\    setlocal filetype=php
+\    setf php
 autocmd FileType php
 \    syntax on
 \   |setlocal
@@ -327,7 +327,7 @@ autocmd FileType php
 \   |LongLinesShow
 
 autocmd BufRead,BufNewFile *.txt
-\    setlocal filetype=text
+\    setf text
 autocmd FileType text
 \    if &buftype!=#"help"
 \       | setlocal
