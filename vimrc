@@ -895,8 +895,8 @@ nmap yCC <Plug>YSsurround
 xmap C   <Plug>VSurround
 xmap gC  <Plug>VgSurround
 
-call vam#ActivateAddons(['Conque_Shell']) " :ConqueTerm
-call vam#ActivateAddons(['SrcExpl']) " :SrcExplToggle
+call vam#ActivateAddons(['git:git://github.com/oplatek/Conque-Shell.git']) " :ConqueTerm
+call vam#ActivateAddons(['Source_Explorer_SrcExpl']) " :SrcExplToggle
 " FIXME: temporarily disabled YankRing. See if that helps with the corruption,
 " and if it does, then remove it permanently.
 " call vam#ActivateAddons(['YankRing']) \" you can do \"2p (without the
