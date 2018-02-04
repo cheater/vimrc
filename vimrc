@@ -347,8 +347,8 @@ autocmd FileType text
 " Highlight long lines
 "command LongLinesShow let w:m1=matchadd('Search', '\%<81v.\%>77v', -1) | let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 "command LongLinesHide call matchdelete(w:m1) | call matchdelete(w:m2)
-command LongLinesShow let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
-command LongLinesHide call matchdelete(w:m2)
+command LongLinesShow if !exists('w:ll_exists') | let w:ll_exists=0 | endif | if w:ll_exists==0 | let w:ll_match=matchadd('ErrorMsg', '\%>79v.\+', -1) | let w:ll_exists=1 | endif
+command LongLinesHide call matchdelete(w:ll_match) | let w:ll_exists=0
 
 if !exists('g:pager_mode')
   if exists('+colorcolumn')
