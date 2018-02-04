@@ -1038,8 +1038,9 @@ call vam#ActivateAddons(['sokoban']) " sokoban. Note that the installation
 " with vam does not work currently, and you might need to go to
 " .vim/vim-addons/sokoban, create a subdir called plugin, and move the .vim
 " and .sok files in there. FIXME
-let g:pythonhelper_updatetime = 20
-call vam#ActivateAddons(['git:git://github.com/cheater/pythonhelper.git'])
+let g:pythonhelper_updatetime = 1000
+"call vam#ActivateAddons(['git:git://github.com/cheater/pythonhelper.git'])
+call vam#ActivateAddons(['py-coverage'])
 "call vam#ActivateAddons(['pythonhelper'])
 " displays the class and function name the cursor is currently on.
 " FIXME: breaks on multiline comments that reduce indent level.
