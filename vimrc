@@ -1145,6 +1145,7 @@ setlocal tags=./tags;,./TAGS;,tags;,TAGS; " Find tags directory by going
                                           " up from file and from cwd
 set showfulltag " display the full tag in the completion menu.
 call vam#ActivateAddons(['AutoTag']) " update ctags on file save
+let Tlist_Ctags_Cmd = 'ctags-exuberant' " ubuntu puts etags in /usr/bin/ctags
 call vam#ActivateAddons(['taglist']) " :TlistToggle to see ctags in open files
 call vam#ActivateAddons(['SourceCodeObedience'])
 " create tags and cscope.out in your project root, and in the dir where they
