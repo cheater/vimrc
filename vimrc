@@ -784,7 +784,7 @@ map!            <Esc>[1;6C      <C-S-Right>
 let g:vim_addon_manager = {'auto_install' : 1 }
 
 fun SetupVAM()
-  let g:vim_addon_manager = {'auto_install' : 1 }
+  let g:vim_addon_manager['auto_install'] = 1
   " YES, you can customize this vam_install_path path and everything still works!
   let vam_install_path = expand('$HOME') . '/.vim/vim-addons'
   exec 'set runtimepath+='.vam_install_path.'/vim-addon-manager'
