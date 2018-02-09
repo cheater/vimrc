@@ -1136,7 +1136,7 @@ call vam#ActivateAddons(['Shortcut_functions_for_KeepCase_script_'])
 
 " -- Tags and IDE stuff
 
-call vam#ActivateAddons(['fugitive']) " apparently needed for gitv
+call vam#ActivateAddons(['fugitive']) " needed for gitv
 call vam#ActivateAddons(['gitv']) " like gitk, but in Vim. Really cool. Does
 " this exist for mercurial?
 call vam#ActivateAddons(['Lawrencium']) " like fugitive, but for hg
