@@ -56,8 +56,8 @@ setlocal showcmd           " show the command in the lower right corner
 setlocal wildmode=full     " default
 setlocal wildmenu          " displays a menu of the completions you go through
 setlocal binary            " show control characters (ignore 'fileformat')
-setlocal timeoutlen=100    " let me enter edit mode right after exiting it
-                           " FIXME: stop using esc to exit modes altogether?
+" setlocal timeoutlen=100    " let me enter edit mode right after exiting it
+"                            " FIXME: stop using esc to exit modes altogether?
 setlocal undolevels=1000   " maximum number of changes that can be undone
 if exists('+undodir')      " set undodir stuff, which saves the undo history
                            " in an external file, across saves. New in Vim 7.3
@@ -84,7 +84,7 @@ setlocal noautowrite       " don't save buffers when abandoning (going out of)
                            " them, e.g. with g]
 setlocal switchbuf=useopen " prefer already open windows when switching buffer
 
-setlocal t_Co=256          " Much more beautiful than the standard of using
+" setlocal t_Co=256          " Much more beautiful than the standard of using
 " just 8 colors! You can do:
 "
 " :so $VIMRUNTIME/syntax/hitest.vim
@@ -1083,8 +1083,9 @@ map ge <Plug>(smartword-ge)
 
 call vam#ActivateAddons(['phpcomplete']) " ^X^O for omnicompletion via tags or
 "from open files.
-call vam#ActivateAddons(['CmdlineComplete']) " press ^N/^P in command line or
-" search mode. Doesn't work well in search but works well in command mode.
+" call vam#ActivateAddons(['CmdlineComplete']) " press ^N/^P (C-n, C-p) in
+" command line or search mode. Doesn't work well in search but works well in
+" command mode.
 " ^ FIXME: seems broken.
 call vam#ActivateAddons(['git:git://github.com/bogado/file-line.git'])
 " allows you to open file:line like from compiler or grep output
