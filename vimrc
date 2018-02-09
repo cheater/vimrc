@@ -41,6 +41,9 @@ scriptencoding utf-8
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 let skip_defaults_vim=1
+
+set secure " no hacking allowed!!
+
 setlocal nocompatible
 setlocal
 \    expandtab
