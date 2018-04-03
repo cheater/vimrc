@@ -1257,6 +1257,9 @@ call vam#ActivateAddons(['git:git://github.com/derekwyatt/vim-scala.git'])
 
 " -- Haskell
 
+" -- TODO: start using codex - ctags generator for cabal projects and their
+"  dependencies. You can jump to the definition of a function in a dependency!
+
 call vam#ActivateAddons(['Cabal']) " Haskell .cabal file syntax definition
 
 " This uses djinn for automatically generating Haskell code from type
