@@ -1417,7 +1417,7 @@ function MoveTabRight()
   " Moves the current tab to the right, wrapping around to the first tab if
   " tab is currently the last one.
   if tabpagenr() < tabpagenr('$')
-    execute "tabmove ".(tabpagenr())
+    execute "tabmove ".(tabpagenr()+1)
   elseif tabpagenr() == tabpagenr('$')
     execute "tabmove 0"
     endif
