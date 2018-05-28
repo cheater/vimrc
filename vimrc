@@ -45,6 +45,7 @@ let skip_defaults_vim=1
 set secure " no hacking allowed!!
 
 setlocal nocompatible
+setlocal mouse=""
 setlocal
 \    expandtab
 \    tabstop=8
