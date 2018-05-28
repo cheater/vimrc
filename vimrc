@@ -308,6 +308,7 @@ autocmd FileType haskell
 \        smartindent
 \        fileformat=unix
 \        encoding=utf-8
+\        iskeyword+='
 \   |highlight BadWhitespace ctermbg=red guibg=red
 \   |match BadWhitespace /^\t\+/
 \   |let python_highlight_all=1
