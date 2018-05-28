@@ -1438,3 +1438,27 @@ imap <silent> <S-F4> <C-o>;MoveTabRight<CR>
 " FIXME: the below is a cool plugin, but the default gui is crap. See if you
 " can fix it.
 " call vam#ActivateAddons(['Tab_Name']) " :TName 'name here', :TNoName
+
+" Jump to tab that contains an open buffer
+
+function! Go(buf)
+  echo a:buf
+  let tabiter = 1
+  while tabiter <= tabpagenr('$')
+    let bufno = 1
+    for bufiter in tabpagebuflist(tabiter)
+      " let indicator = "" " dbg
+      if bufname(bufiter) == a:buf
+        execute "tabnext ".tabiter
+        execute bufno . "wincmd w"
+        " let indicator = " <" " dbg
+        endif
+      " echo tabiter . ": " . bufname(bufiter) . indicator " dbg
+      let bufno += 1
+      endfor
+    let tabiter += 1
+    endwhile
+  endfunction
+" fixme: write own completion function that can complete partial file names and
+" buffer names, using the syntax -complete=custom,GoCompleteFunction.
+com! -complete=buffer -nargs=1 Go call Go(<f-args>)
