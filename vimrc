@@ -1464,6 +1464,5 @@ function! Go(buf)
     let tabiter += 1
     endwhile
   endfunction
-" fixme: write own completion function that can complete partial file names and
-" buffer names, using the syntax -complete=custom,GoCompleteFunction.
+" Note: you can complete partial names by doing :Go *partial*name*<Tab>.
 com! -complete=buffer -nargs=1 Go call Go(<f-args>)
