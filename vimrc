@@ -243,6 +243,21 @@ autocmd FileType awk
 \        autoindent
 \   |LongLinesShow
 
+autocmd FileType vim
+\    syntax on
+\   |setlocal
+\        syntax=vim
+\        smartindent
+\        fileformat=unix
+\        encoding=utf-8
+\        tabstop=8
+\        shiftwidth=2
+\        smarttab
+\        expandtab
+\        softtabstop=2
+\        autoindent
+\   |LongLinesShow
+
 autocmd BufRead,BufNewFile *.py
 \    setf python
 autocmd FileType python
