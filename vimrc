@@ -1439,8 +1439,11 @@ imap <silent> <S-F4> <C-o>;MoveTabRight<CR>
 " can fix it.
 " call vam#ActivateAddons(['Tab_Name']) " :TName 'name here', :TNoName
 
+
 " Jump to tab that contains an open buffer
 
+" fixme: make this cycle to the next tab, and if you are at the last one,
+" continue cycling from the first.
 function! Go(buf)
   " dbg
   echo a:buf
