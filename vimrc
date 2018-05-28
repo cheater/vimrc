@@ -1469,3 +1469,7 @@ function! Go(buf)
   endfunction
 " Note: you can complete partial names by doing :Go *partial*name*<Tab>.
 com! -complete=buffer -nargs=1 Go call Go(<f-args>)
+
+
+" FIXME: sourcing this vimrc moves the cursor for some stupid reason.
+
