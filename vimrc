@@ -1442,18 +1442,23 @@ imap <silent> <S-F4> <C-o>;MoveTabRight<CR>
 " Jump to tab that contains an open buffer
 
 function! Go(buf)
+  " dbg
   echo a:buf
   let tabiter = 1
   while tabiter <= tabpagenr('$')
     let bufno = 1
     for bufiter in tabpagebuflist(tabiter)
-      " let indicator = "" " dbg
-      if bufname(bufiter) == a:buf
+      " dbg:
+      let indicator = ""
+      let bufpath_escaped = expand(bufname(bufiter))
+      if bufname(bufiter) == expand(a:buf)
         execute "tabnext ".tabiter
         execute bufno . "wincmd w"
-        " let indicator = " <" " dbg
+        " dbg
+        let indicator = " <"
         endif
-      " echo tabiter . ": " . bufname(bufiter) . indicator " dbg
+      " dbg
+      echo tabiter . ": " . bufpath_escaped . indicator
       let bufno += 1
       endfor
     let tabiter += 1
