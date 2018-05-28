@@ -355,8 +355,8 @@ autocmd FileType text
 " Highlight long lines
 "command LongLinesShow let w:m1=matchadd('Search', '\%<81v.\%>77v', -1) | let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 "command LongLinesHide call matchdelete(w:m1) | call matchdelete(w:m2)
-command LongLinesShow if !exists('w:ll_exists') | let w:ll_exists=0 | endif | if w:ll_exists==0 | let w:ll_match=matchadd('ErrorMsg', '\%>79v.\+', -1) | let w:ll_exists=1 | endif
-command LongLinesHide call matchdelete(w:ll_match) | let w:ll_exists=0
+command! LongLinesShow if !exists('w:ll_exists') | let w:ll_exists=0 | endif | if w:ll_exists==0 | let w:ll_match=matchadd('ErrorMsg', '\%>79v.\+', -1) | let w:ll_exists=1 | endif
+command! LongLinesHide call matchdelete(w:ll_match) | let w:ll_exists=0
 
 if !exists('g:pager_mode')
   if exists('+colorcolumn')
@@ -368,10 +368,10 @@ if !exists('g:pager_mode')
   endif
 
 " Show the Syntax Highlight Groups
-command HighlightTest source $VIMRUNTIME/syntax/hitest.vim
+command! HighlightTest source $VIMRUNTIME/syntax/hitest.vim
 
 " Show all the colors that Vim supports!
-command ColorTest source $VIMRUNTIME/syntax/colortest.vim
+command! ColorTest source $VIMRUNTIME/syntax/colortest.vim
 
 " Swap ";" and ":".  Convenient.
 nnoremap ; :
@@ -387,23 +387,23 @@ map N Nzz
 map n nzz
 
 " use :w!! to write to a file using sudo if you forgot to "sudo vim file"
-command SudoWrite %!sudo tee > /dev/null %
+command! SudoWrite %!sudo tee > /dev/null %
 
 " Always disable paste mode when leaving insert mode
 au InsertLeave * setlocal nopaste
 
 " Makes Caps Lock work as Esc
-command EscToCapsLock !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+command! EscToCapsLock !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 " Outline Python code:
-function OutlinePy()
+function! OutlinePy()
   " the below regex searches for a string which starts at the beginning of the
   " line, then perhaps has some whitespace, then either has the keyword def or
   " class, and then has one whitespace character. The command g/re/p then
   " prints all such strings.
   execute "g/^\\s*\\(def\\|class\\)\\s/p"
   endfunction
-command OutlinePy ;call OutlinePy()
+command! OutlinePy ;call OutlinePy()
 
 " Backup files:
 setlocal backup                      " make backups
@@ -790,7 +790,7 @@ map!            <Esc>[1;6C      <C-S-Right>
 
 let g:vim_addon_manager = {'auto_install' : 1 }
 
-fun SetupVAM()
+fun! SetupVAM()
 
   let g:vim_addon_manager = {}
   let g:vim_addon_manager.plugin_sources = {}
@@ -1061,7 +1061,7 @@ call vam#ActivateAddons(['py-coverage'])
 " set statusline=%-f%r\ %2*%m%*\ \ \ \ %1*%{TagInStatusLine()}%*%=[%l:%c]
 " \ \ \ \ [buf\ %n]
 
-function TagInStatusLine2()
+function! TagInStatusLine2()
   let s:tag = Tlist_Get_Tagname_By_Line()
   if s:tag == ""
     return ""
@@ -1402,7 +1402,7 @@ vmap <F4> ;tabnext<CR>
 imap <F4> <C-o>;tabnext<CR>
 
 " Move tabs in Vim:
-function MoveTabLeft()
+function! MoveTabLeft()
   " Moves the current tab to the left, wrapping around to the last tab if tab
   " is currently the first one.
   if tabpagenr() > 1
@@ -1411,9 +1411,9 @@ function MoveTabLeft()
     execute "$tabmove"
     endif
   endfunction
-command MoveTabLeft ;call MoveTabLeft()
+command! MoveTabLeft ;call MoveTabLeft()
 
-function MoveTabRight()
+function! MoveTabRight()
   " Moves the current tab to the right, wrapping around to the first tab if
   " tab is currently the last one.
   if tabpagenr() < tabpagenr('$')
@@ -1422,7 +1422,7 @@ function MoveTabRight()
     execute "0tabmove"
     endif
   endfunction
-command MoveTabRight ;call MoveTabRight()
+command! MoveTabRight ;call MoveTabRight()
 
 " compat mapping for gnome-terminal:
 map O1;2R <S-F3>
