@@ -1259,13 +1259,16 @@ function! QFBind()
 
 
 " -- Scala
+"
+" disabled envim because i currently don't have the envim related binary
+" installed and it's annoying to see the errors all the time.
+"  \ 'envim'
 
 let plugins = [
   \ 'ensime',
   \ 'vim-addon-async',
   \ 'vim-async-beans',
   \ 'ensime-common',
-  \ 'envim'
   \ ]
 
 call vam#ActivateAddons(plugins, {'auto_install' : 0})
