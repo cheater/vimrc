@@ -91,6 +91,8 @@ setlocal noautowrite       " don't save buffers when abandoning (going out of)
                            " them, e.g. with g]
 setlocal switchbuf=useopen " prefer already open windows when switching buffer
 setlocal scrolloff=0       " allow the cursor to go to the edge of the window
+setlocal titleold=""       " disable the 'Thanks for flying VIM' message stuck
+                           " in the terminal title after exiting vim.
 
 setlocal t_Co=16
 " setlocal t_Co=256          " Much more beautiful than the standard of using
