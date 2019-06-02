@@ -75,3 +75,11 @@ windows would share buffers, registers, and so on.
 I would like to be able to stop using Esc for exiting modes and use something
 else, because Esc is sluggish because of the whole Esc-based function key codes
 (see :h timeoutlen).
+
+-------------------------
+
+TODO: add suffixesadd for all langs, eg .hs for haskell. Quote: "gf normally is
+“goto file under cursor”, but requires you also have the file suffix in the
+string. suffixesadd also checks for files with that suffix. If you have
+suffixesadd=.md, then pressing gf on the string “foo” will look for files foo
+and foo.md."
