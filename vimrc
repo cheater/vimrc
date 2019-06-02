@@ -1121,9 +1121,17 @@ call vam#ActivateAddons(['git:git://github.com/ciaranm/detectindent.git'])
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 4
 " :DetectIndent
-call vam#ActivateAddons(['Smartput']) " makes p work better inside
+
+" call vam#ActivateAddons(['Smartput']) " makes p work better inside
 " (lists, of, things) and 'lists of words' by auto-adjusting where the space
 " or the comma joining the words is placed.
+" Smartput has been deactivated for now because it conflicts with this
+" advanced use of p:
+" \"=strftime(\"%c\")<cr>p (double quotes have been escaped but normally there
+" are no backslashes). What happens here is we use the expression buffer
+" (named =), we fill it with the output of strftime, and then press p to put
+" it into the buffer.
+
 call vam#ActivateAddons(['keepcase'])
 " Usage:
 "
