@@ -1178,6 +1178,8 @@ call vam#ActivateAddons(['gitv']) " like gitk, but in Vim. Really cool. Does
 " this exist for mercurial?
 call vam#ActivateAddons(['Lawrencium']) " like fugitive, but for hg
 call vam#ActivateAddons(['simple_bookmarks']) " :Bookmark, :GotoBookmark, etc
+call vam#ActivateAddons(['showmarks']) " show marks set with ' left of line
+" by using :DoShowMarks. Turn off with :NoShowMarks.
 
 call vam#ActivateAddons(['opsplorer']) " :Opsplore
 
