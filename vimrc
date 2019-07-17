@@ -69,6 +69,9 @@ setlocal undolevels=1000   " maximum number of changes that can be undone
 if exists('+undodir')      " set undodir stuff, which saves the undo history
                            " in an external file, across saves. New in Vim 7.3
   setlocal undodir=~/.vim/undodir
+  if ! isdirectory(&undodir)
+    call mkdir(&undodir, "p")
+    endif
   setlocal undofile
   setlocal undoreload=10000 " max lines to save for undo on buffer reload
   endif
