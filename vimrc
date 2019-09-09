@@ -1463,6 +1463,8 @@ command! MoveTabRight ;call MoveTabRight()
 " compat mapping for gnome-terminal:
 map O1;2R <S-F3>
 map O1;2S <S-F4>
+map [1;2R <S-F3>
+map [1;2S <S-F4>
 
 nmap <silent> <S-F3> ;MoveTabLeft<CR>
 vmap <silent> <S-F3> ;MoveTabLeft<CR>
