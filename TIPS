@@ -415,3 +415,7 @@ pylint.vim : compiler plugin for python style checking tool
 
 phpfolding.vim : Automatic folding of PHP functions, classes,.. (also folds
 related PhpDoc)
+
+To align columns in text, you can do the following. It will search for a string
+called "Test", and insert spaces on the left of it, until "Test" starts on the
+126th column: :'<,'>s/^\(.*\)\zeTest/\=printf("%-126s", submatch(1))/
