@@ -1,0 +1,7 @@
+.netrwhist
+.vimundo
+plugged
+undodir
+backup
+*.swp
+*.swo

@@ -1,0 +1,1 @@
+make something like chapa, but for haskell, using hasktags tags. fnt/fpt - find next/previous type sig, fnf - find next function, fnl - find next let, fnw - find next where, fnd - find next type declaration (type, data, newtype)
