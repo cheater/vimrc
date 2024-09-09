@@ -82,10 +82,17 @@ let g:cmdleader = ';' " for use in various mappings later
 
 " Search mappings: These will make it so that going to the next result in a
 " search will center on the line it's found in.
-nmap n <Plug>(anzu-n-with-echo)zz
-nmap N <Plug>(anzu-N-with-echo)zz
-nmap * <Plug>(anzu-star-with-echo)zz
-nmap # <Plug>(anzu-sharp-with-echo)zz
+if exists("g:loaded_anzu")
+  nmap n <Plug>(anzu-n-with-echo)zz
+  nmap N <Plug>(anzu-N-with-echo)zz
+  nmap * <Plug>(anzu-star-with-echo)zz
+  nmap # <Plug>(anzu-sharp-with-echo)zz
+else
+  nmap n nzz
+  nmap N Nzz
+  nmap * *zz
+  nmap # #zz
+  endif
 
 " */# search in visual mode (from www.vim.org)
 " Atom \V sets following pattern to "very nomagic", i.e. only the backslash
@@ -280,8 +287,11 @@ setlocal tags=./tags;,./TAGS;,./codex.tags;,tags;,TAGS;,codex.tags;
 set showfulltag " display the full tag in the completion menu.
 
 " tagbar#currenttag() comes from the tagbar plugin
-set statusline=\ %n\ %f\ %<[%M%Y%R]%h%w\ %<%{tagbar#currenttag('[%s]\ ','')}%=\ [L%l\ C%v\ %p%%%{AnzuStatusLine()}]
-
+if exists("tagbar#currenttag") && exists("AnzuStatusLine")
+  set statusline=\ %n\ %f\ %<[%M%Y%R]%h%w\ %<%{tagbar#currenttag('[%s]\ ','')}%=\ [L%l\ C%v\ %p%%%{AnzuStatusLine()}]
+else
+  set statusline=\ %n\ %f\ %<[%M%Y%R]%h%w\ %<%=\ [L%l\ C%v\ %p%%]
+  endif
 " creates a brighter-colored column at 80 characters in, and all text going
 " over that gets a red background.
 if !exists('g:pager_mode')

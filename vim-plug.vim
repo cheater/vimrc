@@ -134,10 +134,12 @@ Plug 'tpope/vim-rsi' " Readline keybindings in the command line and insert
 " TODO: extract the C-j/k functionality alone
 
 Plug 'kana/vim-smartword' " better word movements.
-map w <Plug>(smartword-w)
-map b <Plug>(smartword-b)
-map e <Plug>(smartword-e)
-map ge <Plug>(smartword-ge)
+if exists("smartword#move")
+  map w <Plug>(smartword-w)
+  map b <Plug>(smartword-b)
+  map e <Plug>(smartword-e)
+  map ge <Plug>(smartword-ge)
+  endif
 
 
 " -- Do stuff
@@ -358,10 +360,12 @@ call plug#end()
 
 " -- Plugin related settings that can't be called before the plugin is loaded
 
-call expand_region#custom_text_objects({
-      \ 'a]' :1,
-      \ 'ab' :1,
-      \ 'aB' :1,
-      \ 'ii' :0,
-      \ 'ai' :0,
-      \ })
+if exists("expand_region#custom_text_objects")
+  call expand_region#custom_text_objects({
+        \ 'a]' :1,
+        \ 'ab' :1,
+        \ 'aB' :1,
+        \ 'ii' :0,
+        \ 'ai' :0,
+        \ })
+  endif
