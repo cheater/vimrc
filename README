@@ -1,8 +1,35 @@
 ABOUT THIS PROGRAM
 
-This is my vimrc file. I put it in /etc/vim/vimrc.local and then
-Ubuntu automatically includes it. It has a few options that work
-against RSI. Also check out my ez_enter project on Bitbucket.
+This is my vimrc file. I clone it to my computer and then link to the directory
+from ~/.vim. It has a few options that work against RSI. Also check out my
+[us_split project on github](https://github.com/cheater/us_split_v3) for a
+keyboard layout that minimizes RSI.
+
+
+INSTALLATION
+
+```bash
+# Install vimrc
+if ! [ -d ~/projects/vimrc ]; then
+  echo "Cloning vimrc..."
+  mkdir -p ~/projects
+  cd ~/projects
+  # can't use git@github.com:cheater/vimrc.git if no ssh key has been installed yet
+  git clone https://github.com/cheater/vimrc.git
+  fi
+if ! [ -e ~/.vim ]; then
+  echo "Installing vimrc..."
+  ln -s ~/projects/vimrc ~/.vim
+  fi
+if ! [ -d ~/projects/vimrc/plugged ]; then
+  echo "Installing Vim plugins..."
+  if ! vim +PlugInstall +qa; then
+    rm -rf ~/projects/vimrc/plugged
+    echo "Error installing Vim plugins!" >&2
+    exit 1
+    fi
+  fi
+```
 
 
 LICENSE
