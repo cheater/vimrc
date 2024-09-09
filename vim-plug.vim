@@ -1,7 +1,9 @@
 " Load plugins using vim-plug (autoload/plug.vim)
-"
-" This file needs to be loaded first therefore it is called 0000=vim-plug so
-" that it's the earliest in alphabetical order
+
+" Note: you need to do :PlugInstall to load the plugins specified in
+" vim-plug.vim, it does not install them on its own. This will result in a
+" bunch of errors showing up before you install the plugins on a fresh system.
+
 
 " Utility function
 function! Cond(cond, ...)
