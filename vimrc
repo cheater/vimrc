@@ -56,6 +56,10 @@ let s:vimrcdir = expand('<sfile>:p:h')
 " up before everything in the rtp is being sourced.
 exec 'source ' . s:vimrcdir . '/vim-plug.vim'
 
+" Note: you need to do :PlugInstall to load the plugins specified in
+" vim-plug.vim, it does not install them on its own. This will result in a
+" bunch of errors showing up before you install the plugins on a fresh system.
+
 
 " -- Mappings and digraphs
 

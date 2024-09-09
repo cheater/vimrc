@@ -369,3 +369,8 @@ if exists("expand_region#custom_text_objects")
         \ 'ai' :0,
         \ })
   endif
+
+
+" Note: you need to do :PlugInstall to load the plugins specified in
+" vim-plug.vim, it does not install them on its own. This will result in a
+" bunch of errors showing up before you install the plugins on a fresh system.
