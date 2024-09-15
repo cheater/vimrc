@@ -374,7 +374,7 @@ function! DiffSwpAgainstFileOnDisk()
 if exists(":DiffOrig") != 2
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_
         \ | diffthis | wincmd p | diffthis
-endif
+  endif
 
 
 " use :w!! to write to a file using sudo if you forgot to "sudo vim file"
