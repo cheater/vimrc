@@ -34,9 +34,9 @@ autocmd FileType clojure
 autocmd FileType sh
 \   setlocal
 \       smartindent
-\       tabstop=8
-\       softtabstop=4
-\       shiftwidth=4
+\       tabstop=4
+\       softtabstop=2
+\       shiftwidth=2
 \       smarttab
 \       expandtab
 \       autoindent
