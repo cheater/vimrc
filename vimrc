@@ -131,17 +131,21 @@ imap <F1> <nop>
 nmap <F3> ;tabprevious<CR>
 vmap <F3> ;tabprevious<CR>
 imap <F3> <C-o>;tabprevious<CR>
+tmap <F3> <C-w>:tabprevious<CR>
 nmap <F4> ;tabnext<CR>
 vmap <F4> ;tabnext<CR>
 imap <F4> <C-o>;tabnext<CR>
+tmap <F4> <C-w>:tabnext<CR>
 
 " Move tabs in Vim. See plugin/movetab.vim
 nmap <silent> <S-F3> ;MoveTabLeft<CR>
 vmap <silent> <S-F3> ;MoveTabLeft<CR>
 imap <silent> <S-F3> <C-o>;MoveTabLeft<CR>
+tmap <silent> <S-F3> <C-w>:MoveTabLeft<CR>
 nmap <silent> <S-F4> ;MoveTabRight<CR>
 vmap <silent> <S-F4> ;MoveTabRight<CR>
 imap <silent> <S-F4> <C-o>;MoveTabRight<CR>
+tmap <silent> <S-F4> <C-w>:MoveTabRight<CR>
 
 " Go to tab containing a buffer, fuzzy search. see plugin/gobuf.vim
 nmap     <expr> <Leader>t       g:cmdleader . 'Go<Space>'
